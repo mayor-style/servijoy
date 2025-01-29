@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import cleaner from '../../../public/assets/imgs/home_repair.jpg'
-import Plumbing from '../../../public/assets/imgs/plumbing.jpg'
-import Painting from '../../../public/assets/imgs/painting.jpg'
-import Capentry from '../../../public/assets/imgs/carpentry.jpg'
-import home_repair from '../../../public/assets/imgs/electrical.jpg'
-import Flooring from '../../../public/assets/imgs/flooring.jpg'
+import cleaner from '../../assets/imgs/home_repair.jpg'
+import Plumbing from '../../assets/imgs/plumbing.jpg'
+import Painting from '../../assets/imgs/painting.jpg'
+import Capentry from '../../assets/imgs/carpentry.jpg'
+import home_repair from '../../assets/imgs/electrical.jpg'
+import Flooring from '../../assets/imgs/flooring.jpg'
 
 const FeaturedServices = () => {
 
