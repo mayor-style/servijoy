@@ -5,7 +5,7 @@ module.exports = {
   theme: {
   	extend: {
 		backgroundImage: {
-			hero:"url('/assets/imgs/hero_2.jpg')",
+			hero:"url('/assets/imgs/hero.jpg')",
 		},
   		fontFamily: {
   			header: [
