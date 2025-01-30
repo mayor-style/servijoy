@@ -1,43 +1,35 @@
-import React from 'react'
-import { IoIosSearch } from "react-icons/io";
+import React from 'react';
+import { IoIosArrowForward } from 'react-icons/io';
+import {Link} from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className='min-h-screen flex w-full relative bg-hero bg-no-repeat bg-cover bg-center'>
-       <div className="absolute inset-0 gradient-black"></div>
-       <div className="relative flex pt-[200px] text-center w-full m-auto justify-center items-center flex-col text-white z-10 px-3 md:px-7 ">
+    <div className="py-[200px] lg:py-0 lg:min-h-[100vh] flex w-full relative bg-hero bg-no-repeat bg-cover bg-center">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 gradient-black "></div>
 
-    <h1 className="sm:text-4xl text-3xl md:text-5xl xl:text-6xl pb-3 font-header md:leading-normal
-     font-bold">Find the Best Professionals in Your Area.</h1>
-    <p className="sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-black ">Reliable, vetted, and ready to help with all your needs.</p>
+      {/* Hero Content */}
+      <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white z-10 px-5 md:px-10">
+        {/* Headline */}
+        <div className="">
+        <h1 className=" md:text-5xl lg:text-6xl xl:text-7xl pb-3 font-header text-4xl  max-xs:text-3xl font-bold">
+         Find the Best Professional
+        </h1>
+        <h1 className=" mt-3 md:text-5xl lg:text-6xl xl:text-7xl pb-3 font-header text-4xl  max-xs:text-3xl font-bold">
+          in Your Area
+        </h1>
+        </div>
 
-    <div className="join pt-10">
-  <div>
-    <div>
-      <input className="input text-lg w-full text-gray-500 input-bordered join-item" placeholder="Where do you need a service?" />
+        {/* Subtext */}
+        <p className=" sm:text-lg max-xs:text-sm  md:text-xl lg:text-2xl text-light-gray font-semibold lg:max-w-3xl xl:max-w-4xl">
+          Reliable, vetted and ready to help with all your needs.
+        </p>
+
+        {/* CTA Buttons */}
+        
+      </div>
     </div>
-  </div>
-  <select className="select text-lg select-bordered text-black join-item">
-    <option disabled selected>Service</option>
-    <option>Cleaning</option>
-    <option>Plumbng</option>
-    <option>Painting</option>
-    <option>Home Repair</option>
-    <option>Flooring</option>
-    <option>Capentry</option>
-  </select>
-  <div className="indicator">
-    <button className="btn text-white join-item
-     bg-gradient-to-r from-green to-green">
-      Search
-    </button>
-  </div>
-</div>
+  );
+};
 
-
-  </div>
-    </div>
-  )
-}
-
-export default Hero
+export default Hero;

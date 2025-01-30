@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
 
       <div className="">
-      <h1 className='font-header text-gradient font-bold text-3xl '>Servi<span>Joy</span></h1>
+      <h1 className='font-header text-gradient font-semibold max-xs:text-2xl text-3xl '>Servi<span>Joy</span></h1>
       </div>
 
       <ul className="lg:flex hidden gap-8 text-lg items-center justify-center">

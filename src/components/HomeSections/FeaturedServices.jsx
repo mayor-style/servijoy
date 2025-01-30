@@ -19,12 +19,20 @@ const FeaturedServices = () => {
     ]
 
   return (
-    <div className='py-[100px] px-6 h-full w-full bg-[#F5F5F5]'>
-      <h1 className='header text-black'> 
+    <section className="py-16 bg-gray-100">
+       <div className="max-w-7xl mx-auto px-5">
+        {/* Section Title */}
+        <div className="mb-12">
+        <h2 className='header'>
         Popular Services
-      </h1>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 sm:gap-y-20 gap-x-6 py-12">
+        </h2>
+        <p className="md:text-lg max-xs:text-sm text-gray-600 mt-3">
+            Discover the wide range of services we offer, tailored to meet your needs.
+          </p>
+        </div>
+      
+      {/* Service Cards */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10 sm:gap-y-20 gap-x-6 ">
 
        {
 
@@ -37,8 +45,8 @@ const FeaturedServices = () => {
                     <img loading='lazy' className='sm:h-[67%]  h-full w-full rounded-2xl object-cover' src={service.img} alt="" />
                 </div>
                 <div className="px-3 w-full text-gray-200 sm:absolute bottom-3">
-                <h2 className='text-white font-header font-bold  text-xl'>{service.title}</h2>
-                <p className='font-semibold'>{`Experience the best ${service.title} service on ServiJoy!`}</p>
+                <h2 className='text-white font-header font-semibold text-lg sm:text-xl'>{service.title}</h2>
+                <p className='font-semibold max-xs:text-sm'>{`Experience the best ${service.title} service on ServiJoy!`}</p>
                 </div>
             </div>
         )
@@ -48,6 +56,7 @@ const FeaturedServices = () => {
 
       </div>
     </div>
+    </section>
   )
 }
 

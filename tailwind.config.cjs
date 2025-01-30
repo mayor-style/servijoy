@@ -5,8 +5,11 @@ module.exports = {
   theme: {
   	extend: {
 		backgroundImage: {
-			hero:"url('/assets/imgs/hero.jpg')",
+			hero:"url('/assets/imgs/plumbing.jpg')",
 		},
+		screens:{
+			xs:"480px",
+		  },
   		fontFamily: {
   			header: [
   				'Poppins',

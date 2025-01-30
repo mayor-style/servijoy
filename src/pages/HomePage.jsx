@@ -4,6 +4,7 @@ import HowItWorks from '../components/HomeSections/HowItWorks'
 import FeaturedServices from '../components/HomeSections/FeaturedServices'
 import TestimonialsSection from '../components/HomeSections/TestimonialsSection'
 import CTA_bannerSection from '../components/HomeSections/CTA_bannerSection'
+import FAQ from '../components/FAQ'
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <HowItWorks />
       <FeaturedServices />
       <TestimonialsSection />
+      <FAQ />
       <CTA_bannerSection />
     </div>
   )
