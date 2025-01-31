@@ -16,6 +16,7 @@ module.exports = {
 		  },
 		  animation: {
 			glow: 'glow 3s ease-in-out',
+			glow_fast:'glow 1s ease-in-out',
 		  },
 		screens:{
 			xs:"480px",
