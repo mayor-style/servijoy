@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
 
         {/* Call to Action */}
         <div className="mt-12">
-          <button className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold transition">
+          <button className="btn-blue">
             Start Booking Now
           </button>
         </div>

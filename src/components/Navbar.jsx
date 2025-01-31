@@ -11,7 +11,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className='fixed bg-soft-white right-0 left-0 top-0 py-4 px-8 items-center  flex justify-between z-50 border-b border-b-gray-200'>
+    <nav className='fixed bg-soft-white right-0 left-0 top-0 py-4 px-8 shadow-xl items-center flex justify-between z-50 border-b border-b-gray-200'>
 
       <div className="lg:hidden">
       <label className=" swap swap-rotate">

@@ -44,6 +44,14 @@
         @apply text-transparent bg-clip-text bg-gradient-to-r from-green to-blue-500
     }
 
+    .btn-green{
+       @apply transition-all duration-300 border-none outline-none ease-in-out shadow-lg rounded-lg py-3 px-4 hover:gradient hover:shadow-xl max-sm:text-sm font-medium bg-green text-soft-white active:scale-90 cursor-pointer
+    }
+
+    .btn-blue{
+        @apply transition-all duration-300 border-none outline-none ease-in-out shadow-lg  rounded-lg py-3 px-4 hover:bg-blue-600 hover:shadow-xl max-sm:text-sm cursor-pointer font-medium bg-blue-500 text-white active:scale-90
+    }
+
     button{
         @apply font-header text-white border-none
     }

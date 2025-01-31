@@ -7,6 +7,16 @@ module.exports = {
 		backgroundImage: {
 			hero:"url('/assets/imgs/flooring.jpg')",
 		},
+		keyframes: {
+			glow: {
+			  '0%': { opacity: 0 },
+			  '50%': { textShadow: '0 0 10px #ffffff' },
+			  '100%': { opacity: 1, textShadow: 'none' },
+			},
+		  },
+		  animation: {
+			glow: 'glow 3s ease-in-out',
+		  },
 		screens:{
 			xs:"480px",
 		  },

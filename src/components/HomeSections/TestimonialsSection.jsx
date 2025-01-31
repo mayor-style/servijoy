@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
 </Swiper>
   {/* Call-to-Action */}
   <div className="text-center mt-4">
-          <button className="btn hover:gradient transition-all ease-in-out duration-300 bg-green text-white max-xs:text-sm md:text-lg font-semibold">
+          <button className="btn-green">
             Book Service Now
           </button>
         </div>
