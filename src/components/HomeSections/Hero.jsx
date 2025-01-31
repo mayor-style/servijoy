@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white z-10 px-5 md:px-10">
         
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-header leading-tight">
+        <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-header leading-tight">
           Find the Best <span className="text-gradient">Professional</span> <br className="hidden md:block" /> in Your Area
         </h1>
 
@@ -30,7 +30,7 @@ const Hero = () => {
         </p>
 
         {/* Service & Location Search */}
-        <div className="mt-8 bg-white rounded-xl flex flex-col md:flex-row p-4 md:p-2 items-center gap-4 shadow-lg w-full md:w-auto max-w-3xl">
+        <div className="mt-8 bg-white max-sm:text-sm rounded-xl flex flex-col md:flex-row p-4 md:p-2 items-center gap-4 shadow-lg w-full md:w-auto max-w-3xl">
           
           {/* Service Dropdown */}
           <div className="relative flex-1 w-full md:w-64">
