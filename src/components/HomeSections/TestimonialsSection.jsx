@@ -36,11 +36,18 @@ const TestimonialsSection = () => {
       feedback:
         "Fantastic job! They even handled tough stains I thought were impossible to remove.",
     },
+    {
+      name: "Michael Brown",
+      avatar: "/images/avatar4.jpg",
+      rating: 4.5,
+      feedback:
+        "Fantastic job! They even handled tough stains I thought were impossible to remove.",
+    },
   ];
 
   return (
     <section className="py-16 gradient-blue">
-     <div className="max-w-7xl mx-auto px-9">
+     <div className="max-w-7xl mx-auto px-1 sm:px-9">
       {/* Section Title */}
     <div className="mb-12 text-center">
     <h1 className="header">What Our Clients Are Saying</h1>

@@ -14,7 +14,7 @@ const HowItWorks = () => {
     <section className="py-16 bg-gray-50">
     <div className='max-w-7xl mx-auto px-6 text-center'>
        {/* Section Heading */}
-      <h2 className='header text-black mb-4'>How ServiJoy Works</h2>
+      <h2 className='header text-black mb-4'>How <span className='text-gradient'>ServiJoy</span> Works</h2>
       <p className="subheader text-gray-600 mb-10">
           Three Simple steps to book a service.
         </p>
@@ -28,7 +28,7 @@ const HowItWorks = () => {
           <div className={` px-8 py-6 flex justify-center items-center ${data.index ===2 ? "gradient": "bg-green"} mb-4 rounded-tl-3xl rounded-br-3xl text-white`}>
            {data.icon}
           </div>
-          <h3 className='font-header mb-2 font-semibold xs:text-xl text-lg'>{data.title}</h3>
+          <h3 className=' mb-2 font-semibold xs:text-xl text-lg'>{data.title}</h3>
           <p className=''>{data.desc}</p>
         </div>
           )

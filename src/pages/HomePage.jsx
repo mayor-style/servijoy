@@ -5,6 +5,8 @@ import FeaturedServices from '../components/HomeSections/FeaturedServices'
 import TestimonialsSection from '../components/HomeSections/TestimonialsSection'
 import CTA_bannerSection from '../components/HomeSections/CTA_bannerSection'
 import FAQ from '../components/FAQ'
+import WhyChooseUs from '../components/HomeSections/WhyChooseUs'
+import BecomeAVendor from '../components/HomeSections/BecomeAVendor'
 
 const HomePage = () => {
   return (
@@ -12,7 +14,9 @@ const HomePage = () => {
       <Hero />
       <HowItWorks />
       <FeaturedServices />
+      <WhyChooseUs />
       <TestimonialsSection />
+      <BecomeAVendor />
       <FAQ />
       <CTA_bannerSection />
     </div>

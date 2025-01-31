@@ -5,7 +5,7 @@ module.exports = {
   theme: {
   	extend: {
 		backgroundImage: {
-			hero:"url('/assets/imgs/plumbing.jpg')",
+			hero:"url('/assets/imgs/flooring.jpg')",
 		},
 		screens:{
 			xs:"480px",
