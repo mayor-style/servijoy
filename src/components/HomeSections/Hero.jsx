@@ -14,10 +14,10 @@ const Hero = () => {
   return (
     <div className="py-[170px] lg:py-0 lg:min-h-[90vh] flex w-full relative bg-hero bg-no-repeat bg-cover bg-center">
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-black/65"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Hero Content */}
-      <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white z-10 px-5 md:px-10">
+      <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white z-10 xs:px-5 md:px-10">
         
         {/* Headline */}
         <h1 className="text-3xl xs:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-header leading-tight">
@@ -30,7 +30,7 @@ const Hero = () => {
         </p>
 
         {/* Service & Location Search */}
-        <div className="mt-8 bg-white max-sm:text-sm rounded-xl flex flex-col md:flex-row p-4 md:p-2 items-center gap-4 shadow-lg w-full md:w-auto max-w-3xl">
+        <div className="mt-8 bg-white max-sm:text-sm rounded-xl flex flex-col md:flex-row p-4 md:p-2 items-center max-xs:max-w-sm gap-4 shadow-lg w-full md:w-auto max-w-3xl">
           
           {/* Service Dropdown */}
           <div className="relative flex-1 w-full md:w-64">
