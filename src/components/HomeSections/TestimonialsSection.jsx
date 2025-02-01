@@ -47,39 +47,46 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-16 gradient-blue">
-     <div className="max-w-7xl mx-auto px-1 sm:px-9">
-      {/* Section Title */}
-    <div className="mb-12 text-center">
-    <h1 className="header">What Our Clients Are Saying</h1>
-     <p className="subheader mt-3">
+      <div className="max-w-7xl mx-auto px-1 sm:px-9">
+        {/* Section Title */}
+        <div className="mb-12 text-center">
+          <h1 className="header">What Our Clients Are Saying</h1>
+          <p className="subheader mt-3">
             Real experiences from our satisfied clients.
           </p>
-    </div>
+        </div>
 
-{/* Testimonials Slider */}
-<Swiper
-  spaceBetween={20}
-  loop={true}
-  autoplay={{ delay: 0, disableOnInteraction: false, pauseOnMouseEnter: false }}
-  speed={3000}
-  pagination={{ clickable: true }}
-  breakpoints={{
-    640: { slidesPerView: 1 }, // For medium devices (md)
-    768: { slidesPerView: 2 }, // For large devices (lg)
-    1024: { slidesPerView: 3 }, // For extra-large devices (xl)
-    1280: { slidesPerView: 4 }, // Default (4 slides on larger screens)
-  }}
-  modules={[Autoplay, Pagination]}
-  className="w-full h-full "
->
-  {testimonyInfo.map((info, index) => (
-    <SwiperSlide
-      key={index}
-      className="shadow-lg bg-[#f7f7f7] mx-6 p-6 rounded-lg mb-16 text-center w-full h-full"
-    >
-                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
+        {/* Testimonials Slider */}
+        <Swiper
+          spaceBetween={20}
+          loop={true}
+          centeredSlides={true} // Ensures the slide is centered
+          centerInsufficientSlides={true} // Helps center even when fewer slides exist
+          autoplay={{
+            delay: 2500, // Smooth auto-slide delay
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          }}
+          speed={1500} // Adjusts speed for smooth transition
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 1 }, // Medium devices
+            768: { slidesPerView: 2 }, // Large devices
+            1024: { slidesPerView: 3 }, // Extra-large devices
+            1280: { slidesPerView: 3 }, // Default 3 slides on larger screens
+          }}
+          modules={[Autoplay, Pagination]}
+          className="w-full h-full"
+        >
+          {testimonyInfo.map((info, index) => (
+            <SwiperSlide
+              key={index}
+              className="shadow-lg bg-[#f7f7f7] mx-4 p-6 rounded-lg mb-16 text-center w-full h-full"
+            >
+              {/* Avatar */}
+              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
                 <img
-                 src="../../assets/imgs/hero_2.jpg"
+                  src="../../assets/imgs/hero_2.jpg"
                   alt={info.name}
                   className="w-full h-full object-cover"
                 />
@@ -98,18 +105,16 @@ const TestimonialsSection = () => {
                 )}
               </div>
               {/* Feedback */}
-              <p className="mt-3 text-gray-600">{info.feedback}</p> 
-    </SwiperSlide>
-  ))}
+              <p className="mt-3 text-gray-600">{info.feedback}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-</Swiper>
-  {/* Call-to-Action */}
-  <div className="text-center mt-4">
-          <button className="btn-green">
-            Book Service Now
-          </button>
+        {/* Call-to-Action */}
+        <div className="text-center mt-4">
+          <button className="btn-green">Book Service Now</button>
         </div>
-     </div>
+      </div>
     </section>
   );
 };

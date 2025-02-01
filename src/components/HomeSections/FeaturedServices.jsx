@@ -47,7 +47,7 @@ const FeaturedServices = () => {
           <motion.div
             ref={ref}
             key={index}
-            className={`relative  flex h-36 items-center sm:gap-4 cursor-pointer shadow-lg hover:shadow-2xl 
+            className={`relative  flex h-36 items-center sm:gap-4 cursor-pointer shadow-lg hover:shadow-2xl transition-all 
              sm:h-[300px] w-full rounded-2xl bg-green sm:w-72 ${
                 index === 1 || index === 3 || index === 5 ? "gradient" : ""
               } ${index > 3 ? "sm:flex hidden" : ""}`}
@@ -59,14 +59,10 @@ const FeaturedServices = () => {
             // Adjust delay based on whether the element is in view
             transition={{
               duration: 0.5,
-              delay:  inView ? 0: index * 0.4, 
+              delay:  index * 0.4, 
               ease: "easeOut",
             }}
-            whileHover={{
-              scale: 1.03,
-              // No delay on hover, smooth transition
-              transition: { duration: 0.3 },
-            }}
+          
           >
         
            <div className="p-2 sm:w-full w-[60%] h-full sm:absolute inset-0 ">
