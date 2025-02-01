@@ -1,10 +1,17 @@
 import React from 'react'
+import HowItWorksHero from '../components/HowItWorksSection/HowItWorkHero'
+import HowItWorksSteps from '../components/HowItWorksSection/HowItWorkSteps'
+import TestimonialsSection from '../components/HomeSections/TestimonialsSection'
+import FAQ from '../components/FAQ'
 
 const HowItWorksPage = () => {
   return (
-    <div className='py-80 bg-red-400'>
-      <h1>How It Works</h1>
-    </div>
+    <main className=''>
+      <HowItWorksHero />
+    <HowItWorksSteps />
+    <TestimonialsSection />
+    <FAQ />
+    </main>
   )
 }
 

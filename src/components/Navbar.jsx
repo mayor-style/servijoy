@@ -7,7 +7,7 @@ const Navbar = () => {
     {name: 'About Us', path:"/about"},
     {name: 'How It Works', path:"/how-it-works"},
     {name: 'Services', path:"/services"},
-    {name: 'Contact Us', path:"/contact"},
+    {name: 'FAQ', path:"/contact"},
   ]
 
   return (
@@ -62,7 +62,7 @@ const Navbar = () => {
 
       <div className="lg:space-x-10 text-lg hidden md:flex items-center">
       <span className='text-black lg:block hidden hover:text-green transition'>
-        <Link>Login</Link>
+        <Link>Login / SignUp</Link>
       </span>
 
       <button className='btn font-subheading hover:gradient bg-green text-white'>Become a Vendor</button>

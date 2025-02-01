@@ -9,39 +9,39 @@ import { Autoplay, Pagination } from "swiper/modules";
 const TestimonialsSection = () => {
   const testimonyInfo = [
     {
-      name: "John Doe",
+      name: "Chinedu O.",
       avatar: "/images/avatar1.jpg",
       rating: 5,
       feedback:
-        "Luxe BNB Cleaning exceeded my expectations. My home has never been this spotless!",
+        "ServiJoy made finding a reliable plumber effortless. Within minutes, I got connected, and the service was top-notch!",
     },
     {
-      name: "Jane Smith",
+      name: "Fatima K.",
       avatar: "/images/avatar2.jpg",
-      rating: 4,
+      rating: 4.5,
       feedback:
-        "Their service was impeccable! They truly know how to deliver a luxury experience.",
+        "I needed a last-minute home cleaning before an event, and ServiJoy delivered beyond my expectations. Highly recommended!",
     },
     {
-      name: "Emily Johnson",
+      name: "Ahmed T.",
       avatar: "/images/avatar3.jpg",
       rating: 5,
       feedback:
-        "Professional, efficient, and friendly. Luxe BNB Cleaning is my go-to service.",
+        "As a service provider, joining ServiJoy has boosted my business. More clients, smooth transactions, and an easy-to-use platform!",
     },
     {
-      name: "Michael Brown",
+      name: "Jessica M.",
       avatar: "/images/avatar4.jpg",
-      rating: 4.5,
+      rating: 4,
       feedback:
-        "Fantastic job! They even handled tough stains I thought were impossible to remove.",
+        "The process was seamless. I booked an electrician, and he arrived on time with all the necessary tools. Great experience!",
     },
     {
-      name: "Michael Brown",
-      avatar: "/images/avatar4.jpg",
-      rating: 4.5,
+      name: "Emmanuel B.",
+      avatar: "/images/avatar5.jpg",
+      rating: 5,
       feedback:
-        "Fantastic job! They even handled tough stains I thought were impossible to remove.",
+        "Trust and security were my concerns, but ServiJoy’s verification system made me feel at ease. I always use them for home repairs.",
     },
   ];
 
@@ -50,9 +50,9 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-1 sm:px-9">
         {/* Section Title */}
         <div className="mb-12 text-center">
-          <h1 className="header">What Our Clients Are Saying</h1>
+          <h1 className="header">What People Are Saying About ServiJoy</h1>
           <p className="subheader mt-3">
-            Real experiences from our satisfied clients.
+            Hear from our satisfied users and service providers.
           </p>
         </div>
 
@@ -60,20 +60,20 @@ const TestimonialsSection = () => {
         <Swiper
           spaceBetween={20}
           loop={true}
-          centeredSlides={true} // Ensures the slide is centered
-          centerInsufficientSlides={true} // Helps center even when fewer slides exist
+          centeredSlides={true}
+          centerInsufficientSlides={true}
           autoplay={{
-            delay: 2500, // Smooth auto-slide delay
+            delay: 2500,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
           }}
-          speed={1500} // Adjusts speed for smooth transition
+          speed={1500}
           pagination={{ clickable: true }}
           breakpoints={{
-            640: { slidesPerView: 1 }, // Medium devices
-            768: { slidesPerView: 2 }, // Large devices
-            1024: { slidesPerView: 3 }, // Extra-large devices
-            1280: { slidesPerView: 3 }, // Default 3 slides on larger screens
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3 },
           }}
           modules={[Autoplay, Pagination]}
           className="w-full h-full"
@@ -86,7 +86,7 @@ const TestimonialsSection = () => {
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
                 <img
-                  src="../../assets/imgs/hero_2.jpg"
+                  src={info.avatar}
                   alt={info.name}
                   className="w-full h-full object-cover"
                 />
@@ -112,7 +112,7 @@ const TestimonialsSection = () => {
 
         {/* Call-to-Action */}
         <div className="text-center mt-4">
-          <button className="btn-green">Book Service Now</button>
+          <button className="btn-green">Find a Service Provider Now</button>
         </div>
       </div>
     </section>

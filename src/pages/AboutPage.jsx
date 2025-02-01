@@ -1,26 +1,21 @@
 import React from 'react'
+import AboutHero from '../components/AboutUsSections/AboutHero'
+import AboutMission from '../components/AboutUsSections/AboutMission'
+import AboutStory from '../components/AboutUsSections/AboutStory'
+import OurValues from '../components/AboutUsSections/OurValues'
+import OurTeam from '../components/AboutUsSections/OurTeam'
+import AboutClosing from '../components/AboutUsSections/AboutClosing'
 
 const AboutPage = () => {
   return (
-    <div className='py-80 bg-yellow-300'>
-    <label htmlFor="my-drawer" className="btn ml-[400px] btn-primary drawer-butto">Open drawer</label>
-      <div className="drawer">
-  <input id="my-drawer" type="checkbox" className="drawer-toggle" />
- 
-  <div className="drawer-side ">
-    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-    <ul className="menu bg-base-200 text-black min-h-full w-80 p-4">
-      {/* Sidebar content here */}
-      <li className='text-5xl text-black'><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-      <li className='text-5xl text-black'><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-      <li className='text-5xl text-black'><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
-    </ul>
-  </div>
-</div>
-    </div>
+    <main className=''>
+    <AboutHero />
+    <AboutMission />
+    <AboutStory />
+    <OurValues />
+    <OurTeam /> {/* This could be optional but well it serve as a placeholder for now! */}
+    <AboutClosing />
+    </main>
   )
 }
 

@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import ServicesPage from "./pages/ServicesPage";
 import { useEffect, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 function PageWrapper() {
   const location = useLocation();
@@ -74,13 +75,11 @@ function App() {
     <div className="absolute w-40 h-40 bg-white/5 rounded-full blur-3xl bottom-1/4 right-1/3 animate-pulse"></div>
 
     {/* Main Content */}
-    <h1 className="text-4xl xs:text-5xl sm:text-6xl animate-glow_fast font-bold font-header text-gradient drop-shadow-lg">
+    <h1 className="text-4xl xs:text-5xl sm:text-6xl animate-glow_fast font-bold font-header mb-2 text-gradient drop-shadow-lg">
       ServiJoy
     </h1>
-    <p className="text-lg sm:text-xl md:text-2xl animate-glow_fast font-medium text-white/90 mt-3 drop-shadow-md">
-      Seamless Services, Ultimate Convenience.
-    </p>
-    <span className="loading loading-spinner loading-lg mt-4 text-white"></span>
+
+    <FaSpinner className="text-white text-5xl animate-spin" />
   </motion.div>
 ) : (
   <Router>
