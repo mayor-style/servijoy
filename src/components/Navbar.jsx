@@ -7,7 +7,7 @@ const Navbar = () => {
     {name: 'About Us', path:"/about"},
     {name: 'How It Works', path:"/how-it-works"},
     {name: 'Services', path:"/services"},
-    {name: 'FAQ', path:"/contact"},
+    {name: 'FAQ', path:"/faq"},
   ]
 
   return (
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link>Login / SignUp</Link>
       </span>
 
-      <button className='btn font-subheading hover:gradient bg-green text-white'>Become a Vendor</button>
+      <button className='btn font-subheading hover:gradient bg-green text-white'><Link to={'/become-a-vendor'}>Become a Vendor</Link></button>
       </div>
   
         <div className="flex md:hidden"></div>

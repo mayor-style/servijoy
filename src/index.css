@@ -29,7 +29,7 @@
     }
 
     .header{
-        @apply font-header font-semibold lg:font-bold text-black leading-normal md:text-4xl text-2xl xs:text-3xl
+        @apply font-header font-semibold lg:font-bold text-gradient leading-normal md:text-4xl text-2xl xs:text-3xl
     }
     
     .subheader{

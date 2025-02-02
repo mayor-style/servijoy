@@ -5,6 +5,7 @@ import AboutStory from '../components/AboutUsSections/AboutStory'
 import OurValues from '../components/AboutUsSections/OurValues'
 import OurTeam from '../components/AboutUsSections/OurTeam'
 import AboutClosing from '../components/AboutUsSections/AboutClosing'
+import ContactUs from '../components/AboutUsSections/ContactUs'
 
 const AboutPage = () => {
   return (
@@ -15,6 +16,7 @@ const AboutPage = () => {
     <OurValues />
     <OurTeam /> {/* This could be optional but well it serve as a placeholder for now! */}
     <AboutClosing />
+    <ContactUs />
     </main>
   )
 }

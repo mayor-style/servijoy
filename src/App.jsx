@@ -5,9 +5,12 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import HowItWorksPage from "./pages/HowItWorksPage";
+import BecomeAVendorPage from "./pages/BecomeAVendorPage";
 import ServicesPage from "./pages/ServicesPage";
 import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
+import FAQpage from "./pages/FAQpage";
+import ScrollToTop from "./ScrollToTop";
 
 function PageWrapper() {
   const location = useLocation();
@@ -26,6 +29,8 @@ function PageWrapper() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/become-a-vendor" element={<BecomeAVendorPage />} />
+          <Route path="/faq" element={<FAQpage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
@@ -84,6 +89,7 @@ function App() {
 ) : (
   <Router>
     <Navbar />
+    <ScrollToTop />
     <PageWrapper />
     <Footer />
   </Router>

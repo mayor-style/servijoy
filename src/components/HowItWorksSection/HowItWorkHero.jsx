@@ -3,27 +3,28 @@ import { Link } from "react-router-dom";
 
 const HowItWorksHero = () => {
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#f8f9fa] to-[#ffffff] py-20 pt-40 px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between border-b border-gray-500" >
+    <section className="relative w-full gradient-black  py-20 pt-40 px-6 lg:px-12 lg:px-24 flex flex-col lg:flex-row items-center justify-between border-b border-gray-500" >
+      <div className="absolute inset-0 bg-black/60"></div>
       {/* Text Content */}
-      <div className="max-w-xl text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-header font-bold text-gray-900 leading-tight">
+      <div className="max-w-xl relative text-center lg:text-left">
+        <h1 className="text-4xl lg:text-5xl font-header font-bold text-gray-100 leading-tight">
           How <span className="text-gradient">ServiJoy</span> Works
         </h1>
-        <p className="text-lg text-gray-600 mt-4">
+        <p className="text-lg text-gray-200 mt-4">
           Book top-rated service providers effortlessly. No stress, no delays—just premium, reliable service at your fingertips.
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4">
+        <div className="mt-6 flex flex-col lg:flex-row lg:space-x-4">
           <Link
             to="/services"
-            className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-opacity-90 transition"
+            className="btn-blue max-lg:mb-4"
           >
             Get Started
           </Link>
           <Link
             to="/register-vendor"
-            className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-300 transition mt-3 sm:mt-0"
+            className=" btn-green "
           >
             Become a Vendor
           </Link>
@@ -31,9 +32,9 @@ const HowItWorksHero = () => {
       </div>
 
       {/* Image / Illustration */}
-      <div className="mt-10 md:mt-0 md:w-1/2">
+      <div className="mt-10 relative lg:mt-0 lg:w-1/2">
         <img
-          src="../../assets/imgs/hero_2.jpg"
+          src="../../assets/imgs/flooring.jpg"
           alt="How it works"
           className="w-full h-auto"
         />

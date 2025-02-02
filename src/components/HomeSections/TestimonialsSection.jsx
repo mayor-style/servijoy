@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import sampleImg from '../../assets/imgs/electrical.jpg'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -50,7 +51,7 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-1 sm:px-9">
         {/* Section Title */}
         <div className="mb-12 text-center">
-          <h1 className="header">What People Are Saying About ServiJoy</h1>
+          <h1 className="header text-gradient">What They Say About Us</h1>
           <p className="subheader mt-3">
             Hear from our satisfied users and service providers.
           </p>
@@ -86,7 +87,7 @@ const TestimonialsSection = () => {
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
                 <img
-                  src={info.avatar}
+                  src={sampleImg}
                   alt={info.name}
                   className="w-full h-full object-cover"
                 />

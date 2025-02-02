@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import sampleImg from '../../assets/imgs/plumbing.jpg'
 
 const team = [
   {
@@ -49,7 +50,7 @@ const OurTeam = () => {
             >
               {/* Profile Image */}
               <img
-                src={member.image}
+                src={sampleImg}
                 alt={member.name}
                 className="w-32 h-32 object-cover rounded-full border-4 border-green shadow-md"
               />

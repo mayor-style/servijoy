@@ -8,6 +8,7 @@ import FAQ from '../components/FAQ'
 import WhyChooseUs from '../components/HomeSections/WhyChooseUs'
 import BecomeAVendor from '../components/HomeSections/BecomeAVendor'
 import AboutClosing from '../components/AboutUsSections/AboutClosing'
+import ContactUs from '../components/AboutUsSections/ContactUs'
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <BecomeAVendor />
       <FAQ />
       <AboutClosing />
+      <ContactUs />
     </main>
   )
 }
