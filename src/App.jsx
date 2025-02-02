@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import FAQpage from "./pages/FAQpage";
 import ScrollToTop from "./ScrollToTop";
+import AuthPage from "./pages/AuthPage";
+import ServicePage from "./pages/ServicePage";
 
 function PageWrapper() {
   const location = useLocation();
@@ -31,6 +33,8 @@ function PageWrapper() {
           <Route path="/how-it-works" element={<HowItWorksPage />} />
           <Route path="/become-a-vendor" element={<BecomeAVendorPage />} />
           <Route path="/faq" element={<FAQpage />} />
+          <Route path="/login-signup" element={<AuthPage />} />
+          <Route path="/service/:service" element={<ServicePage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

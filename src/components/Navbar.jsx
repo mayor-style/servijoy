@@ -62,10 +62,10 @@ const Navbar = () => {
 
       <div className="lg:space-x-10 text-lg hidden md:flex items-center">
       <span className='text-black lg:block hidden hover:text-green transition'>
-        <Link>Login / SignUp</Link>
+        <Link to={'/login-signup'}>Login / SignUp</Link>
       </span>
 
-      <button className='btn font-subheading hover:gradient bg-green text-white'><Link to={'/become-a-vendor'}>Become a Vendor</Link></button>
+      <Link to={'/become-a-vendor'} className='btn font-subheading hover:gradient bg-green text-white'>Become a Vendor</Link>
       </div>
   
         <div className="flex md:hidden"></div>

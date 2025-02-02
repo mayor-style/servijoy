@@ -9,6 +9,22 @@
         @apply font-body
     }
 
+    .auth-container {
+        @apply flex items-center justify-center min-h-screen gradient;
+      }
+      
+      .auth-card {
+        @apply w-full max-w-md bg-white p-8 rounded-lg shadow-lg;
+      }
+      
+      .auth-header {
+        @apply text-center text-2xl font-bold mb-6;
+      }
+      
+      .auth-switch {
+        @apply text-center mt-4 text-sm cursor-pointer text-blue-500 hover:underline;
+      }
+      
     .span{
         @apply text-green
     }
@@ -55,5 +71,10 @@
     button{
         @apply font-header text-white border-none
     }
+
+      
+      .review {
+        @apply transition-transform transform hover:scale-105 duration-300 ease-in-out;
+      }
 }
 
