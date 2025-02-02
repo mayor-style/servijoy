@@ -1,5 +1,6 @@
 import React from "react";
-import aboutImage from "../../assets/imgs/home_repair.jpg"; // Replace with your real image
+import aboutImage from "../../assets/imgs/home_repair.webp"; // Replace with your real image
+import OptimizedImage from "../OptimizedImage";
 
 const AboutStory = () => {
   return (
@@ -7,12 +8,13 @@ const AboutStory = () => {
       <div className="container mx-auto gap-6 px-6 lg:px-20 flex flex-col lg:flex-row items-center">
         {/* Left Side - Image */}
         <div className="lg:w-1/2">
-          <img
+          <OptimizedImage 
             src={aboutImage}
             alt="Our Story"
-            className="rounded-lg shadow-lg"
+            className=" rounded-lg shadow-lg "
             width={600}
             height={400}
+            rounded={'rounded-2xl '}
           />
         </div>
 

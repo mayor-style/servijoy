@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import sampleImg from '../../assets/imgs/hero.jpg'
+import sampleImg from '../../assets/imgs/hero.webp'
 
 const featuredServices = [
-  { id: 1, name: "Deep Home Cleaning", img: "/images/cleaning.jpg" },
-  { id: 2, name: "24/7 Plumbing Support", img: "/images/plumbing.jpg" },
-  { id: 3, name: "Emergency Electrical Repairs", img: "/images/electrical.jpg" },
+  { id: 1, name: "Deep Home Cleaning", img: "/images/cleaning.webp" },
+  { id: 2, name: "24/7 Plumbing Support", img: "/images/plumbing.webp" },
+  { id: 3, name: "Emergency Electrical Repairs", img: "/images/electrical.webp" },
 ];
 
 const FeaturedServices = () => {

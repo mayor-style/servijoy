@@ -1,45 +1,46 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import sampleImg from '../../assets/imgs/electrical.jpg'
+import sampleImg from '../../assets/imgs/electrical.webp'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
+import OptimizedImage from "../OptimizedImage";
 
 const TestimonialsSection = () => {
   const testimonyInfo = [
     {
       name: "Chinedu O.",
-      avatar: "/images/avatar1.jpg",
+      avatar: "/images/avatar1.webp",
       rating: 5,
       feedback:
         "ServiJoy made finding a reliable plumber effortless. Within minutes, I got connected, and the service was top-notch!",
     },
     {
       name: "Fatima K.",
-      avatar: "/images/avatar2.jpg",
+      avatar: "/images/avatar2.webp",
       rating: 4.5,
       feedback:
         "I needed a last-minute home cleaning before an event, and ServiJoy delivered beyond my expectations. Highly recommended!",
     },
     {
       name: "Ahmed T.",
-      avatar: "/images/avatar3.jpg",
+      avatar: "/images/avatar3.webp",
       rating: 5,
       feedback:
         "As a service provider, joining ServiJoy has boosted my business. More clients, smooth transactions, and an easy-to-use platform!",
     },
     {
       name: "Jessica M.",
-      avatar: "/images/avatar4.jpg",
+      avatar: "/images/avatar4.webp",
       rating: 4,
       feedback:
         "The process was seamless. I booked an electrician, and he arrived on time with all the necessary tools. Great experience!",
     },
     {
       name: "Emmanuel B.",
-      avatar: "/images/avatar5.jpg",
+      avatar: "/images/avatar5.webp",
       rating: 5,
       feedback:
         "Trust and security were my concerns, but ServiJoy’s verification system made me feel at ease. I always use them for home repairs.",
@@ -86,11 +87,11 @@ const TestimonialsSection = () => {
             >
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
-                <img
-                  src={sampleImg}
-                  alt={info.name}
-                  className="w-full h-full object-cover"
-                />
+             <OptimizedImage 
+              alt={`${info.name} Image`}
+              className={"w-full h-full object-cover"}
+              src={sampleImg}
+             />
               </div>
               {/* Name */}
               <h3 className="text-xl font-semibold text-dark-gray">

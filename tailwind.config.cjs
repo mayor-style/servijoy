@@ -5,7 +5,7 @@ module.exports = {
   theme: {
   	extend: {
 		backgroundImage: {
-			hero:"url('/assets/imgs/flooring.jpg')",
+			hero:"url('/assets/imgs/flooring.webp')",
 		},
 		keyframes: {
 			glow: {

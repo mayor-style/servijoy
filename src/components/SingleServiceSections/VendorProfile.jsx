@@ -15,7 +15,7 @@ const VendorProfile = () => {
           className="flex flex-col items-center md:w-1/3"
         >
           <img 
-            src="../../assets/imgs/painting.jpg" 
+            src="../../assets/imgs/painting.webp" 
             alt="Vendor" 
             className="w-32 h-32 rounded-full object-cover border-4 border-green-500"
           />

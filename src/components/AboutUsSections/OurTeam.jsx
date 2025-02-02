@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import sampleImg from '../../assets/imgs/plumbing.jpg'
+import sampleImg from '../../assets/imgs/plumbing.webp'
+import OptimizedImage from "../OptimizedImage";
 
 const team = [
   {
@@ -49,10 +50,11 @@ const OurTeam = () => {
               className="flex flex-col items-center bg-white shadow-lg p-6 rounded-lg transition hover:shadow-xl"
             >
               {/* Profile Image */}
-              <img
-                src={sampleImg}
-                alt={member.name}
-                className="w-32 h-32 object-cover rounded-full border-4 border-green shadow-md"
+              <OptimizedImage 
+               src={sampleImg}
+               alt={member.name}
+               className="w-32 h-32 object-cover rounded-full border-4 border-green shadow-md"
+               rounded={'rounded-full '}
               />
 
               {/* Name & Role */}

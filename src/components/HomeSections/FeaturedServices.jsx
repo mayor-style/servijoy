@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import cleaner from "../../assets/imgs/home_repair.jpg";
-import Plumbing from "../../assets/imgs/plumbing.jpg";
-import Painting from "../../assets/imgs/painting.jpg";
-import Capentry from "../../assets/imgs/carpentry.jpg";
-import home_repair from "../../assets/imgs/electrical.jpg";
-import Flooring from "../../assets/imgs/flooring.jpg";
+import cleaner from "../../assets/imgs/home_repair.webp";
+import Plumbing from "../../assets/imgs/plumbing.webp";
+import Painting from "../../assets/imgs/painting.webp";
+import Capentry from "../../assets/imgs/carpentry.webp";
+import home_repair from "../../assets/imgs/electrical.webp";
+import Flooring from "../../assets/imgs/flooring.webp";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import OptimizedImage from "../OptimizedImage";
 
 const FeaturedServices = () => {
   const navigate = useNavigate();
@@ -65,14 +66,15 @@ const FeaturedServices = () => {
           
           >
         
-           <div className="p-2 sm:w-full w-[60%] h-full sm:absolute inset-0 ">
-              <img
-                loading="lazy"
-                className="sm:h-[67%] h-full w-full rounded-2xl object-cover"
-                src={service.img}
-                alt=""
-              />
-            </div>
+        <div className="p-2 sm:w-full w-[60%] h-full sm:absolute inset-0">
+        <OptimizedImage
+          src={service.img}
+          alt={`${service.title} Image`}
+          className="sm:h-[67%] h-full w-full object-cover"
+          rounded={'rounded-2xl '}
+        />
+      </div>
+
             <div className="px-3 w-full text-gray-200 sm:absolute bottom-3">
               <h2 className="text-white font-header font-semibold text-lg sm:text-xl">
                 {service.title}

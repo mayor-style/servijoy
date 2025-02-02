@@ -1,4 +1,5 @@
 import { FaUserCheck } from "react-icons/fa";
+import OptimizedImage from "../OptimizedImage";
 
 const BecomeVendorHero = () => {
   return (
@@ -24,10 +25,11 @@ const BecomeVendorHero = () => {
 
       {/* Right Side Image/Graphic */}
       <div className="hidden relative lg:block w-1/2">
-        <img 
-          src="../../assets/imgs/carpentry.jpg" 
-          alt="Vendor Working" 
-          className="w-full max-w-md rounded-lg shadow-lg"
+        <OptimizedImage 
+        src="../../assets/imgs/carpentry.webp" 
+        alt="Vendor Working" 
+        className="w-full h-auto rounded-xl shadow-lg"
+        rounded={'rounded-xl shadow-lg '}
         />
       </div>
 

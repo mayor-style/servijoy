@@ -14,7 +14,7 @@ const AuthForm = ({ isLogin, setIsLogin }) => {
 
   return (
     <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-      <h2 className="header text-center mb-6">{isLogin ? "Login" : "Sign Up"}</h2>
+      <h2 className="header pb-3 text-center mb-6">{isLogin ? "Login" : "Sign Up"}</h2>
 
       {!isLogin && (
         <InputField

@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import { FaMoneyBillWave, FaUsers, FaLock, FaTools } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import vendorImg from "../../assets/imgs/plumbing (2).jpg"; // Replace with a high-quality image
+import vendorImg from "../../assets/imgs/plumbing (2).webp"; // Replace with a high-quality image
+import OptimizedImage from "../OptimizedImage";
 
 const BecomeAVendor = () => {
 
@@ -45,10 +46,11 @@ const BecomeAVendor = () => {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, delay:0.5, ease: "easeOut" }}
         >
-          <img
-            src={vendorImg}
-            alt="Become a Vendor"
-            className="w-full h-auto rounded-3xl shadow-lg"
+          <OptimizedImage 
+          src={vendorImg}
+          alt="Become a Vendor"
+          className="w-full h-auto rounded-3xl shadow-lg"
+          rounded=' rounded-3xl '
           />
         </motion.div>
 

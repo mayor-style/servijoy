@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import OptimizedImage from "../OptimizedImage";
 
 const HowItWorksHero = () => {
   return (
@@ -33,11 +34,12 @@ const HowItWorksHero = () => {
 
       {/* Image / Illustration */}
       <div className="mt-10 relative lg:mt-0 lg:w-1/2">
-        <img
-          src="../../assets/imgs/flooring.jpg"
-          alt="How it works"
-          className="w-full h-auto"
-        />
+       <OptimizedImage 
+        src="../../assets/imgs/flooring.webp"
+        alt="How it works"
+        className="w-full h-auto"
+        rounded={'rounded-xl '}
+       />
       </div>
     </section>
   );
