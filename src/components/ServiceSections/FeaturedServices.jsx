@@ -1,5 +1,7 @@
+import React from "react";
 import { motion } from "framer-motion";
-import sampleImg from '../../assets/imgs/hero.webp'
+import ServiceCard from "../ServiceCard"; // Import the reusable card component
+import sampleImg from '../../assets/imgs/hero_2.webp'
 
 const featuredServices = [
   { id: 1, name: "Deep Home Cleaning", img: "/images/cleaning.webp" },
@@ -35,28 +37,15 @@ const FeaturedServices = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10"
+          className="flex justify-center flex-wrap gap-6 mt-10"
         >
-          {featuredServices.map((service) => (
-            <motion.div
+          {featuredServices.map((service, index) => (
+            <ServiceCard
               key={service.id}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative group overflow-hidden rounded-xl shadow-lg transition-all"
-            >
-              {/* Background Image */}
-              <div
-                className="w-full h-64 bg-cover bg-center bg-hero"
-              ></div>
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-all"></div>
-
-              {/* Service Name */}
-              <h3 className="absolute bottom-5 left-5 text-white text-xl font-semibold transition-all group-hover:scale-110">
-                {service.name}
-              </h3>
-            </motion.div>
+              title={service.name}
+              img={sampleImg}
+              gradient={index % 2 === 1} // Apply gradient to every second card
+            />
           ))}
         </motion.div>
       </div>

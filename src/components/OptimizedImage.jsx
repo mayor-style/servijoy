@@ -10,7 +10,7 @@ const OptimizedImage = ({ src, alt, rounded, width, height, className }) => {
         alt={alt}
         width={width}
         height={height}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-0" : "opacity-100 blur-md"} ${rounded}`}
+        className={`absolute inset-0 w-full h-full object-cover  transition-opacity duration-500 ${loaded ? "opacity-0" : "opacity-100 blur-md"} ${rounded}`}
       />
 
       {/* Actual Image */}

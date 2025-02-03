@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FAQItem from './FAQItem';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -50,20 +51,11 @@ const FAQ = () => {
 
           <div className="mt-10 space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-300 rounded-lg overflow-hidden">
-                <button
-                  className="w-full flex justify-between items-center p-4 bg-white text-left text-blue-900 max-xs:text-sm font-medium hover:bg-gray-100"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  {faq.question}
-                  <span className={`text-sm ${openIndex === index? 'text-blue-900' : ''}`}>
-                    {openIndex === index ? "➖" : "➕"}
-                  </span>
-                </button>
-                {openIndex === index && (
-                  <div className="p-4 max-xs:text-sm bg-white text-gray-700">{faq.answer}</div>
-                )}
-              </div>
+             <FAQItem  
+             key={index}
+             question={faq.question}
+             answer={faq.answer}
+             />
             ))}
           </div>
         </div>
