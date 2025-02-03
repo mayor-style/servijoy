@@ -1,6 +1,6 @@
 const ReviewSection = () => {
     return (
-      <div className="mt-8 px-6">
+      <div className="mt-8 overflow-hidden px-6">
         <h2 className="sm:text-2xl text-lg xs:text-xl  font-semibold mb-4">Customer Reviews</h2>
   
         {/* Review Item */}

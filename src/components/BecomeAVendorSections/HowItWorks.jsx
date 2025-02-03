@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaUserCheck, FaCogs, FaBriefcase, FaWallet } from "react-icons/fa";
 
 const steps = [
@@ -24,6 +26,10 @@ const steps = [
 ];
 
 const HowItWorksVendor = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Runs only once
+    threshold: 0.5, // Ensures smooth visibility before animation
+  });
   return (
     <section className="w-full bg-gray-50 py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center text-center">
       {/* Header */}
@@ -35,11 +41,16 @@ const HowItWorksVendor = () => {
       {/* Steps Container */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {steps.map((step, index) => (
-          <div key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center transition hover:shadow-xl">
+          <motion.div
+          ref={ref}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay:index * 0.2}}
+          key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center transition hover:shadow-xl">
             {step.icon}
             <h3 className="font-semibold text-lg mt-4">{step.title}</h3>
             <p className="text-black/70 text-sm mt-2">{step.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

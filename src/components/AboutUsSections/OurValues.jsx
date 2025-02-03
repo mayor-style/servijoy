@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaHandshake, FaShieldAlt, FaUsers, FaStar, FaRocket, FaHeart } from "react-icons/fa";
 
 const values = [
@@ -35,28 +37,42 @@ const values = [
 ];
 
 const OurValues = () => {
+  const { ref, inView } = useInView({
+                triggerOnce: true, // Runs only once
+                threshold: 0.5, // Ensures smooth visibility before animation
+              });
+  
   return (
     <section className="w-full bg-white py-20">
       <div className="container mx-auto px-6 lg:px-20">
         {/* Section Title */}
-        <div className="text-center mb-12">
+        <motion.div
+         ref={ref}
+         initial={{ opacity: 0, y:20 }}
+         animate={inView ? { opacity: 1, y: 0 } : {}}
+         transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-center mb-12">
           <h2 className="header text-gradient">What Drives Us</h2>
           <p className="subheader text-gray-600 mt-4">
             These core values define our mission and shape every decision we make.
           </p>
-        </div>
+        </motion.div>
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
-            <div
+            <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut", delay:index * 0.3}}
               key={index}
               className="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-lg transition hover:shadow-xl"
             >
               {value.icon}
               <h3 className="text-xl max-sm:text-lg font-semibold mt-4">{value.title}</h3>
               <p className="text-gray-600 max-sm:text-sm mt-2">{value.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

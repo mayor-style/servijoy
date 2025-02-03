@@ -77,10 +77,10 @@ function App() {
     initial={{ opacity: 1 }}
     animate={{ opacity: 0 }}
     transition={{ duration: 0.8, ease: "easeInOut", delay: 1.2 }}
-    className="min-h-screen flex flex-col justify-center items-center w-full h-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 relative overflow-hidden"
+    className="min-h-screen flex flex-col justify-center items-center w-full h-full gradient-black relative overflow-hidden"
   >
     {/* Subtle Animated Background Effects */}
-    <div className="absolute inset-0 bg-black/10 "></div>
+    <div className="absolute inset-0 bg-black/60 "></div>
     
     {/* Glowing Circle Animation */}
     <div className="absolute w-60 h-60 bg-white/15 rounded-full blur-3xl top-1/4 left-1/3 animate-pulse"></div>

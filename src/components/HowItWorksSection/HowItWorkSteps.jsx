@@ -1,3 +1,5 @@
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaSearch, FaClipboardCheck, FaHandshake, FaSmile, FaUserCheck, FaBriefcase, FaTools, FaStar } from "react-icons/fa";
 
@@ -57,6 +59,10 @@ const vendorSteps = [
 
 const HowItWorkSteps = () => {
   const [activeTab, setActiveTab] = useState("users");
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Runs only once
+    threshold: 0.5, // Ensures smooth visibility before animation
+  });
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24">
@@ -89,27 +95,35 @@ const HowItWorkSteps = () => {
         {activeTab === "users" ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {userSteps.map((step) => (
-              <div
+              <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y:-50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3}}
                 key={step.id}
                 className="bg-white shadow-lg p-6 rounded-lg text-center hover:shadow-xl transition transform hover:-translate-y-2"
               >
                 <div className="flex justify-center mb-4">{step.icon}</div>
                 <h3 className="font-semibold text-lg text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 max-sm:text-sm mt-2">{step.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {vendorSteps.map((step) => (
-              <div
+              <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y:-50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3}}
                 key={step.id}
                 className="bg-white shadow-lg p-6 rounded-lg text-center hover:shadow-xl transition transform hover:-translate-y-2"
               >
                 <div className="flex justify-center mb-4">{step.icon}</div>
                 <h3 className="font-semibold text-lg text-gray-900">{step.title}</h3>
                 <p className="text-gray-600 mt-2">{step.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}

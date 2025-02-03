@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import OptimizedImage from "../OptimizedImage";
 
@@ -7,7 +8,11 @@ const HowItWorksHero = () => {
     <section className="relative w-full gradient-black min-h-[80vh]  py-20 pt-32 px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between border-b border-gray-500" >
       <div className="absolute inset-0 bg-black/60"></div>
       {/* Text Content */}
-      <div className="max-w-xl relative text-center lg:text-left">
+      <motion.div 
+       initial={{ opacity: 0, x: -100 }}
+       animate={{ opacity: 1, x: 0 }}
+       transition={{ duration: 0.6, ease: "easeOut", delay:0.2 }}
+      className="max-w-xl relative text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-header font-bold text-gray-100 leading-tight">
           How <span className="text-gradient">ServiJoy</span> Works
         </h1>
@@ -30,17 +35,21 @@ const HowItWorksHero = () => {
             Become a Vendor
           </Link>
         </div>
-      </div>
+      </motion.div>
 
       {/* Image / Illustration */}
-      <div className="mt-10 relative lg:mt-0 lg:w-1/2">
+      <motion.div
+       initial={{ opacity: 0, x: 100 }}
+       animate={{ opacity: 1, x: 0 }}
+       transition={{ duration: 0.6, ease: "easeOut", delay:0.2 }}
+      className="mt-10 relative lg:mt-0 lg:w-1/2">
        <OptimizedImage 
         src="../../assets/imgs/flooring.webp"
         alt="How it works"
         className="w-full h-auto"
         rounded={'rounded-xl '}
        />
-      </div>
+      </motion.div>
     </section>
   );
 };

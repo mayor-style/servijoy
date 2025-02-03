@@ -1,4 +1,6 @@
 import { FaMoneyBillWave, FaUsers, FaClock, FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const WhyBecomeVendor = () => {
   const benefits = [
@@ -24,6 +26,12 @@ const WhyBecomeVendor = () => {
     },
   ];
 
+
+    const { ref, inView } = useInView({
+                  triggerOnce: true, // Runs only once
+                  threshold: 0.5, // Ensures smooth visibility before animation
+                });
+
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 flex flex-col bg-gray-100 items-center text-center">
       {/* Header */}
@@ -35,11 +43,16 @@ const WhyBecomeVendor = () => {
       {/* Benefits Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {benefits.map((benefit, index) => (
-          <div key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
+          <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay:index * 0.3}}
+          key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
             {benefit.icon}
             <h3 className="font-semibold text-lg mt-4">{benefit.title}</h3>
             <p className="text-black/70 text-sm mt-2">{benefit.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

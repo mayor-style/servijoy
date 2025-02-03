@@ -1,12 +1,23 @@
 import React from "react";
+import {  motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { FaHandshake, FaRocket, FaGlobe } from "react-icons/fa";
 
 const AboutMission = () => {
+   const { ref, inView } = useInView({
+                triggerOnce: true, // Runs only once
+                threshold: 0.5, // Ensures smooth visibility before animation
+              });
   return (
     <section className="w-full bg-white py-20">
       <div className="container gap-6 mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center">
         {/* Left Side - Text */}
-        <div className="lg:w-1/2 text-center lg:text-left">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: -100 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay:0.2 }}
+        className="lg:w-1/2 text-center lg:text-left">
           <h2 className="header">Our Mission & Vision</h2>
           <p className="subheader text-gray-700 mt-4">
             At <span className="text-gradient font-medium">ServiJoy</span>, our mission is to
@@ -21,10 +32,15 @@ const AboutMission = () => {
             providers and satisfied customers, ensuring fair opportunities for
             all.
           </p>
-        </div>
+        </motion.div>
 
         {/* Right Side - Icons */}
-        <div className="lg:w-1/2 flex justify-center mt-10 lg:mt-0">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: 100 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut", delay:0.2 }}
+        className="lg:w-1/2 flex justify-center mt-10 lg:mt-0">
           <div className="grid grid-cols-3 gap-6">
             <div className="flex flex-col text-center items-center">
               <FaHandshake className="text-3xl xs:text-4xl lg:text-5xl text-green" />
@@ -38,8 +54,8 @@ const AboutMission = () => {
               <FaGlobe className="text-3xl xs:text-4xl lg:text-5xl text-black" />
               <p className="subheader mt-2 text-gray-700">Global Impact</p>
             </div>
-          </div>
         </div>
+          </motion.div>
       </div>
     </section>
   );
