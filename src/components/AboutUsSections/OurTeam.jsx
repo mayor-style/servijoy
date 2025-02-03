@@ -58,8 +58,8 @@ const OurTeam = () => {
               />
 
               {/* Name & Role */}
-              <h3 className="text-xl font-semibold mt-4">{member.name}</h3>
-              <p className="text-gray-600">{member.role}</p>
+              <h3 className="text-xl max-sm:text-lg font-semibold mt-4">{member.name}</h3>
+              <p className="text-gray-600 max-sm:text-sm">{member.role}</p>
 
               {/* Social Icons */}
               <div className="flex gap-4 mt-3">

@@ -5,7 +5,7 @@ const AboutClosing = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-24 gradient-black text-center text-white relative overflow-hidden">
+    <section className="w-full py-16 gradient-black text-center text-white relative overflow-hidden">
       {/* Background Overlay (Optional) */}
       <div className="absolute inset-0 bg-black/60"></div>
 
@@ -19,7 +19,7 @@ const AboutClosing = () => {
         </p>
 
         {/* Call to Action */}
-        <div className="flex justify-center gap-6 mt-8">
+        <div className="flex items-center flex-wrap justify-center gap-4 mt-8">
           <button
             onClick={() => navigate("/signup")}
             className="btn-green"

@@ -14,22 +14,22 @@ const ContactUs = () => {
         <div className="mt-8 flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="bg-gray-100 shadow-lg rounded-lg p-6 text-center w-full md:w-1/3">
             <h4 className="font-semibold text-lg">📧 Email</h4>
-            <p className="text-gray-600">support@servijoy.com</p>
+            <p className="text-gray-600 max-sm:text-sm">support@servijoy.com</p>
           </div>
           <div className="bg-gray-100 shadow-lg rounded-lg p-6 text-center w-full md:w-1/3">
             <h4 className="font-semibold text-lg">📍 Address</h4>
-            <p className="text-gray-600">Ilorin, Nigeria</p>
+            <p className="max-sm:text-sm text-gray-600">Ilorin, Nigeria</p>
           </div>
           <div className="bg-gray-100 shadow-lg rounded-lg p-6 text-center w-full md:w-1/3">
             <h4 className="font-semibold text-lg">📞 Phone</h4>
-            <p className="text-gray-600">+234 123 456 7890</p>
+            <p className="max-sm:text-sm text-gray-600">+234 123 456 7890</p>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="mt-12 max-w-2xl mx-auto bg-gray-50 p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold">Send Us a Message</h3>
-          <form className="mt-6 flex flex-col gap-4">
+        <div className="mt-12 max-w-2xl mx-auto bg-gray-50 max-sm:px-3 p-6 rounded-lg shadow-lg">
+          <h3 className="text-xl max-sm:text-lg font-semibold">Send Us a Message</h3>
+          <form className="mt-6 max-sm:text-sm flex flex-col gap-4">
             <input
               type="text"
               placeholder="Your Name"

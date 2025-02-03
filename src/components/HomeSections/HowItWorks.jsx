@@ -8,19 +8,19 @@ const howItWorkData = [
     index: 1,
     title: "Describe your needs.",
     desc: "Describe the kind of service you need and get linked with the best professional.",
-    icon: <FaCalendarAlt className="text-4xl" />,
+    icon: <FaCalendarAlt className="text-2xl xs:text-3xl sm:text-4xl" />,
   },
   {
     index: 2,
     title: "Get matched instantly.",
     desc: "Get matched with the best Professionals around you with our sleek matching algorithm.",
-    icon: <FaHandsHelping className="text-4xl" />,
+    icon: <FaHandsHelping  className="text-2xl xs:text-3xl sm:text-4xl" />,
   },
   {
     index: 3,
     title: "Hire and complete your task.",
     desc: "Get in contact with your Professional and schedule a time to get the task done.",
-    icon: <FaSmileBeam className="text-4xl" />,
+    icon: <FaSmileBeam  className="text-2xl xs:text-3xl sm:text-4xl" />,
   },
 ];
 
@@ -59,7 +59,7 @@ const HowItWorks = () => {
               >
                 <div
                   className={`px-8 py-6 flex justify-center items-center ${
-                    data.index === 2 ? "gradient" : "bg-green"
+                    data.index === 2 ? "gradient" : "bg-green" 
                   } mb-4 rounded-tl-3xl rounded-br-3xl text-white shadow-lg`}
                 >
                   {data.icon}
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                 <h3 className="mb-2 font-semibold xs:text-xl text-lg">
                   {data.title}
                 </h3>
-                <p className="text-gray-700">{data.desc}</p>
+                <p className="max-xs:text-sm text-gray-700">{data.desc}</p>
               </motion.div>
             );
           })}

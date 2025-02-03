@@ -3,10 +3,10 @@ import { FaShieldAlt, FaBolt, FaThumbsUp, FaUserCheck } from "react-icons/fa";
 
 const WhyChooseUs = () => {
   const benefits = [
-    { icon: <FaShieldAlt className='text-4xl text-white' />, title: "Trusted & Verified", desc: "Every professional is thoroughly vetted to ensure safety and reliability." },
-    { icon: <FaBolt className='text-4xl text-white' />, title: "Fast & Seamless", desc: "Get matched instantly with top-rated professionals near you." },
-    { icon: <FaThumbsUp className='text-4xl text-white' />, title: "Quality Assurance", desc: "We prioritize customer satisfaction with reliable service guarantees." },
-    { icon: <FaUserCheck className='text-4xl text-white' />, title: "Secure Payments", desc: "Your transactions are protected with escrow, ensuring peace of mind." }
+    { icon: <FaShieldAlt className='text-3xl sm:text-4xl text-white' />, title: "Trusted & Verified", desc: "Every professional is thoroughly vetted to ensure safety and reliability." },
+    { icon: <FaBolt className='text-3xl sm:text-4xl text-white' />, title: "Fast & Seamless", desc: "Get matched instantly with top-rated professionals near you." },
+    { icon: <FaThumbsUp className='text-3xl sm:text-4xl text-white' />, title: "Quality Assurance", desc: "We prioritize customer satisfaction with reliable service guarantees." },
+    { icon: <FaUserCheck className='text-3xl sm:text-4xl text-white' />, title: "Secure Payments", desc: "Your transactions are protected with escrow, ensuring peace of mind." }
   ];
 
   return (

@@ -7,11 +7,11 @@ const BecomeVendorHero = () => {
       <div className="absolute inset-0 bg-black/60"></div>
       {/* Left Content */}
       <div className="max-w-2xl relative text-center lg:text-left">
-        <h1 className="text-4xl font-header md:text-5xl font-bold leading-tight mb-4">
+        <h1 className="xs:text-4xl text-3xl font-header md:text-5xl font-bold leading-tight mb-4">
           Earn More. Work Freely.  
-          <span className="block text-gradient">Join ServiJoy Today!</span>
+          <span className="block max-sm:pt-2 text-gradient">Join ServiJoy Today!</span>
         </h1>
-        <p className="text-lg text-white/80 max-w-lg">
+        <p className="sm:text-lg max-xs:text-sm text-white/80 max-w-lg">
           Connect with customers, grow your business, and get paid with ease.  
           Join a trusted platform that brings real work to real service providers.  
         </p>

@@ -54,8 +54,8 @@ const OurValues = () => {
               className="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-lg transition hover:shadow-xl"
             >
               {value.icon}
-              <h3 className="text-xl font-semibold mt-4">{value.title}</h3>
-              <p className="text-gray-600 mt-2">{value.description}</p>
+              <h3 className="text-xl max-sm:text-lg font-semibold mt-4">{value.title}</h3>
+              <p className="text-gray-600 max-sm:text-sm mt-2">{value.description}</p>
             </div>
           ))}
         </div>

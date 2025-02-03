@@ -78,12 +78,12 @@ const Hero = () => {
   };
 
   return (
-    <div className="py-[170px] lg:py-0 lg:min-h-[90vh] flex w-full relative bg-hero bg-no-repeat bg-cover bg-center">
+    <div className="py-[100px] pt-[150px] px-2 lg:py-0 lg:min-h-[90vh] flex w-full relative bg-hero bg-no-repeat bg-cover bg-center">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white z-10 xs:px-5 md:px-10">
+      <div className="relative flex text-center w-full m-auto justify-center items-center flex-col text-white  z-10 xs:px-5 md:px-10">
 
         {/* Headline with Glow Effect */}
         <motion.h1

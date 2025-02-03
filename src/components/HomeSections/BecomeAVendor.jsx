@@ -10,22 +10,22 @@ const BecomeAVendor = () => {
 
   const benefits = [
     {
-      icon: <FaMoneyBillWave className="text-4xl text-white" />,
+      icon: <FaMoneyBillWave className="text-3xl sm:text-4xl text-white" />,
       title: "Earn More Money",
       desc: "Expand your client base and boost your income with every completed service.",
     },
     {
-      icon: <FaUsers className="text-4xl text-white" />,
+      icon: <FaUsers className="text-3xl sm:text-4xl text-white" />,
       title: "Join a Growing Network",
       desc: "Get discovered by thousands of users actively looking for skilled professionals.",
     },
     {
-      icon: <FaLock className="text-4xl text-white" />,
+      icon: <FaLock className="text-3xl sm:text-4xl text-white" />,
       title: "Secure Payments",
       desc: "We ensure timely and protected payments through our trusted escrow system.",
     },
     {
-      icon: <FaTools className="text-4xl text-white" />,
+      icon: <FaTools className="text-3xl sm:text-4xl text-white" />,
       title: "Easy Management",
       desc: "Our intuitive dashboard lets you manage bookings, track earnings, and more.",
     },

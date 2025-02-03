@@ -4,7 +4,7 @@ import { FaSearch, FaClipboardCheck, FaHandshake, FaSmile, FaUserCheck, FaBriefc
 const userSteps = [
   {
     id: 1,
-    icon: <FaSearch size={30} className="text-green" />,
+    icon: <FaSearch size={25} className="text-green" />,
     title: "Find the Right Service",
     description: "Browse through our verified professionals to find the perfect fit for your needs.",
   },
@@ -95,7 +95,7 @@ const HowItWorkSteps = () => {
               >
                 <div className="flex justify-center mb-4">{step.icon}</div>
                 <h3 className="font-semibold text-lg text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 mt-2">{step.description}</p>
+                <p className="text-gray-600 max-sm:text-sm mt-2">{step.description}</p>
               </div>
             ))}
           </div>

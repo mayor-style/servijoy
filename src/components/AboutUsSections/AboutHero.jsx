@@ -13,9 +13,9 @@ const AboutHero = () => {
           with individuals in need. We bridge the gap between quality and
           convenience, ensuring a hassle-free experience every time.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-4 items-center">
           <button className="btn-green">Explore Services</button>
-          <button className="btn-blue ml-4">Become a Vendor</button>
+          <button className="btn-blue">Become a Vendor</button>
         </div>
       </div>
     </section>

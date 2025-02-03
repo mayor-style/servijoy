@@ -2,22 +2,22 @@ import { FaUserCheck, FaCogs, FaBriefcase, FaWallet } from "react-icons/fa";
 
 const steps = [
   {
-    icon: <FaUserCheck className="text-5xl text-green" />,
+    icon: <FaUserCheck className="xs:text-4xl text-3xl md:text-5xl text-green" />,
     title: "Sign Up & Verify",
     description: "Create an account, complete verification, and get ready to start working.",
   },
   {
-    icon: <FaCogs className="text-5xl text-blue-500" />,
+    icon: <FaCogs className="xs:text-4xl text-3xl md:text-5xl text-blue-500" />,
     title: "Set Up Profile",
     description: "Add your skills, pricing, availability, and let users find you.",
   },
   {
-    icon: <FaBriefcase className="text-5xl text-green" />,
+    icon: <FaBriefcase className="xs:text-4xl text-3xl md:text-5xl text-green" />,
     title: "Get Hired & Work",
     description: "Users book your services, you complete tasks, and earn money.",
   },
   {
-    icon: <FaWallet className="text-5xl text-blue-400" />,
+    icon: <FaWallet className="xs:text-4xl text-3xl md:text-5xl text-blue-400" />,
     title: "Get Paid Securely",
     description: "Receive payments quickly and withdraw your earnings anytime.",
   },
@@ -29,7 +29,7 @@ const HowItWorksVendor = () => {
       {/* Header */}
       <h2 className="header text-gradient mb-4">How It Works</h2>
       <p className="subheader text-black/70 max-w-3xl">
-        Becoming a vendor on **ServiJoy** is simple! Follow these **four easy steps** to start earning today.
+        Becoming a vendor on ServiJoy is simple! Follow these **four easy steps** to start earning today.
       </p>
 
       {/* Steps Container */}

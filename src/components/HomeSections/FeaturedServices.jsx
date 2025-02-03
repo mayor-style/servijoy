@@ -89,7 +89,7 @@ const FeaturedServices = () => {
       })}
         
 
-          <Link className="sm:hidden hover:underline font-subheading text-green font-semibold text-center text-lg cursor-pointer">
+          <Link className="sm:hidden hover:underline font-subheading btn-link font-semibold text-center  cursor-pointer">
             View all services
           </Link>
         </div>

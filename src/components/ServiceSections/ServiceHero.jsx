@@ -3,7 +3,7 @@ import { FaTools, FaHandHoldingHeart, FaCheckCircle } from "react-icons/fa";
 
 const ServicesHero = () => {
   return (
-    <section className="relative w-full min-h-[60vh] flex items-center justify-center pt-36 pb-24 bg-black">
+    <section className="relative w-full sm:min-h-[60vh] flex items-center justify-center pt-36 pb-24 bg-black">
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 gradient-black"></div>
 
@@ -45,7 +45,7 @@ const ServicesHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-          className="flex flex-wrap gap-4 justify-center mt-6"
+          className="flex flex-wrap items-center gap-4 justify-center mt-6"
         >
           <button className="btn-green flex items-center gap-2">
             <FaCheckCircle /> Book a Service

@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 const ServiceHero = () => {
   return (
     <section 
-      className="relative w-full min-h-[75vh] flex items-center justify-center bg-cover bg-center bg-hero" 
+      className="relative w-full py-16 sm:min-h-[75vh] flex items-center justify-center bg-cover bg-center bg-hero" 
     >
       {/* Dark Overlay for Better Visibility */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -17,7 +17,7 @@ const ServiceHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-extrabold text-white"
+          className="sm:text-4xl text-3xl md:text-6xl font-extrabold text-white"
         >
           Premium Home Cleaning
         </motion.h1>
@@ -27,7 +27,7 @@ const ServiceHero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="text-lg md:text-xl text-gray-200 mt-4 max-w-2xl mx-auto"
+          className="sm:text-lg md:text-xl text-gray-200 mt-4 max-w-2xl mx-auto"
         >
           Experience top-tier cleaning services with unmatched quality and reliability.
         </motion.p>
@@ -40,7 +40,7 @@ const ServiceHero = () => {
           className="flex justify-center items-center gap-1 mt-4"
         >
           {Array(5).fill().map((_, index) => (
-            <FaStar key={index} className="text-yellow-400 text-2xl" />
+            <FaStar key={index} className="text-yellow-400 sm:text-xl  md:text-2xl" />
           ))}
           <span className="text-gray-200 text-lg ml-2">(4.9/5)</span>
         </motion.div>

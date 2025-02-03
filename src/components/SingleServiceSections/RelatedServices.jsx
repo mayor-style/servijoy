@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import sampleImg from '../../assets/imgs/flooring.webp'
+import OptimizedImage from "../OptimizedImage";
 
 const relatedServices = [
   {
@@ -31,7 +33,7 @@ const RelatedServices = () => {
       <div className="max-w-5xl mx-auto">
         
         {/* Section Title */}
-        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+        <h3 className="header font-bold text-gray-900 text-center mb-8">
           You May Also Like
         </h3>
 
@@ -41,7 +43,11 @@ const RelatedServices = () => {
             <div key={service.id} className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
               
               {/* Service Image */}
-              <img src={service.image} alt={service.name} className="w-full h-40 object-cover" />
+              <OptimizedImage 
+              alt={service.name} className="w-full h-40 object-cover"
+              src={sampleImg}
+              rounded={'rounded-tr-lg rounded-tl-lg  '}
+              />
               
               {/* Service Details */}
               <div className="p-4">
@@ -49,7 +55,7 @@ const RelatedServices = () => {
                 <p className="text-gray-600 text-sm mt-1">{service.description}</p>
                 
                 {/* CTA */}
-                <Link to={service.link} className="mt-3 inline-block text-green-600 font-medium hover:underline">
+                <Link to={service.link} className="mt-3 inline-block text-green-600 max-sm:text-sm font-medium hover:underline">
                   View Details →
                 </Link>
               </div>

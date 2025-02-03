@@ -15,9 +15,9 @@ const ServicePage = () => {
       <ServiceDetails />
 
       {/* Vendor Information */}
-      <VendorProfile />
+     {/*  <VendorProfile />*/}
 
-        <PricingBooking />
+        {/* <PricingBooking /> */}
 
              {/* Reviews */}
       <ReviewSection />

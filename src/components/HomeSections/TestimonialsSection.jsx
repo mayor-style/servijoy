@@ -48,7 +48,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-16 gradient-blue">
+    <section className="py-16 px-1 gradient-blue">
       <div className="max-w-7xl mx-auto px-1 sm:px-9">
         {/* Section Title */}
         <div className="mb-12 text-center">
@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
           centeredSlides={true}
           centerInsufficientSlides={true}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
           }}
@@ -83,7 +83,7 @@ const TestimonialsSection = () => {
           {testimonyInfo.map((info, index) => (
             <SwiperSlide
               key={index}
-              className="shadow-lg bg-[#f7f7f7] mx-4 p-6 rounded-lg mb-16 text-center w-full h-full"
+              className="shadow-lg bg-[#f7f7f7] mx-0 p-6 rounded-xl mb-16 text-center w-full h-full"
             >
               {/* Avatar */}
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4">
@@ -94,11 +94,11 @@ const TestimonialsSection = () => {
              />
               </div>
               {/* Name */}
-              <h3 className="text-xl font-semibold text-dark-gray">
+              <h3 className="sm:text-xl text-lg font-semibold text-dark-gray">
                 {info.name}
               </h3>
               {/* Rating */}
-              <div className="flex justify-center items-center mt-2">
+              <div className="flex  max-xs:text-sm justify-center items-center mt-2">
                 {Array.from({ length: Math.floor(info.rating) }, (_, i) => (
                   <FaStar key={i} className="text-green" />
                 ))}
@@ -107,7 +107,7 @@ const TestimonialsSection = () => {
                 )}
               </div>
               {/* Feedback */}
-              <p className="mt-3 text-gray-600">{info.feedback}</p>
+              <p className="mt-3 max-xs:text-sm text-gray-600">{info.feedback}</p>
             </SwiperSlide>
           ))}
         </Swiper>
