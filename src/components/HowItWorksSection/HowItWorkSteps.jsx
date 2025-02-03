@@ -96,10 +96,6 @@ const HowItWorkSteps = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {userSteps.map((step) => (
               <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y:-50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3}}
                 key={step.id}
                 className="bg-white shadow-lg p-6 rounded-lg text-center hover:shadow-xl transition transform hover:-translate-y-2"
               >
@@ -113,10 +109,6 @@ const HowItWorkSteps = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {vendorSteps.map((step) => (
               <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y:-50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.3}}
                 key={step.id}
                 className="bg-white shadow-lg p-6 rounded-lg text-center hover:shadow-xl transition transform hover:-translate-y-2"
               >

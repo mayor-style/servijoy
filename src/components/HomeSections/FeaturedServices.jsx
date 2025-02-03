@@ -62,7 +62,7 @@ const FeaturedServices = () => {
             // Adjust delay based on whether the element is in view
             transition={{
               duration: 0.5,
-              delay:  index * 0.4, 
+              delay:  index * 0.3, 
               ease: "easeOut",
             }}
           

@@ -42,10 +42,6 @@ const HowItWorksVendor = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {steps.map((step, index) => (
           <motion.div
-          ref={ref}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut", delay:0.3}}
           key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center transition hover:shadow-xl">
             {step.icon}
             <h3 className="font-semibold text-lg mt-4">{step.title}</h3>
