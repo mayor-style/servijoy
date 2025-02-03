@@ -24,12 +24,12 @@ const BecomeVendorHero = () => {
       </div>
 
       {/* Right Side Image/Graphic */}
-      <div className="mt-10 relative lg:mt-0 lg:w-1/2">
+      <div className="mt-10 relative shadow-lg lg:mt-0 lg:w-1/2">
         <OptimizedImage 
         src="../../assets/imgs/carpentry.webp" 
         alt="Vendor Working" 
         className="w-full h-auto"
-        rounded={'rounded-xl shadow-lg '}
+        rounded={'rounded-xl  '}
         />
       </div>
 

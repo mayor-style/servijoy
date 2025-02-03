@@ -1,76 +1,93 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi"; // Imported hamburger icons
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    {name: 'About Us', path:"/about"},
-    {name: 'How It Works', path:"/how-it-works"},
-    {name: 'Services', path:"/services"},
-    {name: 'FAQ', path:"/faq"},
-  ]
+    { name: "About Us", path: "/about" },
+    { name: "How It Works", path: "/how-it-works" },
+    { name: "Services", path: "/services" },
+    { name: "FAQ", path: "/faq" },
+  ];
 
   return (
-    <nav className='fixed bg-soft-white right-0 left-0 top-0 py-4 px-8 shadow-xl items-center flex justify-between z-50 border-b border-b-gray-200'>
-
-      {/* smaller screen size- mobile menu*/}
-      <div className="lg:hidden">
-      <label  className=" swap swap-rotate">
-      {/* this hidden checkbox controls the state */}
-      <input type="checkbox" />
-
-      {/* hamburger icon */}
-      <svg
-        className="swap-off fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 512 512">
-        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-      </svg>
-
-      {/* close icon */}
-      <svg
-        className="swap-on fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 512 512">
-        <polygon
-          points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-      </svg>
-    </label>
-
-      </div>
-
-      <Link to={'/'} className="">
-      <h1 className='font-header text-gradient font-semibold max-xs:text-2xl text-3xl '>Servi<span>Joy</span></h1>
+    <nav className="fixed bg-soft-white right-0 left-0 top-0 py-4 px-8 shadow-xl flex justify-between items-center z-50 border-b border-gray-200">
+      {/* Logo */}
+      <Link to={"/"}>
+        <h1 className="font-header text-gradient font-semibold max-xs:text-2xl text-3xl">
+          Servi<span>Joy</span>
+        </h1>
       </Link>
 
-      <ul className="lg:flex hidden gap-8 text-lg items-center justify-center">
-      
-        {
-          links.map((link, index)=> 
-            <li key={index} className='hover:text-green transition'>
-          <Link to={link.path}>{link.name}</Link>
-        </li>
-  
-          )
-        }
-
+      {/* Desktop Navigation */}
+      <ul className="lg:flex hidden gap-8 text-lg items-center">
+        {links.map((link, index) => (
+          <li key={index} className="hover:text-green transition">
+            <Link to={link.path}>{link.name}</Link>
+          </li>
+        ))}
       </ul>
 
-      <div className="lg:space-x-10 text-lg hidden md:flex items-center">
-      <span className='text-black lg:block hidden hover:text-green transition'>
-        <Link to={'/login-signup'}>Login / SignUp</Link>
-      </span>
-
-      <Link to={'/become-a-vendor'} className='btn font-subheading hover:gradient bg-green text-white'>Become a Vendor</Link>
+      {/* Right-side Buttons (Desktop) */}
+      <div className="lg:flex hidden space-x-10 text-lg items-center">
+        <span className="text-black hover:text-green transition">
+          <Link to={"/login-signup"}>Login / SignUp</Link>
+        </span>
+        <Link to={"/become-a-vendor"} className="btn font-subheading hover:gradient bg-green text-white">
+          Become a Vendor
+        </Link>
       </div>
-  
-        <div className="flex md:hidden"></div>
-    </nav>
-  )
-}
 
-export default Navbar
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden z-50 text-black transition-all duration-300"
+      >
+        {isOpen ? (
+          <FiX className="text-3xl text-white" />
+        ) : (
+          <FiMenu className="text-3xl text-black" />
+        )}
+      </button>
+
+      {/* Mobile Dropdown Menu */}
+      <div
+        className={`fixed top-0 left-0 w-full h-screen bg-black/80 backdrop-blur-md flex flex-col items-center justify-center space-y-6 text-white transition-all duration-500 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            to={link.path}
+            className="sm:text-2xl text-lg xs:text-xl hover:text-green transition"
+            onClick={() => setIsOpen(false)}
+          >
+            {link.name}
+          </Link>
+        ))}
+
+        <div className="flex items-center flex-col space-y-4">
+          <Link
+            to={"/login-signup"}
+            className="text-lg hover:text-green transition"
+            onClick={() => setIsOpen(false)}
+          >
+            Login / SignUp
+          </Link>
+          <Link
+            to={"/become-a-vendor"}
+            className="btn-green flex items-center m-auto font-subheading "
+            onClick={() => setIsOpen(false)}
+          >
+            Become a Vendor
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
