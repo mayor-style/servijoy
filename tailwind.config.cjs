@@ -5,7 +5,7 @@ module.exports = {
   theme: {
   	extend: {
 		backgroundImage: {
-			hero:"url('/assets/imgs/flooring.webp')",
+			hero:"url('/assets/imgs/hero_2.webp')",
 		},
 		keyframes: {
 			glow: {
@@ -20,6 +20,7 @@ module.exports = {
 		  },
 		screens:{
 			xs:"480px",
+			xss:"360px",
 		  },
   		fontFamily: {
   			header: [

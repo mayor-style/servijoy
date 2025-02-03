@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ServiceHero = () => {
   return (
@@ -52,9 +53,9 @@ const ServiceHero = () => {
           transition={{ delay: 1, duration: 1 }}
           className="mt-6"
         >
-          <button className="btn-green">
+          <Link to={'/vendor-list'} className="btn-green">
             Book Now
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

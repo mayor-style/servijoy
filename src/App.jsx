@@ -13,6 +13,8 @@ import FAQpage from "./pages/FAQpage";
 import ScrollToTop from "./ScrollToTop";
 import AuthPage from "./pages/AuthPage";
 import ServicePage from "./pages/ServicePage";
+import VendorList from "./components/VendorList";
+
 
 function PageWrapper() {
   const location = useLocation();
@@ -35,6 +37,7 @@ function PageWrapper() {
           <Route path="/faq" element={<FAQpage />} />
           <Route path="/login-signup" element={<AuthPage />} />
           <Route path="/service/:service" element={<ServicePage />} />
+          <Route path="/vendor-list" element={<VendorList />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

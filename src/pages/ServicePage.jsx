@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PricingBooking from "../components/SingleServiceSections/PricingBooking";
 import RelatedServices from "../components/SingleServiceSections/RelatedServices";
 import ReviewSection from "../components/SingleServiceSections/ReviewSection";
@@ -27,9 +28,9 @@ const ServicePage = () => {
 
       {/* Booking Button */}
       <div className="flex justify-center mt-8">
-        <button className="btn-green px-6 py-3 rounded-lg text-white text-lg shadow-md hover:shadow-lg">
+        <Link to={'/vendor-list'} className="btn-green px-6 py-3 rounded-lg text-white text-lg shadow-md hover:shadow-lg">
           Book This Service
-        </button>
+        </Link>
       </div>
     </div>
   );

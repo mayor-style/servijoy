@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { FaBroom, FaTools, FaBolt, FaPaintRoller, FaTruckMoving, FaLeaf } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const services = [
   { id: 1, name: "Cleaning Services", icon: <FaBroom />, color: "bg-green" },
@@ -10,7 +12,13 @@ const services = [
   { id: 6, name: "Landscaping", icon: <FaLeaf />, color: "bg-green" },
 ];
 
+
 const ServiceCategories = () => {
+  const navigate = useNavigate();
+  
+  const handleNaviagte = ()=>{
+    navigate('/service/cleaning')
+  }
   return (
     <section className="py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
@@ -42,6 +50,7 @@ const ServiceCategories = () => {
         >
           {services.map((service) => (
             <motion.div
+              onClick={handleNaviagte}
               key={service.id}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

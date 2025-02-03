@@ -13,9 +13,6 @@ import OptimizedImage from "../OptimizedImage";
 
 const FeaturedServices = () => {
   const navigate = useNavigate();
-
- 
-
   const featuredService = [
     { title: "Cleaning", img: cleaner },
     { title: "Plumbing", img: Plumbing },
@@ -24,6 +21,10 @@ const FeaturedServices = () => {
     { title: "Home Repair", img: home_repair },
     { title: "Flooring", img: Flooring },
   ];
+
+  const handleNavigate=()=>{
+    navigate('/service/h')
+  }
 
   return (
     <section className="py-16 bg-gray-100">
@@ -46,6 +47,7 @@ const FeaturedServices = () => {
         
         return (
           <motion.div
+          onClick={handleNavigate}
             ref={ref}
             key={index}
             className={`relative  flex h-36 items-center sm:gap-4 cursor-pointer shadow-lg hover:shadow-2xl transition-all 
@@ -76,10 +78,10 @@ const FeaturedServices = () => {
       </div>
 
             <div className="px-3 w-full text-gray-200 sm:absolute bottom-3">
-              <h2 className="text-white font-header font-semibold text-lg sm:text-xl">
+              <h2 className="text-white font-header font-semibold xss:text-lg sm:text-xl">
                 {service.title}
               </h2>
-              <p className="font-semibold max-xs:text-sm">
+              <p className="font-semibold max-xs:text-sm max-xss:text-xs">
                 {`Experience the best ${service.title} service on ServiJoy!`}
               </p>
             </div>            

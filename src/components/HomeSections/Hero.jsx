@@ -166,7 +166,7 @@ const Hero = () => {
           {/* Search Button */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-              to={`/services?category=${selectedService}&location=${selectedLocation}`}
+              to={`/vendor-list`}
               className={`flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg transition ${
                 !selectedService || !selectedLocation ? 'opacity-50 pointer-events-none' : 'hover:bg-blue-600'
               }`}

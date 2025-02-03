@@ -62,7 +62,7 @@ const Navbar = () => {
           <Link
             key={index}
             to={link.path}
-            className="sm:text-2xl text-lg xs:text-xl hover:text-green transition"
+            className="sm:text-2xl xss:text-lg xs:text-xl hover:text-green transition"
             onClick={() => setIsOpen(false)}
           >
             {link.name}

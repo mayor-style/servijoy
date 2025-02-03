@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputField from "./InputField";
+import InputField from "../AuthSections/InputField";
 import Button from "./Button";
 import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 

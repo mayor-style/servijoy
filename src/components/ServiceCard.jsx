@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 import OptimizedImage from "../components/OptimizedImage"; // Import if you're using it
 
 const ServiceCard = ({ title, img, gradient = false, hiddenOnSmall = false }) => {
@@ -9,9 +10,12 @@ const ServiceCard = ({ title, img, gradient = false, hiddenOnSmall = false }) =>
     threshold: 0.5,
   });
 
+  const navigate = useNavigate();
+
   return (
     <motion.div
       ref={ref}
+      onClick={()=>navigate('/service/cleaning')}
       className={`relative flex h-36 items-center sm:gap-4 cursor-pointer shadow-lg hover:shadow-2xl transition-all 
         sm:h-[350px] w-full rounded-2xl bg-green sm:w-72
         ${gradient ? "gradient" : ""}
@@ -37,8 +41,8 @@ const ServiceCard = ({ title, img, gradient = false, hiddenOnSmall = false }) =>
       </div>
 
       <div className="px-3 text-left w-full text-gray-200 sm:absolute bottom-3">
-        <h2 className="text-white font-header font-semibold text-lg sm:text-xl">{title}</h2>
-        <p className="font-semibold max-xs:text-sm">
+        <h2 className="text-white font-header font-semibold xss:text-lg sm:text-xl">{title}</h2>
+        <p className="font-semibold max-xs:text-sm max-xss:text-xs">
           {`Experience the best ${title} service on ServiJoy!`}
         </p>
       </div>
