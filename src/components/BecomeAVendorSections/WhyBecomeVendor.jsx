@@ -47,7 +47,7 @@ const WhyBecomeVendor = () => {
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut", delay:index * 0.3}}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3}}
           key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
             {benefit.icon}
             <h3 className="font-semibold text-lg mt-4">{benefit.title}</h3>

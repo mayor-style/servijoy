@@ -45,7 +45,7 @@ const HowItWorksVendor = () => {
           ref={ref}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut", delay:index * 0.2}}
+          transition={{ duration: 0.6, ease: "easeOut", delay:0.3}}
           key={index} className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center transition hover:shadow-xl">
             {step.icon}
             <h3 className="font-semibold text-lg mt-4">{step.title}</h3>
