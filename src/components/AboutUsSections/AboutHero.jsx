@@ -2,9 +2,9 @@ import React from "react";
 
 const AboutHero = () => {
   return (
-    <section className="w-full bg-hero bg-cover relative bg-no-repeat text-white pt-32 py-20">
+    <section className="w-full bg-hero bg-cover relative bg-no-repeat text-white pt-32 min-h-[70vh] py-24">
         <div className="absolute inset-0 bg-black/60"></div>
-      <div className="container relative mx-auto px-6 lg:px-20 flex flex-col items-center text-center">
+      <div className="container relative mx-auto px-4 lg:px-20 flex flex-col items-center text-center">
         <h1 className="header text-gradient">
           Empowering Seamless Service Connections
         </h1>
@@ -13,7 +13,7 @@ const AboutHero = () => {
           with individuals in need. We bridge the gap between quality and
           convenience, ensuring a hassle-free experience every time.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-4 items-center">
+        <div className="mt-6 flex flex-wrap justify-center gap-3 items-center">
           <button className="btn-green">Explore Services</button>
           <button className="btn-blue">Become a Vendor</button>
         </div>

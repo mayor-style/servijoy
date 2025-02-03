@@ -4,7 +4,7 @@ import OptimizedImage from "../OptimizedImage";
 
 const HowItWorksHero = () => {
   return (
-    <section className="relative w-full gradient-black  py-20 pt-32 px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between border-b border-gray-500" >
+    <section className="relative w-full gradient-black min-h-[80vh]  py-20 pt-32 px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between border-b border-gray-500" >
       <div className="absolute inset-0 bg-black/60"></div>
       {/* Text Content */}
       <div className="max-w-xl relative text-center lg:text-left">
