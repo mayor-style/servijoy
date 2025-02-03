@@ -25,7 +25,7 @@ const WhyBecomeVendor = () => {
   ];
 
   return (
-    <section className="w-full py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center text-center">
+    <section className="w-full py-20 px-6 md:px-12 lg:px-20 flex flex-col bg-gray-100 items-center text-center">
       {/* Header */}
       <h2 className="header text-gradient mb-4">Why Become a Vendor?</h2>
       <p className="subheader text-black/70 max-w-3xl">

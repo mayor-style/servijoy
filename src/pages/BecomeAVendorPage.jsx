@@ -11,8 +11,8 @@ const BecomeAVendorPage = () => {
       <BecomeVendorHero />
       <WhyBecomeVendor />
       <HowItWorksVendor />
-      <BecomeVendorFAQ />
       <BecomeVendorCTA />
+      <BecomeVendorFAQ />
     </main>
   )
 }

@@ -3,13 +3,13 @@ import OptimizedImage from "../OptimizedImage";
 
 const BecomeVendorHero = () => {
   return (
-    <section className="w-full min-h-[80vh] flex flex-col relative lg:flex-row items-center justify-between px-6 md:px-12 pt-32 lg:px-20 gradient-black text-white py-16">
+    <section className="relative w-full gradient-black  py-20 pt-32 px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between border-b border-gray-500">
       <div className="absolute inset-0 bg-black/60"></div>
       {/* Left Content */}
       <div className="max-w-2xl relative text-center lg:text-left">
-        <h1 className="xs:text-4xl text-3xl font-header md:text-5xl font-bold leading-tight mb-4">
+        <h1 className="sm:text-4xl text-3xl font-header lg:text-5xl text-gray-100 font-bold leading-tight mb-4">
           Earn More. Work Freely.  
-          <span className="block max-sm:pt-2 text-gradient">Join ServiJoy Today!</span>
+          <span className="block pt-2 text-gradient">Join ServiJoy Today!</span>
         </h1>
         <p className="sm:text-lg max-xs:text-sm text-white/80 max-w-lg">
           Connect with customers, grow your business, and get paid with ease.  
@@ -24,11 +24,11 @@ const BecomeVendorHero = () => {
       </div>
 
       {/* Right Side Image/Graphic */}
-      <div className="hidden relative lg:block w-1/2">
+      <div className="mt-10 relative lg:mt-0 lg:w-1/2">
         <OptimizedImage 
         src="../../assets/imgs/carpentry.webp" 
         alt="Vendor Working" 
-        className="w-full h-auto rounded-xl shadow-lg"
+        className="w-full h-auto"
         rounded={'rounded-xl shadow-lg '}
         />
       </div>
