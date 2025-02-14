@@ -8,9 +8,9 @@ const FAQItem = ({ question, answer, index }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <div className="border border-gray-300 rounded-lg overflow-hidden">
+    <div className="border rounded-xl  border-gray-300 shadow-lg overflow-hidden">
       <button
-        className="w-full flex text-gradient justify-between items-center p-4 bg-white text-left sm:text-lg font-medium hover:bg-gray-100 transition"
+        className="w-full flex text-green justify-between items-center p-4 bg-white text-left sm:text-lg font-medium hover:bg-gray-100 transition"
         onClick={() =>  toggleFAQ(index)}
       >
         {question}

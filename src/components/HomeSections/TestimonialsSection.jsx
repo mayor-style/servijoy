@@ -48,12 +48,14 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-1 gradient-blue">
-      <div className="max-w-7xl mx-auto px-1 sm:px-9">
+    <section className="py-16 px-1 gradient relative">
+        {/* Background Overlay (Optional) */}
+        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="max-w-7xl relative mx-auto px-1 sm:px-9">
         {/* Section Title */}
         <div className="mb-12 text-center">
-          <h1 className="header text-gradient">What They Say About Us</h1>
-          <p className="subheader mt-3">
+          <h1 className="header text-white">What They Say About Us</h1>
+          <p className="subheader text-gray-100 mt-3">
             Hear from our satisfied users and service providers.
           </p>
         </div>

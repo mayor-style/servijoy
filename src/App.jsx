@@ -14,12 +14,55 @@ import ScrollToTop from "./ScrollToTop";
 import AuthPage from "./pages/AuthPage";
 import ServicePage from "./pages/ServicePage";
 import VendorList from "./components/VendorList";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import { AuthProvider, useAuth }  from "./context/AuthContext";
+import VendorDashboardHome from "./pages/Dashboard/vendor/VendorDashboardHome";
+import UserDashboardHome from "./pages/Dashboard/user/UserDashboardHome";
+import DashboardHome from "./pages/Dashboard/common/DashboardHome";
+import ManageServicesPage from "./pages/Dashboard/vendor/ManageServicesPage";
+import BookingRequestsPage from "./pages/Dashboard/vendor/BookingRequestsPage";
+import ExploreServicesPage from "./pages/Dashboard/user/ExploreServicesPage";
+import MyBookings from "./pages/Dashboard/user/MyBookingsPage";
+import Favorites from "./pages/Dashboard/user/FavoritesPage";
+import PaymentWallet from "./pages/Dashboard/user/PaymentWalletPage";
+import DisputeManagement from "./pages/Dashboard/user/DisputeManagementPage";
+import Notifications from "./pages/Dashboard/common/NotificationsPage";
+import Messages from "./pages/Dashboard/common/MessagesPage";
+import Settings from "./pages/Dashboard/common/SettingsPage";
+import BookingCalendar from "./pages/Dashboard/vendor/BookingCalendarPage";
+import EarningsAndPayouts from "./pages/Dashboard/vendor/EarningsAndPayoutsPage";
+import VendorDisputeManagement from "./pages/Dashboard/vendor/VendorDisputeManagementPage";
+import AvailableVendors from "./pages/Dashboard/user/AvailableVendorsPage";
+
+
+
+function ProtectedRoute({ children }) {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return user ? children : <AuthPage />;
+}
 
 
 function PageWrapper() {
   const location = useLocation();
+  const hideNavAndFooterRoutes = [
+    '/dashboard',
+   
+  ];
+
+  const shouldHideNavAndFooter = hideNavAndFooterRoutes.some((route) =>
+    location.pathname.startsWith(route)
+  );
 
   return (
+    <>
+      {!shouldHideNavAndFooter && <Navbar />}
+      <ScrollToTop />
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}
@@ -38,9 +81,41 @@ function PageWrapper() {
           <Route path="/login-signup" element={<AuthPage />} />
           <Route path="/service/:service" element={<ServicePage />} />
           <Route path="/vendor-list" element={<VendorList />} />
+          
+
+            {/* Dashboard Layout with Protected Routes */}
+            <Route
+            path="/dashboard/*"
+            element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }
+          >
+            {/* Home Page - Dynamically Render User or Vendor */}
+            <Route index element={<DashboardHome />} />
+            <Route path="manage-services" element={<ManageServicesPage />} />
+            <Route path="booking-requests" element={<BookingRequestsPage />} />
+            <Route path="explore-services" element={<ExploreServicesPage />} />
+            <Route path="bookings" element={<MyBookings />} />
+            <Route path="favorites" element={<Favorites />} />
+            <Route path="wallet" element={<PaymentWallet />} />
+            <Route path="disputes" element={<DisputeManagement />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="calendar" element={<BookingCalendar />} />
+            <Route path="earnings" element={<EarningsAndPayouts />} />
+            <Route path="vendor-disputes" element={<VendorDisputeManagement />} />
+            <Route path="book/:serviceName" element={<AvailableVendors />} />
+            {/* More dashboard pages will be added later */}
+          </Route>
+
         </Routes>
       </motion.div>
     </AnimatePresence>
+    {!shouldHideNavAndFooter && <Footer />}
+    </>
   );
 }
 
@@ -94,12 +169,11 @@ function App() {
     <FaSpinner className="text-white text-5xl animate-spin" />
   </motion.div>
 ) : (
+  <AuthProvider>
   <Router>
-    <Navbar />
-    <ScrollToTop />
     <PageWrapper />
-    <Footer />
   </Router>
+    </AuthProvider>
 )}
 
     </>

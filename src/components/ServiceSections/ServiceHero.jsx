@@ -3,9 +3,9 @@ import { FaTools, FaHandHoldingHeart, FaCheckCircle } from "react-icons/fa";
 
 const ServicesHero = () => {
   return (
-    <section className="relative w-full sm:min-h-[60vh] flex items-center justify-center pt-36 pb-24 bg-black">
+    <section className="relative w-full sm:min-h-[60vh] flex items-center justify-center pt-36 pb-24 gradient-black">
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 gradient-black"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
       <div className="relative max-w-5xl text-center text-white px-6">
@@ -14,7 +14,7 @@ const ServicesHero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-gradient font-medium text-lg"
+          className="text-gradient font-semibold text-xl"
         >
           Wide Range of Professional Services
         </motion.p>

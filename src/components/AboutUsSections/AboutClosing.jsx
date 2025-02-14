@@ -5,15 +5,15 @@ const AboutClosing = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="w-full py-16 gradient-black text-center text-white relative overflow-hidden">
+    <section className="w-full py-16 gradient text-center text-white relative overflow-hidden">
       {/* Background Overlay (Optional) */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-20">
         {/* Heading */}
-        <h2 className="header text-gradient">Transforming Services, Empowering Lives</h2>
-        <p className="subheader text-gray-300 mt-4 max-w-3xl mx-auto">
+        <h2 className="header ">Transforming Services, Empowering Lives</h2>
+        <p className="subheader text-gray-50 mt-4 max-w-3xl mx-auto">
           Join thousands of satisfied users and professional vendors on ServiJoy.  
           Quality, trust, and convenience—this is the future of service booking.
         </p>
