@@ -4,7 +4,7 @@ import VendorWelcome from "./components/dashboardHome/VendorWelcome";
 import VendorBookingRequests from "./components/dashboardHome/VendorBookingRequests";
 import VendorQuickAccess from "./components/dashboardHome/VendorQuickAccess";
 import VendorEarnings from "./components/dashboardHome/VendorEarnings";
-import VendorTrustScore from "./components/dashboardHome/VendorTrustScore";
+import VendorTrustScore from "./components/dashboardHome/VendorTrustscore";
 import VendorMessages from "./components/dashboardHome/VendorRecentMessages";
 
 const VendorDashboardHome = () => {
