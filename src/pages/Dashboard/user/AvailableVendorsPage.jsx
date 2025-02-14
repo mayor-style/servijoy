@@ -9,7 +9,7 @@ const AvailableVendors = () => {
     {
       id: 1,
       name: "John's Plumbing",
-      profileImage: "/images/vendor1.jpg",
+      profileImage: "../../../assets/imgs/hero.webp",
       experience: 5,
       rating: 4.8,
       reviews: 120,
@@ -23,7 +23,7 @@ const AvailableVendors = () => {
     {
       id: 2,
       name: "Elegant Cleaning",
-      profileImage: "/images/vendor2.jpg",
+      profileImage: "../../../assets/imgs/hero.webp",
       experience: 7,
       rating: 4.6,
       reviews: 90,
@@ -34,7 +34,7 @@ const AvailableVendors = () => {
     {
       id: 3,
       name: "Ace Electric",
-      profileImage: "/images/vendor3.jpg",
+      profileImage: "../../../assets/imgs/hero.webp",
       experience: 8,
       rating: 4.9,
       reviews: 150,

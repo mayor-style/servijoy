@@ -13,7 +13,7 @@ const mockServices = [
     shortDescription: "Keep your home spotless with our professional cleaning service.",
     description:
       "Enjoy a thorough, eco-friendly cleaning service that ensures every corner of your home is spotless. Our experienced staff provides flexible scheduling to suit your needs.",
-    image: "/images/home-cleaning.jpg",
+    image: "../../../assets/imgs/home_repair.webp",
     pricing: "$50 - $150",
     minPrice: 50,
     maxPrice: 150,
@@ -30,7 +30,7 @@ const mockServices = [
     shortDescription: "Fix leaks and clogs with expert plumbing services.",
     description:
       "Our plumbing experts provide fast and reliable repair services, from fixing leaks to unclogging drains. We guarantee quality workmanship and quick response times.",
-    image: "/images/plumbing.jpg",
+    image: "../../../assets/imgs/plumbing (2).webp",
     pricing: "$70 - $200",
     minPrice: 70,
     maxPrice: 200,
@@ -48,7 +48,7 @@ const mockServices = [
       "Professional electrical repair services for your home or office.",
     description:
       "Our certified electricians are available 24/7 to handle all your electrical repair needs. Safety and precision are our top priorities.",
-    image: "/images/electrical-repairs.jpg",
+    image: "../../../assets/imgs/electrical.webp",
     pricing: "$80 - $250",
     minPrice: 80,
     maxPrice: 250,
@@ -66,7 +66,7 @@ const mockServices = [
       "High-quality painting services for interiors and exteriors.",
     description:
       "Transform your space with our professional painting services. We provide a flawless finish with long-lasting results for both interior and exterior projects.",
-    image: "/images/painting.jpg",
+    image: "../../../assets/imgs/painting.webp",
     pricing: "$100 - $300",
     minPrice: 100,
     maxPrice: 300,
