@@ -7,7 +7,7 @@ const DisputeDetailsModal = ({ dispute, isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 p-4">
-      <div className="bg-white overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl p-8 relative transition-transform transform">
+      <div className="bg-white overflow-auto scrollbar-thin scrollbar-thumb-gray-500 max-h-[90vh] scrollbar-track-gray-300 dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-2xl p-8 relative transition-transform transform">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"

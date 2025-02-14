@@ -7,7 +7,7 @@ const VendorDetailsModal = ({ vendor, isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center p-2 md:p-4 justify-center bg-black bg-opacity-60 transition-opacity duration-300">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-lg md:max-w-2xl p-6 md:p-8 relative transition-transform duration-300 transform">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-h-[90vh] overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 overflow-y-auto max-w-lg md:max-w-2xl p-6 md:p-8 relative transition-transform duration-300 transform">
         {/* Close Button */}
         <button
           onClick={onClose}

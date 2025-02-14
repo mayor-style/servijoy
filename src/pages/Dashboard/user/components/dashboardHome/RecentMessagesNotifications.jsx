@@ -28,7 +28,7 @@ const RecentMessagesNotifications = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1  gap-6">
         {/* Messages */}
         <div className="space-y-4">
           {messages.map((msg) => (

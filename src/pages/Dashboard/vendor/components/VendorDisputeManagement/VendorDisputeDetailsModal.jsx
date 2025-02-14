@@ -15,7 +15,7 @@ const VendorDisputeDetailsModal = ({ dispute, isOpen, onClose, onUpdateStatus })
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 max-w-lg sm:max-w-2xl w-full relative transition-transform duration-300"
+          className="bg-white overflow-auto scrollbar-thin scrollbar-thumb-gray-500 max-h-[90vh] scrollbar-track-gray-300 dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 max-w-lg sm:max-w-2xl w-full relative transition-transform duration-300"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}

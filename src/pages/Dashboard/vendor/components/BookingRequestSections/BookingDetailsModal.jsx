@@ -16,7 +16,7 @@ const BookingDetailsModal = ({ isOpen, onClose, booking, onAction }) => {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 transition-transform duration-300 transform "
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative overflow-auto scrollbar-thin max-h-[90vh] scrollbar-thumb-gray-500 scrollbar-track-gray-300 transition-transform duration-300 transform "
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}

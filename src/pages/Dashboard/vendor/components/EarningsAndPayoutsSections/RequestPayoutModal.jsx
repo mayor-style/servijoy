@@ -40,7 +40,7 @@ const RequestPayoutModal = ({ isOpen, onClose, onSubmit, availableAmount }) => {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 max-w-xs sm:max-w-md md:max-w-lg w-full relative"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-h-[90vh] sm:p-8 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 max-w-xs sm:max-w-md md:max-w-lg w-full relative"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}
