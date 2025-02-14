@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import { useAuth } from "../context/authContext"; // adjust the path accordingly
+import { useAuth } from "../context/AuthContext"; // adjust the path accordingly
 
 const Footer = () => {
   const { user, login } = useAuth();

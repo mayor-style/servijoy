@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "postinstall": "npm install rollup --force",
+ 
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
