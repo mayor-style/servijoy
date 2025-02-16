@@ -32,7 +32,7 @@ const DashboardHeader = ({ toggleSidebar }) => {
       </button>
 
       {/* Welcome Message */}
-      <h1 className="text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
+      <h1 className="text-lg xs:text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
         Welcome, {user?.name || "User"} 👋
       </h1>
 

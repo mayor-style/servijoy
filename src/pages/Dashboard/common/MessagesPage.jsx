@@ -54,7 +54,7 @@ const Messages = () => {
     const newMessage = {
       id: Date.now(), // Unique id
       text,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       isOwn: true,
     };
 
@@ -74,31 +74,37 @@ const Messages = () => {
   };
 
   return (
-    <div className="min-h-screen px-0 dark:bg-gray-900 flex flex-col md:flex-row">
-      {/* Sidebar: Conversation List */}
-      <div className="md:w-1/3 border-r dark:border-gray-700 h-full overflow-y-auto">
-        <div className="p-6 border-b dark:border-gray-700">
-          <h1 className="text-3xl font-bold dark:text-white">Messages</h1>
-        </div>
-        <ConversationList
-          conversations={conversations}
-          activeConversationId={activeConversationId}
-          onSelectConversation={handleSelectConversation}
-        />
-      </div>
+    <div className="min-h-screen dark:bg-gray-900 flex items-center justify-center ">
+      <div className="w-full max-w-7xl dark:border-gray-700 bg-white scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  dark:bg-gray-800 rounded-2xl border shadow overflow-hidden ">
+        <div className="flex flex-col md:flex-row h-[80vh]">
+          {/* Sidebar: Conversation List */}
+          <div className="md:w-1/3 border-r dark:border-gray-700 h-full scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  overflow-y-auto">
+            <div className="p-6 border-b dark:border-gray-700">
+              <h1 className="text-3xl font-bold dark:text-white">Messages</h1>
+            </div>
+            <ConversationList
+              conversations={conversations}
+              activeConversationId={activeConversationId}
+              onSelectConversation={handleSelectConversation}
+            />
+          </div>
 
-      {/* Chat Window */}
-      <div className="md:w-2/3 h-full">
-        {activeConversation ? (
-          <ChatWindow
-            messages={activeConversation.messages}
-            onSendMessage={handleSendMessage}
-          />
-        ) : (
-          <p className="p-6 text-center text-gray-500 dark:text-gray-300">
-            Select a conversation to start chatting.
-          </p>
-        )}
+          {/* Chat Window */}
+          <div className="md:w-2/3 h-full flex flex-col">
+            {activeConversation ? (
+              <ChatWindow
+                messages={activeConversation.messages}
+                onSendMessage={handleSendMessage}
+              />
+            ) : (
+              <div className="flex-grow flex items-center justify-center">
+                <p className="p-6 text-center text-gray-500 dark:text-gray-300">
+                  Select a conversation to start chatting.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,21 @@
-// File: components/messages/ChatWindow.jsx
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 
 const ChatWindow = ({ messages, onSendMessage }) => {
+  const messagesEndRef = useRef(null);
+
+  // Auto-scroll to the bottom whenever new messages arrive
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
+
   return (
-    <div className="flex flex-col h-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+    <div className="flex flex-col h-full bg-white dark:bg-gray-900">
       {/* Messages Area */}
-      <div className="flex-grow overflow-y-auto p-6 space-y-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-gray-800">
+      <div className="flex-grow scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  overflow-y-auto p-6 space-y-4">
         {messages.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-300">
             No messages yet.
@@ -17,11 +25,10 @@ const ChatWindow = ({ messages, onSendMessage }) => {
             <ChatMessage key={msg.id} message={msg} isOwn={msg.isOwn} />
           ))
         )}
+        <div ref={messagesEndRef} />
       </div>
       {/* Input Area */}
-      <div className="border-t dark:border-gray-700">
-        <ChatInput onSend={onSendMessage} />
-      </div>
+      <ChatInput onSend={onSendMessage} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ const ConversationItem = ({ conversation, isActive, onSelect }) => {
   return (
     <div
       onClick={() => onSelect(conversation.id)}
-      className={`p-5 rounded-xl cursor-pointer transition-all transform hover:scale-105 border-b border-gray-200 dark:border-gray-700 ${
+      className={`p-4 rounded-xl cursor-pointer transition-all transform hover:scale-105 border-b border-gray-200 dark:border-gray-700 ${
         isActive
           ? "bg-blue-100 dark:bg-blue-900"
           : "bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800"

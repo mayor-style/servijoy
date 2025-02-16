@@ -21,7 +21,7 @@ const Sidebar = () => {
       {/* Hamburger Menu Button - Visible on small screens */}
       <button
         onClick={toggleMenu}
-        className=" fixed top-4 left-4 z-50  
+        className=" fixed top-5 left-4 z-50  
         md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors
         "
       >
