@@ -1,7 +1,7 @@
 import React from "react";
-import { OrderDetailsModal, EditOrderModal, DeleteConfirmationModal } from "./OrderModalsComponnts";
+import { DeleteConfirmationModal, EditOrderModal, OrderDetailsModal } from "./OrderModalsComponnts";
 
-// The OrderModal component acts as a wrapper that selects which modal to render based on the "type" prop.
+
 const OrderModal = ({ type, order, onClose, onSave, onConfirm }) => {
   if (!order) return null; // Ensure order data is available
 

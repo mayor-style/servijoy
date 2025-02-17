@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaPlus, FaEye, FaEdit, FaTrash } from "react-icons/fa";
 
 const ServiceModals = () => {
   const [showRequestModal, setShowRequestModal] = useState(false);
@@ -35,8 +36,8 @@ const ServiceModals = () => {
     <div>
       {/* Request Details Modal */}
       {showRequestModal && (
-        <dialog open className="modal">
-          <div className="modal-box">
+        <dialog open className="modal transition">
+          <div className="modal-box bg-soft-white dark:bg-gray-800">
             <h3 className="font-bold text-lg">Service Request Details</h3>
             <p><strong>Requester:</strong> {requestDetails.requester}</p>
             <p><strong>Service:</strong> {requestDetails.service}</p>
@@ -58,8 +59,8 @@ const ServiceModals = () => {
 
       {/* Category Details Modal */}
       {showCategoryModal && (
-        <dialog open className="modal">
-          <div className="modal-box">
+        <dialog open className="modal transition">
+          <div className="modal-box bg-soft-white dark:bg-gray-800">
             <h3 className="font-bold text-lg">Service Category Details</h3>
             <p><strong>Category:</strong> {categoryDetails.name}</p>
             <p><strong>Total Services:</strong> {categoryDetails.totalServices}</p>
@@ -80,8 +81,8 @@ const ServiceModals = () => {
 
       {/* Edit Category Modal */}
       {showEditCategoryModal && (
-        <dialog open className="modal">
-          <div className="modal-box">
+        <dialog open className="modal transition">
+          <div className="modal-box bg-soft-white dark:bg-gray-800">
             <h3 className="font-bold text-lg">Edit Service Category</h3>
             <form>
               <label className="form-control w-full mb-2">
@@ -106,8 +107,8 @@ const ServiceModals = () => {
 
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <dialog open className="modal">
-          <div className="modal-box">
+        <dialog open className="modal transition">
+          <div className="modal-box bg-soft-white dark:bg-gray-800">
             <h3 className="font-bold text-lg">Confirm Deletion</h3>
             <p>Are you sure you want to delete this item? This action cannot be undone.</p>
             <div className="modal-action">
@@ -118,7 +119,7 @@ const ServiceModals = () => {
         </dialog>
       )}
 
-      {/* Buttons to trigger modals (for demonstration purposes) */}
+      {/* Buttons to trigger modals (for demonstration) */}
       <div className="flex gap-2 mt-4">
         <button className="btn" onClick={() => setShowRequestModal(true)}>Show Request Details</button>
         <button className="btn" onClick={() => setShowCategoryModal(true)}>Show Category Details</button>

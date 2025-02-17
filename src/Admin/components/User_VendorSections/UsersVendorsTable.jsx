@@ -130,7 +130,7 @@ const UsersVendorsTable = () => {
   };
 
   return (
-    <div className="overflow-x-auto bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
+    <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
       {loading ? (
         <div className="text-center py-10">
           <span className="loader">Loading Data...</span>
@@ -139,7 +139,7 @@ const UsersVendorsTable = () => {
         <>
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 dark:text-gray-200">
+              <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 text-sm dark:text-gray-200">
                 <th className="p-3">
                   <input
                     type="checkbox"

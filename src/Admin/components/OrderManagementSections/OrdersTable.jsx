@@ -54,7 +54,7 @@ const OrdersTable = ({ filters, selectedOrders, setSelectedOrders, onOpenModal }
                 payment: "Partially Paid",
                 amount: "$180.00",
               },
-              // More mock orders...
+              // Additional mock orders...
             ]);
           }, 1000);
         });
@@ -69,19 +69,16 @@ const OrdersTable = ({ filters, selectedOrders, setSelectedOrders, onOpenModal }
     fetchOrders();
   }, []);
 
-  // Apply filters (basic example: filter by customer name and status)
+  // Apply basic filters (e.g., by customer and status)
   const filteredOrders = orders.filter((order) => {
-    let isValid = true;
+    let valid = true;
     if (filters.customer && filters.customer.trim() !== "") {
-      isValid =
-        isValid &&
-        order.customer.toLowerCase().includes(filters.customer.toLowerCase());
+      valid = valid && order.customer.toLowerCase().includes(filters.customer.toLowerCase());
     }
     if (filters.status && filters.status !== "") {
-      isValid = isValid && order.status.toLowerCase() === filters.status.toLowerCase();
+      valid = valid && order.status.toLowerCase() === filters.status.toLowerCase();
     }
-    // Add more filter conditions as needed...
-    return isValid;
+    return valid;
   });
 
   const toggleSelect = (id) => {
@@ -93,81 +90,83 @@ const OrdersTable = ({ filters, selectedOrders, setSelectedOrders, onOpenModal }
   if (loading) {
     return (
       <div className="flex justify-center items-center p-6">
+        {/* A spinner or skeleton loader */}
         <span className="loading loading-spinner"></span>
       </div>
     );
   }
 
   if (error) {
-    return <div className="alert alert-error">{error}</div>;
+    return <div className="alert alert-error p-4 text-center text-red-500">{error}</div>;
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="table table-zebra w-full">
+    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white dark:bg-gray-800 rounded-lg shadow-md mt-4 transition">
+      <table className="table w-full min-w-[800px]">
         <thead>
-          <tr>
-            <th>
-              <input type="checkbox" className="checkbox" 
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    const currentIds = filteredOrders.map((order) => order.id);
-                    setSelectedOrders(currentIds);
-                  } else {
-                    setSelectedOrders([]);
-                  }
-                }}
+          <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 dark:text-gray-200">
+            <th className="p-3">
+              <input
+                type="checkbox"
+                className="checkbox dark:border-gray-500"
+                onChange={(e) =>
+                  setSelectedOrders(
+                    e.target.checked
+                      ? filteredOrders.map((order) => order.id)
+                      : []
+                  )
+                }
                 checked={
                   filteredOrders.length > 0 &&
                   filteredOrders.every((order) => selectedOrders.includes(order.id))
                 }
               />
             </th>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Order Date</th>
-            <th>Status</th>
-            <th>Payment</th>
-            <th>Total</th>
-            <th>Actions</th>
+            <th className="p-3">Order ID</th>
+            <th className="p-3">Customer</th>
+            <th className="p-3">Order Date</th>
+            <th className="p-3">Status</th>
+            <th className="p-3">Payment</th>
+            <th className="p-3">Total</th>
+            <th className="p-3">Actions</th>
           </tr>
         </thead>
         <tbody>
           {filteredOrders.map((order) => (
             <tr key={order.id} className="border-b dark:border-gray-700">
-              <td>
+              <td className="p-3">
                 <input
                   type="checkbox"
-                  className="checkbox"
+                  className="checkbox  dark:border-gray-500"
                   checked={selectedOrders.includes(order.id)}
                   onChange={() => toggleSelect(order.id)}
                 />
               </td>
-              <td>{order.id}</td>
-              <td>{order.customer}</td>
-              <td>{order.date}</td>
-              <td>
+              <td className="p-3 text-gray-800 dark:text-gray-200">{order.id}</td>
+              <td className="p-3 text-gray-800 dark:text-gray-200">{order.customer}</td>
+              <td className="p-3 text-gray-800 dark:text-gray-200">{order.date}</td>
+              <td className="p-3">
                 <span className={`badge ${getStatusClass(order.status)}`}>
                   {order.status}
                 </span>
               </td>
-              <td>{order.payment}</td>
-              <td>{order.amount}</td>
-              <td className="flex gap-2">
+              <td className="p-3 text-gray-800 dark:text-gray-200">{order.payment}</td>
+              <td className="p-3 text-gray-800 dark:text-gray-200">{order.amount}</td>
+              <td className="p-3 flex gap-2">
                 <button
-                  className="btn btn-sm btn-info"
+                  className="btn btn-sm btn-info transition"
                   onClick={() => onOpenModal("details", order)}
                 >
                   View
                 </button>
                 <button
-                  className="btn btn-sm btn-warning"
+                  className="btn btn-sm btn-warning transition"
                   onClick={() => onOpenModal("edit", order)}
                 >
                   Edit
                 </button>
                 <button
-                  className="btn btn-sm btn-error"
+                  className="btn btn-sm btn-error transition"
                   onClick={() => onOpenModal("delete", order)}
                 >
                   Cancel
@@ -177,7 +176,6 @@ const OrdersTable = ({ filters, selectedOrders, setSelectedOrders, onOpenModal }
           ))}
         </tbody>
       </table>
-      {/* Pagination controls can be added here if needed */}
     </div>
   );
 };

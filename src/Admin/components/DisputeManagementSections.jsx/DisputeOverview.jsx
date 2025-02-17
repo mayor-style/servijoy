@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { CircleDollarSign, CheckCircle2, Clock, XCircle, Package } from "lucide-react";
+import { AlertCircle, CheckCircle2, XCircle, Clock } from "lucide-react";
 
-export default function OrderOverview() {
+export default function DisputeOverview() {
   const [loading, setLoading] = useState(true);
   const [overviewData, setOverviewData] = useState({
-    totalOrders: 0,
-    pendingOrders: 0,
-    completedOrders: 0,
-    canceledOrders: 0,
-    revenue: 0,
+    totalDisputes: 0,
+    pendingDisputes: 0,
+    resolvedDisputes: 0,
+    rejectedDisputes: 0,
   });
 
   useEffect(() => {
-    // Simulate fetching data
     setTimeout(() => {
       setOverviewData({
-        totalOrders: 1200,
-        pendingOrders: 85,
-        completedOrders: 1050,
-        canceledOrders: 65,
-        revenue: 75800,
+        totalDisputes: 120,
+        pendingDisputes: 30,
+        resolvedDisputes: 80,
+        rejectedDisputes: 10,
       });
       setLoading(false);
     }, 1500);
@@ -27,39 +24,33 @@ export default function OrderOverview() {
 
   const cards = [
     {
-      title: "Total Orders",
-      value: overviewData.totalOrders,
-      icon: <Package size={28} />,
+      title: "Total Disputes",
+      value: overviewData.totalDisputes,
+      icon: <AlertCircle size={28} />,
       bgColor: "bg-primary",
     },
     {
-      title: "Pending Orders",
-      value: overviewData.pendingOrders,
+      title: "Pending",
+      value: overviewData.pendingDisputes,
       icon: <Clock size={28} />,
       bgColor: "bg-warning",
     },
     {
-      title: "Completed Orders",
-      value: overviewData.completedOrders,
+      title: "Resolved",
+      value: overviewData.resolvedDisputes,
       icon: <CheckCircle2 size={28} />,
       bgColor: "bg-success",
     },
     {
-      title: "Canceled Orders",
-      value: overviewData.canceledOrders,
+      title: "Rejected",
+      value: overviewData.rejectedDisputes,
       icon: <XCircle size={28} />,
       bgColor: "bg-error",
-    },
-    {
-      title: "Revenue Generated",
-      value: `$${overviewData.revenue.toLocaleString()}`,
-      icon: <CircleDollarSign size={28} />,
-      bgColor: "bg-secondary",
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
       {cards.map((card, index) => (
         <div key={index} className={`card ${card.bgColor} text-white p-6 rounded-lg shadow-xl transition`}>
           {loading ? (

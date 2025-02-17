@@ -33,7 +33,7 @@ const RecentActivities = () => {
   }
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 shadow-lg rounded-lg p-6 h-80 overflow-y-auto transition">
+    <div className="bg-soft-white dark:bg-gray-800 shadow-lg rounded-lg overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 p-6 h-80 overflow-y-auto transition">
       <h2 className="header text-gray-800 dark:text-white mb-4">
         Recent Activities
       </h2>

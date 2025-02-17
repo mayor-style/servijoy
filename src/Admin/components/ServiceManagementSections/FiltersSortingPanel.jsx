@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFilter, FaSort } from "react-icons/fa";
+import { FaFilter } from "react-icons/fa";
 
 const FiltersSortingPanel = ({ onFilterChange }) => {
   const [filters, setFilters] = useState({
@@ -25,13 +25,13 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
   const applyFilters = () => onFilterChange(filters);
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md mt-4 flex flex-wrap gap-4 items-center">
+    <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl mt-4 flex flex-wrap gap-4 items-center transition">
       {/* Status Filter */}
       <select
         name="status"
         value={filters.status}
         onChange={handleChange}
-        className="select select-bordered w-48 dark:bg-gray-700"
+        className="select select-bordered w-48 dark:bg-gray-700 transition"
       >
         <option value="">All Status</option>
         <option value="pending">Pending</option>
@@ -44,7 +44,7 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
         name="category"
         value={filters.category}
         onChange={handleChange}
-        className="select select-bordered w-48 dark:bg-gray-700"
+        className="select select-bordered w-48 dark:bg-gray-700 transition"
       >
         <option value="">All Categories</option>
         <option value="cleaning">Cleaning</option>
@@ -59,7 +59,7 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
           name="from"
           value={filters.dateRange.from}
           onChange={handleDateChange}
-          className="input input-bordered dark:bg-gray-700"
+          className="input input-bordered dark:bg-gray-700 transition"
         />
         <span className="text-gray-500 dark:text-gray-300">to</span>
         <input
@@ -67,7 +67,7 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
           name="to"
           value={filters.dateRange.to}
           onChange={handleDateChange}
-          className="input input-bordered dark:bg-gray-700"
+          className="input input-bordered dark:bg-gray-700 transition"
         />
       </div>
 
@@ -76,7 +76,7 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
         name="sortBy"
         value={filters.sortBy}
         onChange={handleChange}
-        className="select select-bordered w-48 dark:bg-gray-700"
+        className="select select-bordered w-48 dark:bg-gray-700 transition"
       >
         <option value="">Sort By</option>
         <option value="date">Date Submitted</option>
@@ -84,10 +84,10 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
         <option value="serviceName">Service Name</option>
       </select>
 
-      {/* Apply button */}
+      {/* Apply Button */}
       <button
         onClick={applyFilters}
-        className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"
+        className="btn btn-primary flex items-center gap-2 transition"
       >
         <FaFilter /> Apply Filters
       </button>

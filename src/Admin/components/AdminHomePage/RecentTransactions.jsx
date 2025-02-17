@@ -38,7 +38,7 @@ const RecentTransactions = () => {
   }, []);
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-lg transition mt-6">
+    <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-lg  transition mt-6">
       <h2 className="header text-gray-800 dark:text-white mb-4">
         Recent Transactions
       </h2>
@@ -47,7 +47,7 @@ const RecentTransactions = () => {
           <span className="loader">Loading Transactions...</span>
         </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
           <table className="min-w-full bg-soft-white dark:bg-gray-800 rounded-lg overflow-hidden transition">
             <thead className="bg-light-gray dark:bg-gray-700 text-gray-600 dark:text-gray-300">
               <tr>

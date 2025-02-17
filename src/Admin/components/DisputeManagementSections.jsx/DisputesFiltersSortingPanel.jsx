@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
+const DisputesFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
   const [filters, setFilters] = useState({
     status: "",
-    paymentStatus: "",
-    customer: "",
+    vendor: "",
+    category: "",
     dateRange: { start: "", end: "" },
   });
 
@@ -29,33 +29,30 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
           value={filters.status}
           onChange={(e) => handleFilterChange("status", e.target.value)}
         >
-          <option value="">Order Status</option>
+          <option value="">Dispute Status</option>
           <option value="pending">Pending</option>
-          <option value="processing">Processing</option>
-          <option value="shipped">Shipped</option>
-          <option value="delivered">Delivered</option>
-          <option value="canceled">Canceled</option>
-        </select>
-
-        <select
-          className="select select-bordered w-full"
-          value={filters.paymentStatus}
-          onChange={(e) => handleFilterChange("paymentStatus", e.target.value)}
-        >
-          <option value="">Payment Status</option>
-          <option value="paid">Paid</option>
-          <option value="unpaid">Unpaid</option>
-          <option value="partially_paid">Partially Paid</option>
-          <option value="refunded">Refunded</option>
+          <option value="resolved">Resolved</option>
+          <option value="rejected">Rejected</option>
         </select>
 
         <input
           type="text"
-          placeholder="Customer Name/Email"
+          placeholder="Vendor Name"
           className="input input-bordered w-full"
-          value={filters.customer}
-          onChange={(e) => handleFilterChange("customer", e.target.value)}
+          value={filters.vendor}
+          onChange={(e) => handleFilterChange("vendor", e.target.value)}
         />
+
+        <select
+          className="select select-bordered w-full"
+          value={filters.category}
+          onChange={(e) => handleFilterChange("category", e.target.value)}
+        >
+          <option value="">Dispute Category</option>
+          <option value="payment">Payment Issue</option>
+          <option value="service">Service Issue</option>
+          <option value="communication">Communication Issue</option>
+        </select>
 
         <div className="flex flex-col gap-2">
           <label className="text-sm">Date Range</label>
@@ -74,20 +71,21 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
             />
           </div>
         </div>
-
+      </div>
+      <div className="mt-4">
         <select
           className="select select-bordered w-full"
           value={sortOption}
           onChange={(e) => handleSortChange(e.target.value)}
         >
           <option value="">Sort By</option>
-          <option value="orderDate">Order Date</option>
-          <option value="orderStatus">Order Status</option>
-          <option value="totalAmount">Total Amount</option>
+          <option value="date">Dispute Date</option>
+          <option value="status">Dispute Status</option>
+          <option value="vendor">Vendor Name</option>
         </select>
       </div>
     </div>
   );
 };
 
-export default OrdersFiltersSortingPanel;
+export default DisputesFiltersSortingPanel;

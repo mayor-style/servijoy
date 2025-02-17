@@ -38,6 +38,9 @@ import AdminDashboardHome from "./Admin/pages/AdminDashboardHome";
 import UsersVendorsPage from "./Admin/pages/UsersVendorsPage";
 import ServiceManagementPage from "./Admin/pages/ServiceManagementPage";
 import OrderManagementPage from "./Admin/pages/OrderManagementPage";
+import DisputeManagementPage from "./Admin/pages/DisputeManagementPage";
+import AnalyticsPage from "./Admin/pages/AnalyticsPage";
+import AdminSettingsPage from "./Admin/pages/AdminSettingsPage";
 
 
 
@@ -120,6 +123,9 @@ function PageWrapper() {
           <Route path="/admin/users" element={<UsersVendorsPage />} />
           <Route path="/admin/services" element={<ServiceManagementPage />} />
           <Route path="/admin/orders" element={<OrderManagementPage />} />
+          <Route path="/admin/disputes" element={<DisputeManagementPage />} />
+          <Route path="/admin/analytics" element={<AnalyticsPage />} />
+          <Route path="/admin/settings" element={<AdminSettingsPage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

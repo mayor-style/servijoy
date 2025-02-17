@@ -1,25 +1,22 @@
 import React, { useState } from "react";
 
-const OrdersBulkActions = ({ selectedOrders, onActionComplete }) => {
+const DisputesBulkActions = ({ selectedDisputes, onBulkAction }) => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [action, setAction] = useState("");
+  const [error, setError] = useState("");
 
   const handleBulkAction = async (type) => {
-    if (selectedOrders.length === 0) {
-      alert("No orders selected");
+    if (selectedDisputes.length === 0) {
+      alert("No disputes selected");
       return;
     }
-
     setLoading(true);
     setAction(type);
     setError("");
-
     try {
-      // Simulate API call delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      onActionComplete(type, selectedOrders);
-      alert(`Successfully performed ${type} on orders: ${selectedOrders.join(", ")}`);
+      onBulkAction(type, selectedDisputes);
+      alert(`Successfully performed ${type} on disputes: ${selectedDisputes.join(", ")}`);
     } catch (err) {
       setError(`Failed to perform ${type}`);
     } finally {
@@ -32,28 +29,28 @@ const OrdersBulkActions = ({ selectedOrders, onActionComplete }) => {
     <div className="flex flex-wrap gap-4 mt-4">
       <button
         className="btn btn-primary"
-        onClick={() => handleBulkAction("Update Status")}
+        onClick={() => handleBulkAction("Resolve")}
         disabled={loading}
       >
-        {loading && action === "Update Status" ? "Updating..." : "Update Status"}
+        {loading && action === "Resolve" ? "Resolving..." : "Resolve Disputes"}
       </button>
       <button
         className="btn btn-warning"
-        onClick={() => handleBulkAction("Cancel")}
+        onClick={() => handleBulkAction("Reject")}
         disabled={loading}
       >
-        {loading && action === "Cancel" ? "Canceling..." : "Cancel Orders"}
+        {loading && action === "Reject" ? "Rejecting..." : "Reject Disputes"}
       </button>
       <button
         className="btn btn-error"
         onClick={() => handleBulkAction("Delete")}
         disabled={loading}
       >
-        {loading && action === "Delete" ? "Deleting..." : "Delete Orders"}
+        {loading && action === "Delete" ? "Deleting..." : "Delete Disputes"}
       </button>
       {error && <div className="alert alert-error mt-2">{error}</div>}
     </div>
   );
 };
 
-export default OrdersBulkActions;
+export default DisputesBulkActions;

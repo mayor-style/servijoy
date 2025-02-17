@@ -22,13 +22,13 @@ const ActivityLogsSection = () => {
     <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl mt-6 transition">
       <h2 className="header text-gray-800 dark:text-white mb-4">Activity Logs</h2>
       {loading ? (
-        <div className="text-center py-10">
+        <div className="text-center dark:text-gray-300 py-10">
           <span className="loader">Loading Activity Logs...</span>
         </div>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
           <table className="min-w-full table-auto border border-light-gray dark:border-gray-700">
-            <thead className="bg-light-gray dark:bg-gray-700">
+            <thead className="bg-light-gray dark:bg-gray-700 text-sm">
               <tr>
                 <th className="px-4 py-2 text-gray-600 dark:text-gray-300">Action</th>
                 <th className="px-4 py-2 text-gray-600 dark:text-gray-300">Timestamp</th>

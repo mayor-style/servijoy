@@ -7,40 +7,36 @@ import OrdersTable from "../components/OrderManagementSections/OrdersTable";
 import OrdersBulkActions from "../components/OrderManagementSections/OrdersBulkActions";
 import OrderModal from "../components/OrderManagementSections/OrderModal";
 
-
 const OrderManagementPageWrapper = () => {
-  // State for filters from the Filters & Sorting Panel
+  // State for filters
   const [filters, setFilters] = useState({});
   
-  // State for selected order IDs from the Orders Table (for bulk actions)
+  // State for selected order IDs (bulk actions)
   const [selectedOrders, setSelectedOrders] = useState([]);
   
-  // State for modals (detailed view modals for orders)
+  // State for modals (order detail modals)
   const [modalData, setModalData] = useState({ open: false, type: "", order: null });
 
-  // Callback when filters are applied
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
     console.log("Applied Filters:", newFilters);
-    // In production, trigger a re-fetch of orders here using the filters.
+    // Trigger re-fetch if needed.
   };
 
-  // Callback for sorting changes (if applicable)
   const handleSortChange = (sortOption) => {
     console.log("Sort option changed to:", sortOption);
-    // In production, update the order fetching accordingly.
+    // Update order fetching as needed.
   };
 
-  // Bulk action handler with simulated API delay using dummy data
+  // Bulk action handler with simulated API delay
   const handleBulkAction = async (action, selectedIds) => {
     console.log(`Performing ${action} on orders:`, selectedIds);
-    // Simulate API call delay
     await new Promise((resolve) => setTimeout(resolve, 1500));
     alert(`${action} performed on orders: ${selectedIds.join(", ")}`);
-    setSelectedOrders([]); // Clear selection after action
+    setSelectedOrders([]);
   };
 
-  // Modal handling: open the appropriate modal based on action type and selected order
+  // Modal handling
   const handleOpenModal = (type, order) => {
     setModalData({ open: true, type, order });
   };
@@ -50,20 +46,17 @@ const OrderManagementPageWrapper = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6">
-      {/* 1. Page Header Section */}
+    <div className="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
+      {/* 1. Page Header */}
       <OrderManagementHeader />
 
-      {/* 2. Orders Overview Section */}
+      {/* 2. Orders Overview */}
       <OrderOverview />
 
-      {/* 3. Filters & Sorting Panel Section */}
-      <OrdersFiltersSortingPanel 
-        onFilterChange={handleFilterChange} 
-        onSortChange={handleSortChange} 
-      />
+      {/* 3. Filters & Sorting */}
+      <OrdersFiltersSortingPanel onFilterChange={handleFilterChange} onSortChange={handleSortChange} />
 
-      {/* 4. Orders Table Section */}
+      {/* 4. Orders Table */}
       <OrdersTable 
         filters={filters} 
         selectedOrders={selectedOrders} 
@@ -71,34 +64,27 @@ const OrderManagementPageWrapper = () => {
         onOpenModal={handleOpenModal} 
       />
 
-      {/* 5. Bulk Actions Panel Section */}
-      <OrdersBulkActions 
-        selectedOrders={selectedOrders} 
-        onBulkAction={handleBulkAction} 
-      />
+      {/* 5. Bulk Actions */}
+      <OrdersBulkActions selectedOrders={selectedOrders} onBulkAction={handleBulkAction} />
 
-      {/* 6. Detailed View Modals Section */}
+      {/* 6. Order Detail Modals */}
       {modalData.open && (
         <OrderModal 
           type={modalData.type} 
           order={modalData.order} 
           onClose={handleCloseModal} 
+          onSave={(updatedData) => console.log("Updated Order:", updatedData)}
+          onConfirm={(orderId) => console.log("Delete confirmed for order:", orderId)}
         />
       )}
     </div>
   );
 };
 
-
-
 const OrderManagementPage = () => {
   return (
-    <div>
-      <AdminDashboardLayout content={OrderManagementPageWrapper() } />
-    </div>
-  )
-}
+    <AdminDashboardLayout content={<OrderManagementPageWrapper />} />
+  );
+};
 
-export default OrderManagementPage
-
-
+export default OrderManagementPage;
