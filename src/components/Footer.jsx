@@ -79,6 +79,15 @@ const Footer = () => {
                   Test Vendor Dashboard
                 </Link>
               </li>
+              <li>
+                <Link 
+                to={'/admin/dashboard'}
+                  onClick={handleTestVendorDashboard}
+                  className="text-gray-400 hover:text-white transition focus:outline-none"
+                >
+                  Test Admin Dashboard
+                </Link>
+              </li>
             </ul>
           </div>
 

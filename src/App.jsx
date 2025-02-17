@@ -34,6 +34,10 @@ import BookingCalendar from "./pages/Dashboard/vendor/BookingCalendarPage";
 import EarningsAndPayouts from "./pages/Dashboard/vendor/EarningsAndPayoutsPage";
 import VendorDisputeManagement from "./pages/Dashboard/vendor/VendorDisputeManagementPage";
 import AvailableVendors from "./pages/Dashboard/user/AvailableVendorsPage";
+import AdminDashboardHome from "./Admin/pages/AdminDashboardHome";
+import UsersVendorsPage from "./Admin/pages/UsersVendorsPage";
+import ServiceManagementPage from "./Admin/pages/ServiceManagementPage";
+import OrderManagementPage from "./Admin/pages/OrderManagementPage";
 
 
 
@@ -52,6 +56,7 @@ function PageWrapper() {
   const location = useLocation();
   const hideNavAndFooterRoutes = [
     '/dashboard',
+    '/admin'
    
   ];
 
@@ -111,6 +116,10 @@ function PageWrapper() {
             {/* More dashboard pages will be added later */}
           </Route>
 
+          <Route path="/admin/dashboard" element={<AdminDashboardHome />} />
+          <Route path="/admin/users" element={<UsersVendorsPage />} />
+          <Route path="/admin/services" element={<ServiceManagementPage />} />
+          <Route path="/admin/orders" element={<OrderManagementPage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>
