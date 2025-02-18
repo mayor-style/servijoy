@@ -4,11 +4,11 @@ import { FaClipboardList, FaMoneyBillWave, FaHeadset, FaCog } from "react-icons/
 
 const VendorQuickAccess = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-2xl transition transform">
+    <div className="bg-white border border-gray-200 dark:border-gray-800 dark:bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-2xl transition transform">
       <h2 className="text-xl sm:text-2xl font-bold text-gray-800 font-header dark:text-white mb-6">
         ⚡ Quick Access
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="text-center grid grid-cols-2 sm:grid-cols-4 gap-4">
         {/* Manage Services */}
         <div className="flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-r from-blue-500 to-green dark:from-blue-600 dark:to-green-600 text-white rounded-2xl shadow-lg cursor-pointer transition transform hover:scale-105">
           <FaClipboardList className="text-3xl sm:text-4xl mb-2" />

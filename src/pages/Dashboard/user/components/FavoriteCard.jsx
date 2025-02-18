@@ -2,15 +2,16 @@
 import React from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
+import OptimizedImage from "../../../../components/OptimizedImage";
 
 const FavoriteCard = ({ favorite, onRemove, onBookNow }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 relative w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg"
+      className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-300 dark:border-gray-700 transition-transform duration-300 relative w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg"
     >
       {favorite.image && (
-        <img
+        <OptimizedImage
           src={favorite.image}
           alt={favorite.title}
           className="w-full h-48 object-cover transition-transform duration-300"

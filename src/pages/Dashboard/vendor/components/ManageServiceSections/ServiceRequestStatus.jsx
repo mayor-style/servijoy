@@ -16,7 +16,7 @@ const ServiceRequestStatus = () => {
 
   return (
     <div className="w-full bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-xl">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center sm:text-left">
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 font-header dark:text-white mb-6 text-center sm:text-left">
         Service Request Status
       </h2>
 

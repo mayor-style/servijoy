@@ -11,7 +11,7 @@ const PastBookings = ({ pastBookings }) => {
 
   return (
     <section className="w-full p-8 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl transition-all duration-300">
-      <h2 className="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
         Past Bookings
       </h2>
 

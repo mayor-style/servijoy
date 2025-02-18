@@ -15,7 +15,7 @@ const ServiceCategories = ({ onSelectCategory }) => {
   return (
     <section className="py-10 px-5">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6 dark:text-white">Service Categories</h2>
+        <h2 className="text-3xl font-bold mb-6 dark:text-white font-header">Service Categories</h2>
         <p className="text-gray-600 dark:text-gray-300 mb-8">
           Browse services by category and find what you need quickly.
         </p>

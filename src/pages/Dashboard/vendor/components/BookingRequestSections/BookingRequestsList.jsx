@@ -28,7 +28,7 @@ const BookingRequestsList = ({ bookings, onUpdateBookingStatus }) => {
       <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
         Booking Requests
       </h2>
-      <div className="overflow-x-auto">
+      <div className="overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 overflow-y-aut">
         <table className="min-w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white">
@@ -79,7 +79,7 @@ const BookingRequestsList = ({ bookings, onUpdateBookingStatus }) => {
                       <FaClock size={18} /> Pending
                     </span>
                   ) : booking.status === "accepted" ? (
-                    <span className="flex items-center gap-2 text-green-500 text-xs sm:text-sm">
+                    <span className="flex items-center gap-2 text-green text-xs sm:text-sm">
                       <FaCheck size={18} /> Accepted
                     </span>
                   ) : (

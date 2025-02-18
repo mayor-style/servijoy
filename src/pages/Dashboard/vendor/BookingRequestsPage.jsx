@@ -77,7 +77,7 @@ const BookingRequestsPage = () => {
   return (
     <div className="p-4 sm:py-6 px-0 dark:bg-gray-900 min-h-screen transition-colors duration-300">
       <div className="w-full max-w-7xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 sm:mb-6">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-header font-bold text-gray-800 dark:text-white mb-4 sm:mb-6">
           Manage Booking Requests
         </h1>
         <div className="overflow-x-auto">

@@ -15,7 +15,7 @@ const NotificationCard = ({ notification, onMarkRead }) => {
       onClick={() => onMarkRead(notification.id)}
     >
       <div className="flex items-start sm:items-center gap-3 w-full sm:w-auto">
-        <FaBell className="text-blue-600 dark:text-blue-400" size={24} />
+        <FaBell className={`${notification.read? "": "animate-pulse"} text-blue-600 dark:text-blue-400`} size={24} />
         <div className="flex-1">
           <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
             {notification.title}

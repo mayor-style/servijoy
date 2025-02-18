@@ -13,11 +13,11 @@ const WalletOverview = () => {
   return (
     <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl transform transition duration-300 hover:shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-md md:max-w-lg lg:max-w-xl">
       <div className="flex items-center gap-4">
-        <div className="p-3 bg-gradient-to-br from-green-400 to-green-600 rounded-full shadow-lg">
+        <div className="p-3 gradient rounded-full shadow-lg">
           <FaWallet className="text-white text-2xl md:text-3xl" />
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Wallet Overview</h3>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white font-header">Wallet Overview</h3>
           <p className="text-xs md:text-sm text-gray-500 dark:text-gray-300">Manage your funds securely.</p>
         </div>
       </div>
@@ -28,7 +28,7 @@ const WalletOverview = () => {
       </div>
       
       <div className="mt-6 md:mt-8 flex justify-center gap-6 md:gap-8">
-        <Link to="/dashboard/wallet/deposit" className="flex items-center gap-2 px-3 md:px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow transition">
+        <Link to="/dashboard/wallet/deposit" className="flex items-center gap-2 px-3 md:px-4 py-2 btn-green hover:bg-green-600 text-white rounded-lg shadow transition">
           <FaPlusCircle className="text-lg md:text-xl" /> Deposit
         </Link>
         <Link to="/dashboard/wallet/withdraw" className="flex items-center gap-2 px-3 md:px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg shadow transition">

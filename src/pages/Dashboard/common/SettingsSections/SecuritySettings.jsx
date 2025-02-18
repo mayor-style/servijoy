@@ -21,8 +21,8 @@ const SecuritySettings = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-full max-w-lg mx-auto">
-      <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 dark:text-white text-center">Security Settings</h3>
+    <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-full  mx-auto">
+      <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 dark:text-white text-center font-header">Security Settings</h3>
       <div className="space-y-4 sm:space-y-6">
         {/* Current Password Field */}
         <div>

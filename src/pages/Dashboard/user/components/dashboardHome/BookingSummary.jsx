@@ -29,7 +29,7 @@ const BookingSummary = () => {
             <FaClock className="text-blue-600 dark:text-blue-400 text-3xl" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white font-header">
               Upcoming Booking
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 italic">
@@ -61,11 +61,11 @@ const BookingSummary = () => {
       {/* Past Booking Card */}
       <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transition hover:shadow-xl hover:scale-[1.02]">
         <div className="flex items-center gap-4">
-          <div className="bg-green-100 dark:bg-green-900 p-3 rounded-full">
+          <div className="bg-green/50 dark:bg-green p-3 rounded-full">
             <FaCheckCircle className="text-green-600 dark:text-green-400 text-3xl" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white font-header">
               Last Completed Booking
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 italic">
@@ -84,7 +84,7 @@ const BookingSummary = () => {
           <p className="text-sm text-gray-600 dark:text-gray-300">
             Date: {pastBooking.date}
           </p>
-          <p className="text-sm font-semibold text-green-600">{pastBooking.status}</p>
+          <p className="text-sm font-semibold text-green">{pastBooking.status}</p>
         </div>
 
         <Link

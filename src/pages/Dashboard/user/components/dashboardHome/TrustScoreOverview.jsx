@@ -15,7 +15,7 @@ const TrustScoreOverview = () => {
           <FaStar className="text-yellow-500 dark:text-yellow-300 text-2xl md:text-3xl" />
         </div>
         <div>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">Trust & Ratings</h3>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white font-header">Trust & Ratings</h3>
           <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">Your reliability score on ServiJoy</p>
         </div>
       </div>

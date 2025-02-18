@@ -3,6 +3,7 @@
 import React from "react";
 import { FaTimes, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import OptimizedImage from "../../../../../components/OptimizedImage";
 
 const ServiceDetailsModal = ({ service, isOpen, onClose }) => {
   const navigate = useNavigate();
@@ -12,20 +13,21 @@ const ServiceDetailsModal = ({ service, isOpen, onClose }) => {
   const serviceRouteName = service.title.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full p-6 relative transition-all transform">
+    <div className="fixed overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60">
+      <div className="bg-white h-[95%] dark:bg-gray-900 rounded-2xl shadow-2xl max-w-2xl w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 p-6 relative transition-all transform">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"
+          className="absolute top-4 right-3  z-50 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"
         >
           <FaTimes size={22} />
         </button>
 
         {service.image && (
-          <img
+          <OptimizedImage
             src={service.image}
             alt={service.title}
-            className="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
+            className="w-full h-56 mt-4 md:h-64 object-cover rounded-xl mb-6"
+            rounded={'rounded-xl '}
           />
         )}
 

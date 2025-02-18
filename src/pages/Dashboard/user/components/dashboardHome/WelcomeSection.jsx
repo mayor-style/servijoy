@@ -28,7 +28,7 @@ const WelcomeSection = () => {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold">
+        <h2 className="text-2xl md:text-3xl font-bold font-header">
           {greeting}, {user?.firstName || "User"}! 👋
         </h2>
         <p className="mt-2 text-base md:text-lg opacity-90">

@@ -48,7 +48,7 @@ const Favorites = () => {
   return (
     <div className="min-h-screen  dark:bg-gray-900 py-10 px-0">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl md:text-4xl font-bold text-center dark:text-white mb-6 md:mb-8">
+        <h1 className="text-2xl md:text-4xl font-bold text-center dark:text-white font-header mb-6 md:mb-8">
           My Favorites
         </h1>
         {favorites.length === 0 ? (

@@ -10,7 +10,7 @@ const UpcomingBookings = ({ bookings }) => {
 
   return (
     <section className="w-full p-6 md:p-8 bg-white dark:bg-gray-800 shadow-xl rounded-2xl transition-all duration-300">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
         Upcoming Bookings
       </h2>
 
@@ -50,12 +50,12 @@ const UpcomingBookings = ({ bookings }) => {
                   <p className="flex items-center mt-3 text-gray-700 dark:text-gray-300">
                     <FaUser className="mr-2 text-blue-600" /> Vendor: {booking.vendorName}
                   </p>
-                  <p className="mt-3 text-base">
+                  <p className="mt-3 dark:text-gray-300 text-base">
                     Status:{" "}
                     <span
                       className={`font-semibold ${
                         booking.status === "Confirmed"
-                          ? "text-green-600"
+                          ? "text-green"
                           : booking.status === "Pending"
                           ? "text-yellow-500"
                           : "text-red-500"
@@ -72,7 +72,7 @@ const UpcomingBookings = ({ bookings }) => {
                       </button>
                     )}
                     {booking.status === "Pending" && (
-                      <button className="flex items-center gap-2 px-5 py-2 border border-gray-500 text-gray-500 rounded-lg transition-colors hover:bg-gray-500 hover:text-white">
+                      <button className="flex items-center gap-2 px-5 py-2 border border-gray-500 text-gray-700 dark:text-gray-200 rounded-lg transition-colors hover:bg-gray-500 hover:text-white">
                         <FaRedo className="text-lg" /> Reschedule
                       </button>
                     )}

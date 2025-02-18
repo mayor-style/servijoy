@@ -4,7 +4,7 @@ import NotificationCard from "./NotificationCard";
 
 const NotificationsList = ({ notifications, onMarkRead }) => {
   return (
-    <div className="p-4">
+    <div className="p-1">
       {notifications.length === 0 ? (
         <div className="flex items-center justify-center h-40">
           <p className="text-center text-lg text-gray-500 dark:text-gray-300">

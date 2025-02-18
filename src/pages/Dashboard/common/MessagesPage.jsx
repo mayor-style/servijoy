@@ -80,7 +80,7 @@ const Messages = () => {
           {/* Sidebar: Conversation List */}
           <div className="md:w-1/3 border-r dark:border-gray-700 h-full scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  overflow-y-auto">
             <div className="p-6 border-b dark:border-gray-700">
-              <h1 className="text-3xl font-bold dark:text-white">Messages</h1>
+              <h1 className="text-3xl font-header font-bold dark:text-white">Messages</h1>
             </div>
             <ConversationList
               conversations={conversations}

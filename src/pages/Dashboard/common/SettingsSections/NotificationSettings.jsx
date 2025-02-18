@@ -15,8 +15,8 @@ const NotificationSettings = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-full max-w-lg mx-auto">
-      <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white text-center md:text-left">Notification Settings</h3>
+    <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-full  mx-auto">
+      <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 dark:text-white text-center md:text-left font-header">Notification Settings</h3>
       <div className="space-y-4 md:space-y-6">
         {/* Email Notifications */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-2">

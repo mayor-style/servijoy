@@ -8,18 +8,18 @@ const ServiceCard = ({ service }) => {
   const statusConfig = {
     approved: {
       text: "Approved",
-      icon: <FaCheckCircle className="text-green-600" />,
-      bg: "bg-green-100 dark:bg-green-900",
+      icon: <FaCheckCircle className="text-white" />,
+      bg: "bg-green dark:bg-green",
     },
     pending: {
       text: "Pending",
-      icon: <FaHourglassHalf className="text-yellow-600" />,
-      bg: "bg-yellow-100 dark:bg-yellow-900",
+      icon: <FaHourglassHalf className="text-white" />,
+      bg: "bg-yellow-300 dark:bg-yellow-700",
     },
     rejected: {
       text: "Rejected",
-      icon: <FaTimesCircle className="text-red-600" />,
-      bg: "bg-red-100 dark:bg-red-900",
+      icon: <FaTimesCircle className="text-white" />,
+      bg: "bg-red-500 dark:bg-red-700",
     },
   };
 
@@ -28,7 +28,7 @@ const ServiceCard = ({ service }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 transition-transform duration-300 w-full"
+      className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4 border dark:border-gray-700 transition-transform duration-300 w-full"
     >
       {/* Service Info */}
       <div className="flex-1 min-w-0">
@@ -37,7 +37,7 @@ const ServiceCard = ({ service }) => {
       </div>
 
       {/* Status Indicator */}
-      <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${currentStatus.bg}`}
+      <div className={`flex items-center gap-2 px-3 py-1 rounded-full max-sm:justify-center text-sm font-medium ${currentStatus.bg}`}
       >
         {currentStatus.icon}
         <span className="dark:text-white truncate">{currentStatus.text}</span>

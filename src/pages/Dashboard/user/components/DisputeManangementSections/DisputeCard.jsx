@@ -5,7 +5,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 const statusColors = {
   pending: "bg-yellow-100 text-yellow-800",
   "in-progress": "bg-blue-100 text-blue-800",
-  resolved: "bg-green-100 text-green-800",
+  resolved: "bg-green/10 text-green",
   declined: "bg-red-100 text-red-800",
 };
 
@@ -22,7 +22,7 @@ const DisputeCard = ({ dispute, onViewDetails }) => (
       </span>
       <button
         onClick={() => onViewDetails(dispute)}
-        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+        className="btn-blue bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
       >
         View Details
       </button>

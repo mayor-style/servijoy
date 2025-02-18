@@ -56,15 +56,15 @@ const MyBookings = () => {
   ];
 
   return (
-    <section className="w-full py-4 md:py-8 bg-white dark:bg-gray-800 px-0 shadow-2xl rounded-2xl transition-all duration-300">
-      <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-primary dark:text-primary">
+    <section className="w-full py-4 md:py-8 px-3 bg-white dark:bg-gray-800  shadow-2xl rounded-2xl transition-all duration-300">
+      <h2 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-800 font-header dark:text-gray-200">
         My Bookings
       </h2>
 
       {/* Tab Navigation */}
       <div className="flex flex-wrap gap-2 md:gap-4 mb-6 md:mb-8">
         <button
-          className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base ${
+          className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold  transition-colors duration-200 text-sm md:text-base ${
             activeTab === "upcoming"
               ? "bg-blue-600 text-white"
               : "bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
@@ -74,7 +74,7 @@ const MyBookings = () => {
           Upcoming
         </button>
         <button
-          className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base ${
+          className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold  transition-colors duration-200 text-sm md:text-base ${
             activeTab === "past"
               ? "bg-blue-600 text-white"
               : "bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"
@@ -84,7 +84,7 @@ const MyBookings = () => {
           Past
         </button>
         <button
-          className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-200 text-sm md:text-base ${
+          className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition-colors duration-200 text-sm md:text-base ${
             activeTab === "requests"
               ? "bg-blue-600 text-white"
               : "bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700"

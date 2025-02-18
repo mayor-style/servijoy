@@ -80,19 +80,19 @@ const DisputeManagement = () => {
     <div className="min-h-screen  dark:bg-gray-900 py-6 px-0 transition-colors duration-300">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <h1 className="text-2xl md:text-4xl font-bold dark:text-white">Dispute Management</h1>
+          <h1 className="text-2xl md:text-4xl font-bold dark:text-white font-header">Dispute Management</h1>
           <button
             onClick={handleOpenNewDisputeForm}
-            className="px-4 md:px-6 py-2 md:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200"
+            className="px-4 btn-blue md:px-6 py-2 md:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200"
           >
             Raise a Dispute
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row md:space-x-6 border-b border-gray-300 dark:border-gray-700 pb-3">
+        <div className="flex  items-center justify-between flex-row md:space-x-6 border-b  border-gray-300 dark:border-gray-700 pb-3">
           <button
             onClick={() => setActiveTab("open")}
-            className={`text-lg md:text-xl font-semibold transition-colors duration-200 ${
+            className={`max-xs:text-sm sm:text-lg md:text-xl font-semibold rounded-full transition-colors duration-200 ${
               activeTab === "open"
                 ? "text-blue-600 border-b-4 border-blue-600"
                 : "text-gray-600 dark:text-gray-300 hover:text-blue-500"
@@ -102,7 +102,7 @@ const DisputeManagement = () => {
           </button>
           <button
             onClick={() => setActiveTab("resolved")}
-            className={`text-lg md:text-xl font-semibold transition-colors duration-200 ${
+            className={`ax-xs:text-sm sm:text-lg md:text-xl font-semibold transition-colors duration-200 ${
               activeTab === "resolved"
                 ? "text-blue-600 border-b-4 border-blue-600"
                 : "text-gray-600 dark:text-gray-300 hover:text-blue-500"

@@ -25,7 +25,7 @@ const VendorDisputeManagement = () => {
     <div className="min-h-screen  dark:bg-gray-900 py-10 px-0 transition-colors duration-300">
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex items-center justify-between">
-          <h1 className="text-4xl font-bold dark:text-white">Dispute Management</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-header dark:text-white">Dispute Management</h1>
         </div>
         <div className="flex space-x-6 border-b border-gray-300 dark:border-gray-700 pb-3">
           {["open", "resolved"].map((tab) => (

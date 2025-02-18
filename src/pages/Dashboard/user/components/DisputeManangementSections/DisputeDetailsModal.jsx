@@ -15,18 +15,18 @@ const DisputeDetailsModal = ({ dispute, isOpen, onClose }) => {
           <FaTimes size={24} />
         </button>
 
-        <h2 className="text-3xl font-bold dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">
+        <h2 className="text-2xl sm:text-3xl font-bold dark:text-white mb-4 border-b border-gray-200 dark:border-gray-700 pb-2 font-header">
           {dispute.subject}
         </h2>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">{dispute.description}</p>
+        <p className="sm:text-lg text-gray-700 dark:text-gray-300 mb-6">{dispute.description}</p>
 
-        <div className="mb-4"><span className="font-semibold dark:text-white">Reference:</span> {dispute.reference}</div>
-        <div className="mb-4"><span className="font-semibold dark:text-white">Date:</span> {dispute.date}</div>
-        <div className="mb-6"><span className="font-semibold dark:text-white">Status:</span> {dispute.status.charAt(0).toUpperCase() + dispute.status.slice(1)}</div>
+        <div className="mb-4 dark:text-gray-300"><span className="font-semibold dark:text-white">Reference:</span> {dispute.reference}</div>
+        <div className="mb-4 dark:text-gray-300"><span className="font-semibold dark:text-white">Date:</span> {dispute.date}</div>
+        <div className="mb-6 dark:text-gray-300"><span className="font-semibold dark:text-white">Status:</span> {dispute.status.charAt(0).toUpperCase() + dispute.status.slice(1)}</div>
 
         {dispute.messages?.length > 0 && (
           <div className="mb-4">
-            <h3 className="text-2xl font-bold dark:text-white mb-3 border-b border-gray-200 dark:border-gray-700 pb-1">Messages:</h3>
+            <h3 className="text-xl sm:text-2xl font-bold dark:text-white mb-3 border-b border-gray-200 dark:border-gray-700 pb-1">Messages:</h3>
             <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
               {dispute.messages.map((msg, index) => (
                 <li key={index}><span className="font-semibold">{msg.sender}:</span> {msg.message}</li>

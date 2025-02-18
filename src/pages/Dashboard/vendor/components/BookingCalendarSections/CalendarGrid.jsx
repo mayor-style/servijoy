@@ -5,7 +5,7 @@ const CalendarGrid = ({ calendarDays, events, onSelectEvent }) => {
   const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 overflow-y-aut w-full">
       <div className="grid grid-cols-7 gap-2 sm:gap-3 min-w-[400px] sm:min-w-[600px]">
         {/* Weekday Headers */}
         {weekDays.map((day) => (

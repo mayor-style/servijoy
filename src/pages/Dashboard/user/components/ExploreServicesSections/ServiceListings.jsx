@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ServiceDetailsModal from "./ServiceDetailsModal";
 import { FaStar } from "react-icons/fa";
+import OptimizedImage from "../../../../../components/OptimizedImage";
 
 const ServiceListings = ({ services = [] }) => {
   const fallbackService = [
@@ -39,10 +40,11 @@ const ServiceListings = ({ services = [] }) => {
           {validServices.map((service) => (
             <div
               key={service.id}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+              className="bg-white border dark:border-gray-700 border-gray-300 dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
             >
               {service.image && (
-                <img src={service.image} alt={service.title} className="w-full h-40 object-cover" />
+                <OptimizedImage src={service.image} alt={service.title} className="w-full h-40 object-cover" />
+                
               )}
               <div className="p-6">
                 <h3 className="text-xl font-bold dark:text-white mb-2">{service.title}</h3>

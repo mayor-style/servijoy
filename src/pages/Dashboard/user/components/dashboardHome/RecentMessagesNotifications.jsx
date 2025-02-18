@@ -20,7 +20,7 @@ const RecentMessagesNotifications = () => {
     <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+        <h3 className="text-xl font-bold text-gray-900 font-header dark:text-white">
           Messages & Notifications
         </h3>
         <button className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">
@@ -61,11 +61,11 @@ const RecentMessagesNotifications = () => {
               key={notif.id}
               className={`flex items-center gap-4 p-4 rounded-lg cursor-pointer transition-all ${
                 notif.unread
-                  ? "bg-green-50 dark:bg-green-900 border-l-4 border-green-500"
+                  ? "bg-green/30 dark:bg-green/60 border-l-4 border-green-500"
                   : "hover:bg-gray-100 dark:hover:bg-gray-700"
               }`}
             >
-              <FaBell className="text-green-600 dark:text-green-400 text-2xl" />
+              <FaBell className="text-green/90 dark:text-green text-2xl" />
               <div className="flex-1">
                 <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                   {notif.text}

@@ -6,10 +6,10 @@ const PaymentMethods = ({ methods, onAddMethod, onEditMethod }) => {
   return (
     <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-        <h2 className="text-xl sm:text-2xl font-bold dark:text-white">Payment Methods</h2>
+        <h2 className="text-xl sm:text-2xl font-bold dark:text-white font-header">Payment Methods</h2>
         <button
           onClick={onAddMethod}
-          className="px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200"
+          className="px-4 sm:px-6 py-2 btn-blue sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-200"
         >
           Add Payment Method
         </button>

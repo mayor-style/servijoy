@@ -28,7 +28,7 @@ const RequestNewService = () => {
               </h2>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-gray-600 dark:text-gray-300 hover:text-red-500 text-2xl transition-colors duration-200"
+                className="text-gray-600 dark:text-gray-300 hover:text-red-500 text-2xl font-bold transition-colors duration-200"
               >
                 ✕
               </button>

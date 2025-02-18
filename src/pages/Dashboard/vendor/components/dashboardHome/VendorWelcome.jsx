@@ -8,7 +8,7 @@ const VendorWelcome = () => {
   const vendorName = user?.name || "Vendor";
 
   return (
-    <div className="gradient relative dark:gradient-reverse text-white p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col sm:flex-row items-center justify-between overflow-hidden transition-all">
+    <div className="gradient relative dark:gradient-reverse text-white p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-3 items-center justify-between overflow-hidden transition-all">
       <div className="absolute inset-0 dark:bg-black/20 bg-black/10"></div>
       <div className="mb-4 sm:mb-0 relative">
         <h2 className="text-2xl sm:text-3xl font-header font-bold overflow-hidden">
@@ -19,7 +19,7 @@ const VendorWelcome = () => {
         </p>
       </div>
       <button className="flex relative items-center gap-2 px-5 py-3 bg-white text-blue-600 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300">
-        <FaRegHandshake className="text-2xl" />
+        
         <span className="text-sm sm:text-base">View Requests</span>
       </button>
     </div>

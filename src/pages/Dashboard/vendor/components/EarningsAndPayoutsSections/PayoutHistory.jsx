@@ -3,12 +3,12 @@ import React from "react";
 
 const PayoutHistory = ({ payouts }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-4 sm:p-6 md:p-8 overflow-x-auto">
+    <div className="bg-white dark:bg-gray-800 shadow-2xl rounded-2xl p-4 sm:p-6 md:p-8 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 overflow-y-aut">
       <h3 className="text-2xl sm:text-3xl font-bold dark:text-white mb-4">Payout History</h3>
       {payouts.length === 0 ? (
         <p className="text-center text-gray-500 dark:text-gray-300">No payout records found.</p>
       ) : (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 overflow-y-aut">
           <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead>
               <tr>
@@ -39,10 +39,10 @@ const PayoutHistory = ({ payouts }) => {
                     <span
                       className={`px-2 inline-flex text-xs sm:text-sm leading-5 font-semibold rounded-full ${
                         payout.status === "completed"
-                          ? "bg-green-100 text-green-600"
+                          ? "bg-green text-white"
                           : payout.status === "pending"
-                          ? "bg-yellow-100 text-yellow-600"
-                          : "bg-red-100 text-red-600"
+                          ? "bg-yellow-100 text-black"
+                          : "bg-red-100 text-white"
                       }`}
                     >
                       {payout.status.charAt(0).toUpperCase() + payout.status.slice(1)}

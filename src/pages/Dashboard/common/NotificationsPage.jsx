@@ -49,12 +49,12 @@ const Notifications = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md border border-gray-200 dark:border-gray-700">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-2xl font-header sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">
             Notifications
           </h1>
           <button
             onClick={handleMarkAllRead}
-            className="mt-4 sm:mt-0 px-4 sm:px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition transform hover:scale-105"
+            className="mt-4 sm:mt-0 px-4 sm:px-6 py-3  btn-blue text-white font-semibold rounded-lg transition transform hover:scale-105"
           >
             Mark All as Read {unreadCount > 0 && `(${unreadCount})`}
           </button>

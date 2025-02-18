@@ -12,7 +12,7 @@ const PendingRequests = ({ requests }) => {
 
   return (
     <section className="w-full p-8 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl transition-all duration-300">
-      <h2 className="text-3xl font-bold mb-6 text-primary dark:text-primary">
+      <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
         Pending Booking Requests
       </h2>
       {(!requests || requests.length === 0) ? (
@@ -46,8 +46,8 @@ const PendingRequests = ({ requests }) => {
                   <p className="flex items-center text-gray-700 dark:text-gray-300">
                     <FaClock className="mr-2 text-primary" /> Time: {request.time}
                   </p>
-                  <p className="mt-3 text-base">
-                    Status: <span className={`font-semibold text-${request.status === "Pending" ? "yellow-500" : request.status === "Accepted" ? "green-500" : "red-500"}`}>{request.status}</span>
+                  <p className="mt-3 dark:text-gray-300 text-base">
+                    Status: <span className={`font-semibold ${request.status === "Pending" ? "text-yellow-500" : request.status === "Accepted" ? "text-green" : "text-red-500 dark:text-red-400"}`}>{request.status}</span>
                   </p>
                   {request.status === "Pending" && (
                     <div className="flex justify-end gap-4 mt-6">

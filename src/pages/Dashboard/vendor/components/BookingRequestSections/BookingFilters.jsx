@@ -16,7 +16,7 @@ const BookingFilters = ({ onFilterChange }) => {
 
   return (
     <div className="p-4 sm:p-6 bg-white dark:bg-gray-800 shadow-xl rounded-2xl mb-8 transition-colors duration-300">
-      <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">
+      <h2 className="text-xl sm:text-2xl font-bold font-header text-gray-800 dark:text-white mb-4">
         Filter Bookings
       </h2>
       <div className="flex flex-col md:flex-row md:items-center gap-4 sm:gap-6">
@@ -61,7 +61,7 @@ const BookingFilters = ({ onFilterChange }) => {
             placeholder="Search bookings..."
             className="p-3 border rounded-lg w-full pl-12 bg-gray-100 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 transition-colors"
           />
-          <FaSearch className="absolute left-4 top-3 text-gray-500 dark:text-gray-300" />
+          <FaSearch className="absolute left-4 top-5 text-gray-500 dark:text-gray-300" />
         </div>
       </div>
     </div>
