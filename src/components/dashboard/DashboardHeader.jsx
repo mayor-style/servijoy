@@ -26,7 +26,7 @@ const DashboardHeader = ({ toggleSidebar }) => {
       {/* Menu button for small screens */}
       <button
         onClick={toggleSidebar}
-        className="md:hidden p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        className="lg:hidden p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       >
         <MdMenu className="text-2xl opacity-0 text-gray-700 dark:text-white" />
       </button>
@@ -51,7 +51,7 @@ const DashboardHeader = ({ toggleSidebar }) => {
         </button>
 
         {/* Notifications & Messages (hidden on small screens) */}
-        <div className="hidden md:flex gap-4 relative">
+        <div className="hidden lg:flex gap-4 relative">
           <button className="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <MdNotifications className="text-2xl text-gray-700 dark:text-white" />
             {/* Animated dot */}

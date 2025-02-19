@@ -7,7 +7,7 @@ const SuccessAnimation = () => {
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1.2, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
         className="relative flex items-center justify-center"
       >
         {/* Glowing radial effect */}
@@ -15,7 +15,7 @@ const SuccessAnimation = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1.8 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute w-24 h-24 bg-green opacity-30 rounded-full filter blur-lg"
+          className="absolute w-20 h-20 bg-green opacity-20  rounded-full filter blur-lg"
         />
         {/* Check mark container */}
         <motion.div

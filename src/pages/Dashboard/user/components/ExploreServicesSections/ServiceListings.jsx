@@ -36,7 +36,7 @@ const ServiceListings = ({ services = [] }) => {
   return (
     <section className="py-10 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2  lg:grid-cols-3 gap-6">
           {validServices.map((service) => (
             <div
               key={service.id}

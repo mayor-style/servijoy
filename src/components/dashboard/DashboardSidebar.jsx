@@ -20,7 +20,7 @@ const DashboardSidebar = () => {
       {/* Hamburger Menu Button for Mobile */}
       <button
         onClick={toggleMobile}
-        className="fixed top-5 left-4 z-50 md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        className="fixed top-5 left-4 z-50 lg:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       >
         <FaBars className="text-2xl text-gray-700 dark:text-white" />
       </button>
@@ -28,7 +28,7 @@ const DashboardSidebar = () => {
       {/* Sidebar for Desktop and Mobile */}
       <aside
         className={`bg-gray-900 mt-20 text-white fixed top-0 left-0 bottom-0 z-40 transition-all duration-300 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-700
-          ${isMobileOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 
+          ${isMobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 
           ${isCollapsed ? "w-16" : "w-64"}`}
       >
         {/* Collapse Toggle for Desktop */}

@@ -5,7 +5,7 @@ import ServiceRequestStatus from "./components/ManageServiceSections/ServiceRequ
 const ManageServicesPage = () => {
   return (
     <div className="min-h-screen dark:bg-gray-900 py-7 px-0 transition-colors duration-300">
-      <div className="max-w-[95%] sm:max-w-7xl mx-auto space-y-8 sm:space-y-12">
+      <div className="max-w-[100%] sm:max-w-7xl mx-auto space-y-8 sm:space-y-12">
         {/* Page Title */}
         <h2 className="text-2xl sm:text-3xl font-header rounded-2xl md:text-4xl font-bold text-gray-900 dark:text-white text-center sm:text-left">
           Manage Your Services

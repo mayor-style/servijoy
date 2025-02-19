@@ -25,11 +25,11 @@ const DashboardLayout = () => {
         <DashboardSidebar />
 
         {/* Main Content and Footer */}
-        <div className="flex flex-col flex-1 min-w-0 ml-0 md:ml-64 transition-colors duration-300">
-          <main className="flex-1 overflow-auto p-5 min-w-0 transition-colors duration-300">
+        <div className="flex flex-col flex-1 min-w-0 ml-0 lg:ml-64 transition-colors duration-300">
+          <main className="flex-1 overflow-auto py-5 px-3 lg:px-4 min-w-0 transition-colors duration-300">
             <Outlet />
           </main>
-          <DashboardFooter className="ml-0 md:ml-64" />
+          <DashboardFooter className="ml-0 lg:ml-64" />
         </div>
       </div>
     </div>

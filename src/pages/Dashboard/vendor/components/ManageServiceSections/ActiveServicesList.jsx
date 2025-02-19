@@ -11,8 +11,8 @@ const ActiveServicesList = () => {
   ];
 
   return (
-    <div className="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden">
-      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 font-header dark:text-white mb-8 truncate">
+    <div className="p-4 sm:p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden">
+      <h2 className="sm:text-2xl text-xl md:text-3xl font-semibold text-gray-900 font-header dark:text-white mb-8 truncate">
         Your Active Services
       </h2>
       {services.length === 0 ? (

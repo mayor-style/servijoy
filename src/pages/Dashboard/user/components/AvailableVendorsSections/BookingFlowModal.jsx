@@ -70,7 +70,7 @@ const BookingFlowModal = ({ vendor, isOpen, onClose }) => {
   
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition">
+    <div className="fixed inset-0 px-3 bg-black bg-opacity-60 flex items-center justify-center z-50 transition">
       <div className="bg-soft-white overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 max-h-[95%] dark:bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-lg relative transition-transform duration-300 transform">
         {/* Cancel Icon */}
         <button
@@ -81,7 +81,7 @@ const BookingFlowModal = ({ vendor, isOpen, onClose }) => {
         </button>
         {step === 1 && (
           <>
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white font-header mb-4">
+            <h2 className="text-lg xs:text-xl sm:text-2xl font-bold text-gray-800 dark:text-white font-header mb-4">
               Book Service with {vendor.name}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -172,7 +172,7 @@ const BookingFlowModal = ({ vendor, isOpen, onClose }) => {
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn btn-primary" disabled={submitting}>
+                <button type="submit" className={`btn btn-primary ${submitting ? "text-gray-800 dark:text-gray-300":"" } `} disabled={submitting}>
                   {submitting ? "Submitting..." : "Book Now"}
                 </button>
               </div>
