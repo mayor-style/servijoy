@@ -94,7 +94,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Find the Best <span className="text-gradient">Professional</span> <br className="hidden md:block" /> in Your Area
+          Need Help Now? Get a <span className="text-gradient">Skilled</span> <br className="hidden md:block" /> Pro in a Minute!
         </motion.h1>
 
         {/* Subtext */}
@@ -104,7 +104,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Reliable, vetted, and ready to help with all your needs.
+         Fast, reliable and vetted professionals near you, ready to assist.
         </motion.p>
 
         {/* Search Section */}

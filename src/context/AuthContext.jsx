@@ -8,7 +8,7 @@ export function AuthProvider({ children }) {
     id: "123",
     name: "Slick Dev",
     email: "johndoe@example.com",
-    role: "user", // or "vendor"
+    role: "vendor", // or "vendor"
   });
 
   const login = (userData) => setUser(userData);
