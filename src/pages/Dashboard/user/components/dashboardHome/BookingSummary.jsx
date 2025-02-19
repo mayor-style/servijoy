@@ -21,7 +21,7 @@ const BookingSummary = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Upcoming Booking Card */}
       <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transition hover:shadow-xl hover:scale-[1.02]">
         <div className="flex items-center gap-4">

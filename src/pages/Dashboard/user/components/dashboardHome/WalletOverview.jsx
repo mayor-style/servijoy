@@ -11,7 +11,7 @@ const WalletOverview = () => {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl transform transition duration-300 hover:shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-md md:max-w-lg lg:max-w-xl">
+    <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl transform transition duration-300 hover:shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg sm:max-w-xl">
       <div className="flex items-center gap-4">
         <div className="p-3 gradient rounded-full shadow-lg">
           <FaWallet className="text-white text-2xl md:text-3xl" />

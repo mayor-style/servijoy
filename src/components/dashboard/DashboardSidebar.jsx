@@ -32,7 +32,7 @@ const DashboardSidebar = () => {
           ${isCollapsed ? "w-16" : "w-64"}`}
       >
         {/* Collapse Toggle for Desktop */}
-        <div className="flex justify-end p-2 md:hidden">
+        <div className=" justify-end p-2 hidden">
           <button onClick={toggleCollapse} className="p-2 rounded-md hover:bg-gray-800 transition-colors text-xl">
             <FaBars />
           </button>

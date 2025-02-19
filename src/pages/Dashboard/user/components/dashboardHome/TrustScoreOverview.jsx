@@ -9,7 +9,7 @@ const TrustScoreOverview = () => {
   const rating = 4.5;
 
   return (
-    <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl transform transition duration-300 hover:shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-md md:max-w-lg lg:max-w-xl">
+    <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl transform transition duration-300 hover:shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg sm:max-w-xl">
       <div className="flex items-center gap-4">
         <div className="p-3 bg-yellow-100 dark:bg-yellow-900 rounded-full shadow-lg">
           <FaStar className="text-yellow-500 dark:text-yellow-300 text-2xl md:text-3xl" />
