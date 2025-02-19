@@ -1,6 +1,7 @@
 // File: components/vendor/bookingDashboard/VendorRecentMessages.jsx
 import React from "react";
 import { FaBell, FaEnvelopeOpenText, FaRegEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const VendorRecentMessages = () => {
   return (
@@ -18,9 +19,9 @@ const VendorRecentMessages = () => {
             🔔 You have <strong>2</strong> new notifications
           </p>
         </div>
-        <button className="mt-4 sm:mt-0 text-xs bg-white/40 dark:bg-white/30 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/40 transition">
+        <Link to={'/dashboard/notifications'} className="mt-4 sm:mt-0 text-xs bg-white/40 dark:bg-white/30 px-4 py-2 rounded-full hover:bg-white/50 dark:hover:bg-white/40 transition">
           View All
-        </button>
+        </Link>
       </div>
 
       {/* Recent Messages Section */}

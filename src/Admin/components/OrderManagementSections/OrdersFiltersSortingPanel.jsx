@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
   const [filters, setFilters] = useState({
     status: "",
     paymentStatus: "",
     customer: "",
-    dateRange: { start: "", end: "" },
+    dateRange: { start: null, end: null },
   });
 
   const [sortOption, setSortOption] = useState("");
@@ -25,7 +27,7 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
     <div className="p-4 bg-base-200 dark:bg-gray-800 rounded-xl mb-4 transition">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <select
-          className="select select-bordered w-full"
+          className="select select-bordered w-full dark:bg-gray-700 transition"
           value={filters.status}
           onChange={(e) => handleFilterChange("status", e.target.value)}
         >
@@ -38,7 +40,7 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
         </select>
 
         <select
-          className="select select-bordered w-full"
+          className="select select-bordered w-full dark:bg-gray-700 transition"
           value={filters.paymentStatus}
           onChange={(e) => handleFilterChange("paymentStatus", e.target.value)}
         >
@@ -52,31 +54,37 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
         <input
           type="text"
           placeholder="Customer Name/Email"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full dark:bg-gray-700 dark:text-white transition"
           value={filters.customer}
           onChange={(e) => handleFilterChange("customer", e.target.value)}
         />
 
         <div className="flex flex-col gap-2">
-          <label className="text-sm">Date Range</label>
+          <label className="text-sm text-gray-700 dark:text-white">Date Range</label>
           <div className="flex gap-2">
-            <input
-              type="date"
-              className="input input-bordered w-full"
-              value={filters.dateRange.start}
-              onChange={(e) => handleFilterChange("dateRange", { ...filters.dateRange, start: e.target.value })}
+            <DatePicker
+              selected={filters.dateRange.start}
+              onChange={(date) =>
+                handleFilterChange("dateRange", { ...filters.dateRange, start: date })
+              }
+              placeholderText="From"
+              className="input input-bordered w-full dark:bg-gray-700 dark:text-white transition"
+              dateFormat="yyyy-MM-dd"
             />
-            <input
-              type="date"
-              className="input input-bordered w-full"
-              value={filters.dateRange.end}
-              onChange={(e) => handleFilterChange("dateRange", { ...filters.dateRange, end: e.target.value })}
+            <DatePicker
+              selected={filters.dateRange.end}
+              onChange={(date) =>
+                handleFilterChange("dateRange", { ...filters.dateRange, end: date })
+              }
+              placeholderText="To"
+              className="input input-bordered w-full dark:bg-gray-700 dark:text-white transition"
+              dateFormat="yyyy-MM-dd"
             />
           </div>
         </div>
 
         <select
-          className="select select-bordered w-full"
+          className="select select-bordered w-full dark:bg-gray-700 transition"
           value={sortOption}
           onChange={(e) => handleSortChange(e.target.value)}
         >

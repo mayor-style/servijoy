@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { FaSearch } from "react-icons/fa";
 
 const BookingFilters = ({ onFilterChange }) => {
   const [status, setStatus] = useState("all");
   const [search, setSearch] = useState("");
   const [dateRange, setDateRange] = useState({
-    start: "",
-    end: "",
+    start: null,
+    end: null,
   });
 
   // Update filters whenever any filter state changes
@@ -34,21 +36,23 @@ const BookingFilters = ({ onFilterChange }) => {
 
         {/* Date Range Filter */}
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-          <input
-            type="date"
-            value={dateRange.start}
-            onChange={(e) =>
-              setDateRange({ ...dateRange, start: e.target.value })
+          <DatePicker
+            selected={dateRange.start}
+            onChange={(date) =>
+              setDateRange((prev) => ({ ...prev, start: date }))
             }
+            placeholderText="From"
             className="p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition-colors w-full sm:w-auto"
+            dateFormat="yyyy-MM-dd"
           />
-          <input
-            type="date"
-            value={dateRange.end}
-            onChange={(e) =>
-              setDateRange({ ...dateRange, end: e.target.value })
+          <DatePicker
+            selected={dateRange.end}
+            onChange={(date) =>
+              setDateRange((prev) => ({ ...prev, end: date }))
             }
+            placeholderText="To"
             className="p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition-colors w-full sm:w-auto"
+            dateFormat="yyyy-MM-dd"
           />
         </div>
 

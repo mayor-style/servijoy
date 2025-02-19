@@ -20,9 +20,9 @@ const RequestNewService = () => {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center px-3 justify-center z-50 transition-opacity duration-300">
-          <div className="bg-white h-[90%] overflow-auto dark:bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-lg transition-transform duration-300 transform">
+          <div className="bg-white h-[90%] overflow-auto dark:bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-lg overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 transition-transform duration-300 transform">
             {/* Modal Header */}
-            <div className="flex font-header justify-between items-center border-b border-gray-200 dark:border-gray-700 pb-3 mb-6">
+            <div className="flex font-header overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 justify-between items-center border-b border-gray-200 dark:border-gray-700 pb-3 mb-6">
               <h2 className="text-2xl font-header font-bold text-gray-900 dark:text-white truncate">
                 Request a New Service
               </h2>

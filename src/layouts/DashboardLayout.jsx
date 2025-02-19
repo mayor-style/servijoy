@@ -18,24 +18,20 @@ const DashboardLayout = () => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {/* Header */}
-      <DashboardHeader />
+      <DashboardHeader toggleSidebar={() => {}} />
 
       <div className="flex flex-1 w-full">
         {/* Sidebar */}
         <DashboardSidebar />
 
-        {/* Main Content Area */}
-        <div className="flex flex-col flex-1 min-w-0">
-          <main className="flex-1 overflow-auto p-5  min-w-0 transition-colors duration-300">
-            <div className="w-full">
-              <Outlet />
-            </div>
+        {/* Main Content and Footer */}
+        <div className="flex flex-col flex-1 min-w-0 ml-0 md:ml-64 transition-colors duration-300">
+          <main className="flex-1 overflow-auto p-5 min-w-0 transition-colors duration-300">
+            <Outlet />
           </main>
+          <DashboardFooter className="ml-0 md:ml-64" />
         </div>
       </div>
-
-      {/* Footer (scrolls naturally) */}
-      <DashboardFooter />
     </div>
   );
 };

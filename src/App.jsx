@@ -41,6 +41,7 @@ import OrderManagementPage from "./Admin/pages/OrderManagementPage";
 import DisputeManagementPage from "./Admin/pages/DisputeManagementPage";
 import AnalyticsPage from "./Admin/pages/AnalyticsPage";
 import AdminSettingsPage from "./Admin/pages/AdminSettingsPage";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -71,6 +72,7 @@ function PageWrapper() {
     <>
       {!shouldHideNavAndFooter && <Navbar />}
       <ScrollToTop />
+      <Toaster />
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}

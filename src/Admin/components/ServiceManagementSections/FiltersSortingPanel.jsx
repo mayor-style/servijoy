@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { FaFilter } from "react-icons/fa";
 
 const FiltersSortingPanel = ({ onFilterChange }) => {
   const [filters, setFilters] = useState({
     status: "",
     category: "",
-    dateRange: { from: "", to: "" },
+    dateRange: { from: null, to: null },
     sortBy: "",
   });
 
@@ -14,12 +16,12 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleDateChange = (e) => {
-    const { name, value } = e.target;
-    setFilters((prev) => ({
-      ...prev,
-      dateRange: { ...prev.dateRange, [name]: value },
-    }));
+  const handleDateFromChange = (date) => {
+    setFilters((prev) => ({ ...prev, dateRange: { ...prev.dateRange, from: date } }));
+  };
+
+  const handleDateToChange = (date) => {
+    setFilters((prev) => ({ ...prev, dateRange: { ...prev.dateRange, to: date } }));
   };
 
   const applyFilters = () => onFilterChange(filters);
@@ -54,20 +56,20 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
 
       {/* Date Range Picker */}
       <div className="flex items-center gap-2">
-        <input
-          type="date"
-          name="from"
-          value={filters.dateRange.from}
-          onChange={handleDateChange}
-          className="input input-bordered dark:bg-gray-700 transition"
+        <DatePicker
+          selected={filters.dateRange.from}
+          onChange={handleDateFromChange}
+          placeholderText="From"
+          className="input input-bordered w-full dark:bg-gray-700 transition"
+          dateFormat="yyyy-MM-dd"
         />
         <span className="text-gray-500 dark:text-gray-300">to</span>
-        <input
-          type="date"
-          name="to"
-          value={filters.dateRange.to}
-          onChange={handleDateChange}
-          className="input input-bordered dark:bg-gray-700 transition"
+        <DatePicker
+          selected={filters.dateRange.to}
+          onChange={handleDateToChange}
+          placeholderText="To"
+          className="input input-bordered w-full dark:bg-gray-700 transition"
+          dateFormat="yyyy-MM-dd"
         />
       </div>
 

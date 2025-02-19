@@ -1,5 +1,4 @@
-// File: components/explore/ExploreServices.jsx 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SearchFilter from "./components/ExploreServicesSections/SearchFilter";
 import TrendingServices from "./components/ExploreServicesSections/TrendingServices"; // Accepts a `services` prop
 import ServiceCategories from "./components/ExploreServicesSections/ServiceCategories"; // Accepts an `onSelectCategory` prop
@@ -95,14 +94,23 @@ const ExploreServices = () => {
   // State for the list of services to display (after filtering)
   const [filteredServices, setFilteredServices] = useState(mockServices);
 
-  // Handle changes from the SearchFilter component
+  // Create a ref for the ServiceListings section so we can scroll to it
+  const serviceListingsRef = useRef(null);
+
+  // Handle filter changes from the SearchFilter component (applied via button)
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
+    if (serviceListingsRef.current) {
+      serviceListingsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   // Handle category selection from the ServiceCategories component
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
+    if (serviceListingsRef.current) {
+      serviceListingsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   // Determine trending services (for this demo, trending are those with rating >= 4.8)
@@ -153,18 +161,20 @@ const ExploreServices = () => {
   }, [filters, selectedCategory]);
 
   return (
-    <div className="min-h-screen transition-colors duration-300  px-0 dark:bg-gray-900">
+    <div className="min-h-screen transition-colors duration-300 px-0 dark:bg-gray-900">
       {/* Search & Filter Section */}
       <SearchFilter onFilterChange={handleFilterChange} />
+
+      {/* Service Listings Section with ref for auto-scroll */}
+      <div ref={serviceListingsRef}>
+        <ServiceListings services={filteredServices} />
+      </div>
 
       {/* Trending Services Section */}
       <TrendingServices services={trendingServices} />
 
       {/* Service Categories Section */}
       <ServiceCategories onSelectCategory={handleCategorySelect} />
-
-      {/* Service Listings Section */}
-      <ServiceListings services={filteredServices} />
     </div>
   );
 };

@@ -28,7 +28,7 @@ const DashboardHeader = ({ toggleSidebar }) => {
         onClick={toggleSidebar}
         className="md:hidden p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       >
-        <MdMenu className="text-2xl hidden text-gray-700 dark:text-white" />
+        <MdMenu className="text-2xl opacity-0 text-gray-700 dark:text-white" />
       </button>
 
       {/* Welcome Message */}
@@ -37,7 +37,7 @@ const DashboardHeader = ({ toggleSidebar }) => {
       </h1>
 
       {/* Right-Side Actions */}
-      <div className="flex items-center gap-4 md:gap-6">
+      <div className="flex items-center gap-4 md:gap-6 relative">
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
@@ -51,15 +51,19 @@ const DashboardHeader = ({ toggleSidebar }) => {
         </button>
 
         {/* Notifications & Messages (hidden on small screens) */}
-        <div className="hidden md:flex gap-4">
+        <div className="hidden md:flex gap-4 relative">
           <button className="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <MdNotifications className="text-2xl text-gray-700 dark:text-white" />
-            <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs font-bold px-1 rounded-full">3</span>
+            {/* Animated dot */}
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
           </button>
 
           <button className="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <MdMessage className="text-2xl text-gray-700 dark:text-white" />
-            <span className="absolute -top-1 -right-1 bg-green-500 text-black text-xs font-bold px-1 rounded-full">5</span>
+            {/* Animated dot */}
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></span>
           </button>
         </div>
 

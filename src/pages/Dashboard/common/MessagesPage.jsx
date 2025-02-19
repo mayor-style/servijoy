@@ -1,5 +1,5 @@
-// File: components/messages/Messages.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import ConversationList from "./MessagesSections/ConversationList";
 import ChatWindow from "./MessagesSections/ChatWindow";
 
@@ -30,13 +30,21 @@ const Messages = () => {
         { id: 6, text: "Your issue has been resolved.", time: "11:15 AM", isOwn: false },
       ],
     },
-    // Add more conversation objects as needed...
+    // Additional conversation objects...
   ];
 
   const [conversations, setConversations] = useState(mockConversations);
-  const [activeConversationId, setActiveConversationId] = useState(
-    mockConversations[0]?.id || null
-  );
+  const [activeConversationId, setActiveConversationId] = useState(mockConversations[0]?.id || null);
+  const [searchParams] = useSearchParams();
+
+  // Automatically set active conversation if query parameter is provided
+  useEffect(() => {
+    const convId = searchParams.get("conversationId");
+    if (convId) {
+      // Assume conversation IDs are numeric; adjust as needed
+      setActiveConversationId(Number(convId));
+    }
+  }, [searchParams]);
 
   // Get active conversation messages
   const activeConversation = conversations.find(
@@ -74,11 +82,11 @@ const Messages = () => {
   };
 
   return (
-    <div className="min-h-screen dark:bg-gray-900 flex items-center justify-center ">
-      <div className="w-full max-w-7xl dark:border-gray-700 bg-white scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  dark:bg-gray-800 rounded-2xl border shadow overflow-hidden ">
+    <div className="min-h-screen dark:bg-gray-900 flex items-center justify-center">
+      <div className="w-full max-w-7xl dark:border-gray-700 bg-white scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 dark:bg-gray-800 rounded-2xl border shadow overflow-hidden">
         <div className="flex flex-col md:flex-row h-[80vh]">
           {/* Sidebar: Conversation List */}
-          <div className="md:w-1/3 border-r dark:border-gray-700 h-full scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300  overflow-y-auto">
+          <div className="md:w-1/3 border-r dark:border-gray-700 h-full overflow-y-auto p-4">
             <div className="p-6 border-b dark:border-gray-700">
               <h1 className="text-3xl font-header font-bold dark:text-white">Messages</h1>
             </div>
@@ -88,7 +96,6 @@ const Messages = () => {
               onSelectConversation={handleSelectConversation}
             />
           </div>
-
           {/* Chat Window */}
           <div className="md:w-2/3 h-full flex flex-col">
             {activeConversation ? (

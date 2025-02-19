@@ -16,7 +16,8 @@ const SearchFilter = ({ onFilterChange }) => {
   const [availability, setAvailability] = useState(false);
   const [location, setLocation] = useState("");
 
-  const handleFilterChange = () => {
+  // This handler is only called when the "Apply Filters" button is clicked.
+  const handleApplyFilters = () => {
     onFilterChange({ searchQuery, priceRange, rating, availability, location });
   };
 
@@ -28,10 +29,7 @@ const SearchFilter = ({ onFilterChange }) => {
           type="text"
           placeholder="Search for a service..."
           value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-            handleFilterChange();
-          }}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full p-4 pl-12 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <FaSearch className="absolute left-4 top-5 text-gray-500 dark:text-gray-400" />
@@ -46,10 +44,7 @@ const SearchFilter = ({ onFilterChange }) => {
           </label>
           <Slider
             value={priceRange}
-            onChange={(val) => {
-              setPriceRange(val);
-              handleFilterChange();
-            }}
+            onChange={(val) => setPriceRange(val)}
             min={0}
             max={1000}
             step={10}
@@ -64,12 +59,7 @@ const SearchFilter = ({ onFilterChange }) => {
           <label className="text-sm font-semibold text-gray-700 dark:text-gray-300">
             Ratings
           </label>
-          <Select
-            onValueChange={(value) => {
-              setRating(value);
-              handleFilterChange();
-            }}
-          >
+          <Select onValueChange={(value) => setRating(value)}>
             <SelectTrigger>
               <SelectValue placeholder="Select Rating" />
             </SelectTrigger>
@@ -89,10 +79,7 @@ const SearchFilter = ({ onFilterChange }) => {
           <div className="flex items-center gap-3">
             <Switch
               checked={availability}
-              onCheckedChange={(val) => {
-                setAvailability(val);
-                handleFilterChange();
-              }}
+              onCheckedChange={(val) => setAvailability(val)}
             />
             <span className="text-sm text-gray-600 dark:text-gray-400">
               Only Available Now
@@ -109,13 +96,17 @@ const SearchFilter = ({ onFilterChange }) => {
             type="text"
             placeholder="Enter location..."
             value={location}
-            onChange={(e) => {
-              setLocation(e.target.value);
-              handleFilterChange();
-            }}
+            onChange={(e) => setLocation(e.target.value)}
             className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+      </div>
+
+      {/* Apply Filters Button */}
+      <div className="mt-6 text-right">
+        <button className="btn btn-primary" onClick={handleApplyFilters}>
+          Apply Filters
+        </button>
       </div>
     </div>
   );

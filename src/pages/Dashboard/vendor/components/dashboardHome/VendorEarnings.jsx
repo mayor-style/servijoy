@@ -1,6 +1,7 @@
 // File: components/vendor/earnings/VendorEarnings.jsx
 import React from "react";
 import { FaWallet, FaMoneyBillWave, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const VendorEarnings = () => {
   // Mock values; these can be replaced with dynamic data later
@@ -8,6 +9,8 @@ const VendorEarnings = () => {
   const availableBalance = 3250;
   const expectedPayout = 850;
   const lastPayout = 1200;
+
+  const navigate = useNavigate()
 
   return (
     <div className="gradient relative dark:gradient-reverse text-white p-6 sm:p-8 rounded-2xl shadow-2xl transition transform border border-gray-200 dark:border-gray-700 overflow-hidden">
@@ -55,7 +58,7 @@ const VendorEarnings = () => {
 
       {/* Withdraw Button */}
       <div className="mt-8 relative text-center">
-        <button className="px-4 sm:px-6 py-2 sm:py-3 bg-black/30 dark:bg-black/40 hover:bg-black/50 dark:hover:bg-black/60 text-white rounded-lg font-semibold shadow-md transition duration-300 text-xs sm:text-base">
+        <button onClick={()=>navigate('/dashboard/earnings')} className="px-4 sm:px-6 py-2 sm:py-3 bg-black/30 dark:bg-black/40 hover:bg-black/50 dark:hover:bg-black/60 text-white rounded-lg font-semibold shadow-md transition duration-300 text-xs sm:text-base">
           Withdraw Funds
         </button>
       </div>

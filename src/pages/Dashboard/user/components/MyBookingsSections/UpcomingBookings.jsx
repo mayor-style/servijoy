@@ -9,8 +9,8 @@ const UpcomingBookings = ({ bookings }) => {
   };
 
   return (
-    <section className="w-full p-6 md:p-8 bg-white dark:bg-gray-800 shadow-xl rounded-2xl transition-all duration-300">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+    <section className="w-full p-2 bg-white dark:bg-gray-800 shadow-xl rounded-2xl transition-all duration-300">
+      <h2 className="sm:text-2xl text-xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
         Upcoming Bookings
       </h2>
 

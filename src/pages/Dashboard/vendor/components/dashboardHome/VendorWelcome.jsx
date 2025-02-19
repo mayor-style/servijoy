@@ -2,6 +2,7 @@
 import React from "react";
 import { FaRegHandshake } from "react-icons/fa";
 import { useAuth } from "../../../../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const VendorWelcome = () => {
   const { user } = useAuth(); // Get vendor data
@@ -20,7 +21,9 @@ const VendorWelcome = () => {
       </div>
       <button className="flex relative items-center gap-2 px-5 py-3 bg-white text-blue-600 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300">
         
-        <span className="text-sm sm:text-base">View Requests</span>
+        <Link className="text-sm sm:text-base"
+        to={'/dashboard/booking-requests'}
+        >View Requests</Link>
       </button>
     </div>
   );

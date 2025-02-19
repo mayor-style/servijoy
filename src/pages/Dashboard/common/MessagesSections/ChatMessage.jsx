@@ -4,11 +4,11 @@ const ChatMessage = ({ message, isOwn }) => {
   return (
     <div className={`flex flex-col ${isOwn ? "items-end" : "items-start"} mb-4`}>
       <div 
-        className={`px-4 py-2 max-w-lg break-words rounded-2xl shadow-md 
-          ${isOwn 
-            ? "bg-blue-500 text-white rounded-bl-none" 
-            : "bg-gray-200 text-black rounded-tr-none"} 
-          dark:${isOwn ? "bg-blue-700 text-white" : "bg-gray-700 text-white"}`}
+        className={`px-4 py-2 max-w-lg break-words rounded-2xl shadow-md ${
+          isOwn 
+            ? "bg-blue-500 text-white rounded-bl-none dark:bg-blue-700 dark:text-white"
+            : "bg-gray-100 text-gray-800 rounded-tr-none dark:bg-gray-700 dark:text-white"
+        }`}
       >
         {message.text}
       </div>

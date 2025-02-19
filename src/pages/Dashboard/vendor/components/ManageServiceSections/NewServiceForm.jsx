@@ -40,8 +40,8 @@ const NewServiceForm = ({ closeModal }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-4 space-y-6">
-      <div>
+    <form onSubmit={handleSubmit} className="mt-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 space-y-6">
+      <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
         <label className="block text-base font-semibold text-gray-800 dark:text-white mb-2">
           Select Service Category
         </label>

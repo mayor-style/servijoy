@@ -2,9 +2,19 @@ import React, { useState, useEffect } from "react";
 import VendorFilters from "./components/AvailableVendorsSections/VendorFilters";
 import VendorCard from "./components/AvailableVendorsSections/VendorCard";
 import VendorDetailsModal from "./components/AvailableVendorsSections/VendorDetailsModal";
+import BookingFlowModal from "./components/AvailableVendorsSections/BookingFlowModal"; // New component
 
 const AvailableVendors = () => {
-  // MOCK DATA for vendors (simulate backend API response)
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading for 2 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const initialVendors = [
     {
       id: 1,
@@ -50,11 +60,14 @@ const AvailableVendors = () => {
   const [vendors, setVendors] = useState(initialVendors);
   const [filteredVendors, setFilteredVendors] = useState(initialVendors);
   const [activeVendor, setActiveVendor] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("rating");
 
-  // Update filtered vendors when search query or sort option changes
+  // Booking state
+  const [bookingVendor, setBookingVendor] = useState(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   useEffect(() => {
     let result = vendors.filter((vendor) =>
       vendor.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -83,36 +96,57 @@ const AvailableVendors = () => {
 
   const handleViewDetails = (vendor) => {
     setActiveVendor(vendor);
-    setIsModalOpen(true);
+    setIsDetailsModalOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleBookNow = (vendor) => {
+    setBookingVendor(vendor);
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseDetailsModal = () => {
     setActiveVendor(null);
-    setIsModalOpen(false);
+    setIsDetailsModalOpen(false);
+  };
+
+  const handleCloseBookingModal = () => {
+    setBookingVendor(null);
+    setIsBookingModalOpen(false);
   };
 
   return (
-    <div className="min-h-screen  dark:bg-gray-900 py-10 px-0 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-center dark:text-white mb-6">
-          Available Vendors
-        </h1>
-        <VendorFilters onFilterChange={handleFilterChange} onSortChange={handleSortChange} />
-        
-        {filteredVendors.length === 0 ? (
-          <p className="text-center text-gray-500 dark:text-gray-300">
-            No vendors found.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredVendors.map((vendor) => (
-              <VendorCard key={vendor.id} vendor={vendor} onViewDetails={handleViewDetails} />
-            ))}
-          </div>
-        )}
-      </div>
-      
-      <VendorDetailsModal vendor={activeVendor} isOpen={isModalOpen} onClose={handleCloseModal} />
+    <div className="relative min-h-screen dark:bg-gray-900 py-10 px-0 transition-colors duration-300">
+      {loading && (
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-md z-50">
+          <span className="loading loading-spinner loading-lg text-white"></span>
+        </div>
+      )}
+      {!loading && (
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl text-gray-800 md:text-4xl font-bold text-center font-header dark:text-gray-200 mb-6">
+            Available Vendors
+          </h1>
+          <VendorFilters onFilterChange={handleFilterChange} onSortChange={handleSortChange} />
+          {filteredVendors.length === 0 ? (
+            <p className="text-center text-gray-500 dark:text-gray-300">
+              No vendors found.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredVendors.map((vendor) => (
+                <VendorCard
+                  key={vendor.id}
+                  vendor={vendor}
+                  onViewDetails={handleViewDetails}
+                  onBookNow={handleBookNow}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      <VendorDetailsModal vendor={activeVendor} isOpen={isDetailsModalOpen} onClose={handleCloseDetailsModal} />
+      <BookingFlowModal vendor={bookingVendor} isOpen={isBookingModalOpen} onClose={handleCloseBookingModal} />
     </div>
   );
 };

@@ -11,8 +11,8 @@ const PendingRequests = ({ requests }) => {
   };
 
   return (
-    <section className="w-full p-8 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl transition-all duration-300">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
+    <section className="w-full p-2 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl transition-all duration-300">
+      <h2 className="sm:text-2xl text-xl md:text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">
         Pending Booking Requests
       </h2>
       {(!requests || requests.length === 0) ? (
@@ -29,7 +29,7 @@ const PendingRequests = ({ requests }) => {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                  <h3 className="sm:text-xl text-lg font-bold text-gray-800 dark:text-white">
                     {request.serviceName}
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-300 flex items-center mt-1">
