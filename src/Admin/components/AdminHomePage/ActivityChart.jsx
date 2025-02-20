@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   Filler,
+  Colors,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -42,6 +43,7 @@ const ActivityChart = ({ chartData }) => {
         backgroundColor: "rgba(80, 227, 194, 0.2)",
         fill: true,
         tension: 0.3,
+      
       },
       {
         label: "Vendor Responses",
@@ -58,11 +60,11 @@ const ActivityChart = ({ chartData }) => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { labels: { color: "inherit" } },
+      legend: { labels: { color: "gray" } },
     },
     scales: {
-      x: { ticks: { color: "inherit" } },
-      y: { ticks: { color: "inherit" } },
+      x: { ticks: { color: "gray" } },
+      y: { ticks: { color: "gray" } },
     },
   };
 

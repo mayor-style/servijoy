@@ -42,17 +42,17 @@ const TrendChart = ({ data }) => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      legend: { labels: { color: "inherit" } },
+      legend: { labels: { color: "gray" } },
     },
     scales: {
-      x: { ticks: { color: "inherit" } },
-      y: { ticks: { color: "inherit" } },
+      x: { ticks: { color: "gray" } },
+      y: { ticks: { color: "gray" } },
     },
   };
 
   return (
     <div className="h-64 text-theme bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
-      <Line data={chartData} options={options} />
+      <Line data={chartData}  options={options} />
     </div>
   );
 };

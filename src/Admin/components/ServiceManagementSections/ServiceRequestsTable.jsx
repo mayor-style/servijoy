@@ -140,7 +140,7 @@ const ServiceRequestsTable = () => {
 
   return (
     <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white p-4 dark:bg-gray-800 rounded-lg shadow-md mt-4 transition">
-      <h1 className="header pb-3 text-theme">Service Requests</h1>
+      <h1 className="subheading pb-3 text-theme">Service Requests</h1>
       <table className="table w-full text-theme min-w-[800px]">
         <thead>
           <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 dark:text-gray-200">

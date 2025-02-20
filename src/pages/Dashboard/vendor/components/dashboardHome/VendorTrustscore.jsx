@@ -5,7 +5,7 @@ import { FaStar, FaRegStar, FaChartLine, FaCommentDots } from "react-icons/fa";
 const VendorTrustScore = () => {
   return (
     <div className="bg-gradient-to-br from-green to-blue-600 dark:from-green-700 dark:to-blue-800 text-gray-900 dark:text-white p-6 sm:p-8 rounded-2xl shadow-2xl transition-transform duration-300">
-      <h2 className="text-2xl font-header sm:text-3xl font-bold mb-6 flex items-center gap-2">
+      <h2 className="text-xl xs:text-2xl font-header sm:text-3xl font-bold mb-6 flex items-center gap-2">
         🌟 Trust Score & Ratings
       </h2>
 

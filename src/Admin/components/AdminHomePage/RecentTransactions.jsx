@@ -39,7 +39,7 @@ const RecentTransactions = () => {
 
   return (
     <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-lg  transition mt-6">
-      <h2 className="header text-gray-800 dark:text-white mb-4">
+      <h2 className="subheading text-gray-800 dark:text-white mb-4">
         Recent Transactions
       </h2>
       {loading ? (

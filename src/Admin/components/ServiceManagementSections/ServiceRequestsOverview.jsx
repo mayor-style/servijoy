@@ -54,7 +54,7 @@ const ServiceRequestsOverview = () => {
 
   return (
     <div className="p-6 bg-soft-white dark:bg-gray-800 rounded-lg shadow-md transition">
-      <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">Service Requests Overview</h2>
+      <h2 className="subheading mb-4 text-gray-800 dark:text-white">Service Requests Overview</h2>
       <div className="grid text-theme grid-cols-1 md:grid-cols-4 gap-4">
         <div className="p-4 text-theme bg-gray-200 dark:bg-gray-700 rounded-lg text-center transition">
           <h3 className="text-lg font-semibold">Total Requests</h3>

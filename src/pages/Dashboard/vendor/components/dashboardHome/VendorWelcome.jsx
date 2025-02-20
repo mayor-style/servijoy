@@ -12,7 +12,7 @@ const VendorWelcome = () => {
     <div className="gradient relative dark:gradient-reverse text-white p-6 sm:p-8 rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-3 items-center justify-between overflow-hidden transition-all">
       <div className="absolute inset-0 dark:bg-black/20 bg-black/10"></div>
       <div className="mb-4 sm:mb-0 relative">
-        <h2 className="text-2xl sm:text-3xl font-header font-bold overflow-hidden">
+        <h2 className="text-2xl sm:text-3xl font-header header font-bold overflow-hidden">
           Welcome back, {vendorName}! 👋
         </h2>
         <p className="mt-2 text-base  text-gray-200 overflow-hidden">

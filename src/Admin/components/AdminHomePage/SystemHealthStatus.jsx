@@ -32,7 +32,7 @@ const SystemHealthStatus = () => {
   return (
     <div className="p-0">
       <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-md shadow-lg transition">
-        <h2 className="header text-gray-800 dark:text-gray-300 mb-4">
+        <h2 className="subheading text-gray-800 dark:text-gray-300 mb-4">
           System Health Status
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

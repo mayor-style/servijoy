@@ -63,7 +63,8 @@ const ServiceCategoryManagement = () => {
   };
 
   return (
-    <div className="p-0">
+    <div className=" p-5 bg-soft-white dark:bg-gray-800 shadow-xl">
+      <h1 className="subheading text-theme mb-5"> Service Category Management</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="card bg-primary text-primary-content shadow-xl transition">
           <div className="card-body">
@@ -92,7 +93,6 @@ const ServiceCategoryManagement = () => {
         <p className="text-center text-gray-600 dark:text-gray-300">No categories found.</p>
       ) : (
         <div className="overflow-x-auto p-3 rounded-lg dark:bg-gray-800 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
-          <h1 className="header text-theme pb-3">Services</h1>
           <table className="table w-full scroll min-w-[600px]">
             <thead>
               <tr className="text-gray-700 dark:text-gray-300 bg-gray-300 dark:bg-gray-700">

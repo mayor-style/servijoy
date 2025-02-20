@@ -8,7 +8,7 @@ export default function OrderManagementHeader() {
       <div className="flex items-center text-sm text-gray-500 dark:text-gray-300 mb-4 md:mb-0">
         <span>Admin Dashboard</span>
         <ChevronRightIcon size={16} className="mx-2" />
-        <span className="text-primary font-medium">Order Management</span>
+        <span className="font-header text-primary font-medium">Order Management</span>
       </div>
 
       {/* Page Title */}

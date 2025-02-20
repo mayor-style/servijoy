@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 const getStatusBadgeClass = (status) => {
   switch (status.toLowerCase()) {
@@ -125,13 +126,13 @@ const DisputesTable = ({ filters, selectedDisputes, setSelectedDisputes, onOpenM
                 </td>
                 <td className="p-3 flex gap-2">
                   <button className="btn btn-sm btn-info transition" onClick={() => onOpenModal("details", dispute)}>
-                    View
+                   <FaEye size={16} />
                   </button>
                   <button className="btn btn-sm btn-warning transition" onClick={() => onOpenModal("edit", dispute)}>
-                    Edit
+                    <FaEdit size={16}/>
                   </button>
                   <button className="btn btn-sm btn-error transition" onClick={() => onOpenModal("delete", dispute)}>
-                    Delete
+                    <FaTrash size={16}/>
                   </button>
                 </td>
               </tr>

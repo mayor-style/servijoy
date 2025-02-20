@@ -7,7 +7,7 @@ const VendorRecentMessages = () => {
   return (
     <div className="gradient relative dark:gradient-reverse text-white p-6 sm:p-8 rounded-2xl shadow-2xl transition-transform duration-300 border border-transparent dark:border-gray-700">
       <div className="absolute inset-0 dark:bg-black/20 bg-black/10"></div>
-      <h2 className="text-2xl relative sm:text-3xl font-header font-bold mb-6">
+      <h2 className="xs:text-2xl text-xl relative sm:text-3xl font-header font-bold mb-6">
         📩 Recent Messages & Notifications
       </h2>
 

@@ -26,13 +26,13 @@ const DashboardHeader = ({ toggleSidebar }) => {
       {/* Menu button for small screens */}
       <button
         onClick={toggleSidebar}
-        className="lg:hidden p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        className="lg:hidden p-2 mr-2 rounded-full  transition-colors"
       >
         <MdMenu className="text-2xl opacity-0 text-gray-700 dark:text-white" />
       </button>
 
       {/* Welcome Message */}
-      <h1 className="text-lg xs:text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
+      <h1 className="text-lg header xs:text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
         Welcome, {user?.name || "User"} 👋
       </h1>
 

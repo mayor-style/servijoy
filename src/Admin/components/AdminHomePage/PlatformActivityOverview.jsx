@@ -36,11 +36,11 @@ const PlatformActivityOverview = () => {
 
   return (
     <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl transition-colors">
-      <h2 className="header text-gray-800 dark:text-white mb-4">
+      <h2 className="subheading text-gray-800 dark:text-white mb-4">
         Platform Activity Overview
       </h2>
       {loading ? (
-        <div className="text-center py-10">
+        <div className="text-center dark:text-gray-300 py-10">
           <span className="loader">Loading Activity Data...</span>
         </div>
       ) : (

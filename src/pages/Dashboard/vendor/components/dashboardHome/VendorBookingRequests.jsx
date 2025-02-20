@@ -10,7 +10,7 @@ const dummyRequests = [
 const VendorBookingRequests = () => {
   return (
     <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-2xl transition transform border border-gray-200 dark:border-gray-700 overflow-hidden">
-      <h2 className="text-xl sm:text-2xl font-header font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2 truncate">
+      <h2 className="text-xl sm:text-2xl font-header subheading font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2 truncate">
         <span role="img" aria-label="mail">📩</span> Booking Requests
       </h2>
       <div className="space-y-6">

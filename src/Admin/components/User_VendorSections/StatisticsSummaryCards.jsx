@@ -33,7 +33,7 @@ const StatisticsSummaryCards = () => {
 
   return (
     <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl transition-colors mb-6">
-      <h2 className="header text-gray-800 dark:text-white mb-4">Statistics Summary</h2>
+      <h2 className="subheading text-gray-800 dark:text-white mb-4">Statistics Summary</h2>
       {loading ? (
         <div className="text-center dark:text-gray-300 py-10">
           <span className="loader">Loading Statistics...</span>
