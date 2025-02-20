@@ -49,7 +49,7 @@ const RecentTransactions = () => {
       ) : (
         <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
           <table className="min-w-full bg-soft-white dark:bg-gray-800 rounded-lg overflow-hidden transition">
-            <thead className="bg-light-gray dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+            <thead className="bg-light-gray dark:bg-gray-700 text-sm xs:text-sm text-gray-600 dark:text-gray-300">
               <tr>
                 <th className="px-4 py-2 text-left">User</th>
                 <th className="px-4 py-2 text-left">Service</th>
@@ -58,7 +58,7 @@ const RecentTransactions = () => {
                 <th className="px-4 py-2 text-left">Date</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-xs xs:text-sm">
               {transactions.map((transaction) => (
                 <tr
                   key={transaction.id}

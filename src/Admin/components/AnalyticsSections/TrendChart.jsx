@@ -51,7 +51,7 @@ const TrendChart = ({ data }) => {
   };
 
   return (
-    <div className="h-64 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
+    <div className="h-64 text-theme bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
       <Line data={chartData} options={options} />
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 const getStatusClass = (status) => {
   switch (status) {
@@ -157,19 +158,19 @@ const OrdersTable = ({ filters, selectedOrders, setSelectedOrders, onOpenModal }
                   className="btn btn-sm btn-info transition"
                   onClick={() => onOpenModal("details", order)}
                 >
-                  View
+                  <FaEye size={16} />
                 </button>
                 <button
                   className="btn btn-sm btn-warning transition"
                   onClick={() => onOpenModal("edit", order)}
                 >
-                  Edit
+                  <FaEdit size={16} />
                 </button>
                 <button
                   className="btn btn-sm btn-error transition"
                   onClick={() => onOpenModal("delete", order)}
                 >
-                  Cancel
+                  <FaTrash size={16} />
                 </button>
               </td>
             </tr>

@@ -41,7 +41,7 @@ const FiltersSortingPanel = () => {
       </button>
       {/* Filter Panel */}
       <div
-        className={`bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl transition-all ${
+        className={`bg-soft-white dark:bg-gray-800 p-5 rounded-lg shadow-xl transition-all ${
           showFilters ? "block" : "hidden"
         } md:block`}
       >
@@ -52,7 +52,7 @@ const FiltersSortingPanel = () => {
               name="role"
               value={filters.role}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2  dark:border-none border rounded-lg dark:bg-gray-700 dark:text-white transition"
             >
               <option value="">User</option>
               <option value="vendor">Vendor</option>
@@ -65,7 +65,7 @@ const FiltersSortingPanel = () => {
               name="status"
               value={filters.status}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 dark:border-none border rounded-lg dark:bg-gray-700 dark:text-white transition"
             >
               <option value="">Active</option>
               <option value="inactive">Inactive</option>
@@ -78,7 +78,7 @@ const FiltersSortingPanel = () => {
               name="sortBy"
               value={filters.sortBy}
               onChange={handleChange}
-              className="w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 dark:border-none border rounded-lg dark:bg-gray-700 dark:text-white transition"
             >
               <option value="">Name</option>
               <option value="email">Email</option>

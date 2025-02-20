@@ -10,7 +10,7 @@ import UpcomingEvents from "../components/AdminHomePage/UpcomingEvents";
 
 const AdminHomePage = () => {
   return (
-    <div className="p-4 space-y-6 bg-soft-white dark:bg-gray-900 min-h-screen transition">
+    <div className="py-4 space-y-6 w-full bg-soft-white dark:bg-gray-900 min-h-screen transition">
       <h1 className="header text-gray-800 dark:text-white mb-4">
         Admin Dashboard
       </h1>

@@ -14,11 +14,11 @@ const BulkActionsPanel = ({ selectedItems, onBulkAction }) => {
   };
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl flex flex-wrap gap-4 items-center justify-between mt-4 transition">
-      <span className="text-sm text-gray-600 dark:text-gray-300">
+    <div className="bg-soft-white dark:bg-gray-800 p-1 rounded-lg shadow-xl flex flex-wrap gap-4 items-center justify-between mt-4 transition">
+      <span className="text-xs xs:text-sm text-gray-600 dark:text-gray-300">
         {selectedItems.length} items selected
       </span>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex text-sm flex-wrap gap-2">
         <button
           onClick={() => handleAction("activate")}
           className="btn-green flex items-center gap-2 px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed transition"
@@ -28,7 +28,7 @@ const BulkActionsPanel = ({ selectedItems, onBulkAction }) => {
         </button>
         <button
           onClick={() => handleAction("deactivate")}
-          className="btn-blue flex items-center gap-2 px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed transition"
+          className="btn-blue  flex items-center gap-2 px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed transition"
           disabled={isProcessing || selectedItems.length === 0}
         >
           <FaBan /> Deactivate

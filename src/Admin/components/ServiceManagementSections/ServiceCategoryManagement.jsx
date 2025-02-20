@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 const ServiceCategoryManagement = () => {
   const [categories, setCategories] = useState([]);
@@ -62,23 +63,23 @@ const ServiceCategoryManagement = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-0">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="card bg-primary text-primary-content shadow-xl transition">
           <div className="card-body">
-            <h2 className="card-title">Total Categories</h2>
+            <h2 className="card-title font-header">Total Categories</h2>
             <p>{categories.length}</p>
           </div>
         </div>
         <div className="card bg-warning text-warning-content shadow-xl transition">
           <div className="card-body">
-            <h2 className="card-title">Pending Categories</h2>
+            <h2 className="card-title font-header">Pending Categories</h2>
             <p>{categories.filter(c => c.status === "Pending").length}</p>
           </div>
         </div>
         <div className="card bg-error text-error-content shadow-xl transition">
           <div className="card-body">
-            <h2 className="card-title">Unavailable Categories</h2>
+            <h2 className="card-title font-header">Unavailable Categories</h2>
             <p>{categories.filter(c => c.status === "Unavailable").length}</p>
           </div>
         </div>
@@ -90,8 +91,9 @@ const ServiceCategoryManagement = () => {
       ) : categories.length === 0 ? (
         <p className="text-center text-gray-600 dark:text-gray-300">No categories found.</p>
       ) : (
-        <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
-          <table className="table w-full min-w-[600px]">
+        <div className="overflow-x-auto p-3 rounded-lg dark:bg-gray-800 overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
+          <h1 className="header text-theme pb-3">Services</h1>
+          <table className="table w-full scroll min-w-[600px]">
             <thead>
               <tr className="text-gray-700 dark:text-gray-300 bg-gray-300 dark:bg-gray-700">
                 <th>Name</th>
@@ -113,9 +115,9 @@ const ServiceCategoryManagement = () => {
                   </td>
                   <td>{cat.services_count}</td>
                   <td className="flex gap-2">
-                    <button onClick={() => handleEdit(cat)} className="btn btn-sm btn-primary transition">Edit</button>
-                    <button onClick={() => handleDelete(cat.id)} className="btn btn-sm btn-error transition">Delete</button>
-                    <button onClick={() => handleViewDetails(cat)} className="btn btn-sm btn-info transition">View</button>
+                    <button onClick={() => handleEdit(cat)} className="btn btn-sm btn-primary transition"><FaEdit size={16}/></button>
+                    <button onClick={() => handleDelete(cat.id)} className="btn btn-sm btn-error transition"><FaTrash size={16} /></button>
+                    <button onClick={() => handleViewDetails(cat)} className="btn btn-sm btn-info transition"><FaEye size={16} /></button>
                   </td>
                 </tr>
               ))}
@@ -142,9 +144,9 @@ const ServiceCategoryManagement = () => {
       <button onClick={handleCreate} className="btn btn-success mt-4 transition">+ Add New Category</button>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition">
-          <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg w-1/2">
-            <h2 className="text-xl mb-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-3 transition">
+          <div className="bg-soft-white scroll dark:bg-gray-800 p-6 rounded-lg ">
+            <h2 className="text-xl header text-theme mb-4">
               {modalType === "create"
                 ? "Add New Category"
                 : modalType === "edit"
@@ -153,9 +155,9 @@ const ServiceCategoryManagement = () => {
             </h2>
             {modalType !== "view" ? (
               <form>
-                <input type="text" placeholder="Category Name" className="input input-bordered w-full mb-4" />
-                <textarea placeholder="Description" className="textarea textarea-bordered w-full mb-4"></textarea>
-                <select className="select select-bordered w-full mb-4">
+                <input type="text" placeholder="Category Name" className="input input-bordered w-full mb-4 dark:bg-gray-700 text-theme" />
+                <textarea placeholder="Description" className="textarea textarea-bordered w-full dark:bg-gray-700 text-theme mb-4"></textarea>
+                <select className="select dark:bg-gray-700 text-theme select-bordered w-full mb-4">
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                   <option value="Pending">Pending</option>
@@ -163,11 +165,11 @@ const ServiceCategoryManagement = () => {
                 </select>
                 <div className="flex gap-4">
                   <button className="btn btn-primary">Save</button>
-                  <button onClick={() => setShowModal(false)} className="btn btn-ghost" type="button">Cancel</button>
+                  <button onClick={() => setShowModal(false)} className="btn btn-ghost text-theme" type="button">Cancel</button>
                 </div>
               </form>
             ) : (
-              <div>
+              <div className="w-full p-3 text-theme rounded-lg">
                 <p><strong>Name:</strong> {selectedCategory.name}</p>
                 <p><strong>Description:</strong> {selectedCategory.description}</p>
                 <p><strong>Status:</strong> {selectedCategory.status}</p>

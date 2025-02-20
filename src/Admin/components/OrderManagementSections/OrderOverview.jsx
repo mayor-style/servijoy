@@ -70,7 +70,7 @@ export default function OrderOverview() {
           ) : (
             <>
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold">{card.title}</h2>
+                <h2 className="text-lg font-header font-semibold">{card.title}</h2>
                 {card.icon}
               </div>
               <p className="text-2xl font-bold mt-2">{card.value}</p>

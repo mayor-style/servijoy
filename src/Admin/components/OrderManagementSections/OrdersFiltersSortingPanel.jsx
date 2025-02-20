@@ -25,7 +25,7 @@ const OrdersFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
 
   return (
     <div className="p-4 bg-base-200 dark:bg-gray-800 rounded-xl mb-4 transition">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid text-theme grid-cols-1 md:grid-cols-3 gap-4">
         <select
           className="select select-bordered w-full dark:bg-gray-700 transition"
           value={filters.status}

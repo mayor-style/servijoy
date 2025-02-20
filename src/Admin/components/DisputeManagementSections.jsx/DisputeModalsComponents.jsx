@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const DisputeDetailsModal = ({ dispute, onClose }) => (
   <dialog open className="modal transition">
-    <div className="modal-box bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
-      <h3 className="text-lg font-bold mb-2">Dispute Details: {dispute.id}</h3>
+    <div className="modal-box text-theme bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
+      <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg ">Dispute Details: {dispute.id}</h3>
       <p className="mb-2"><strong>Vendor:</strong> {dispute.vendor}</p>
       <p className="mb-2"><strong>Subject:</strong> {dispute.subject}</p>
       <p className="mb-2"><strong>Date:</strong> {dispute.date}</p>
@@ -25,8 +25,8 @@ const EditDisputeModal = ({ dispute, onSave, onClose }) => {
 
   return (
     <dialog open className="modal transition">
-      <div className="modal-box bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
-        <h3 className="text-lg font-bold mb-4">Edit Dispute: {dispute.id}</h3>
+      <div className="modal-box text-theme bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
+        <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Edit Dispute: {dispute.id}</h3>
         <label className="block text-gray-700 dark:text-gray-300 mb-2">Status:</label>
         <select value={status} onChange={(e) => setStatus(e.target.value)} className="select select-bordered w-full mb-4 dark:bg-gray-700">
           <option>Pending</option>
@@ -46,8 +46,8 @@ const EditDisputeModal = ({ dispute, onSave, onClose }) => {
 
 const DeleteDisputeModal = ({ disputeId, onConfirm, onClose }) => (
   <dialog open className="modal transition">
-    <div className="modal-box bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
-      <h3 className="font-bold text-lg mb-2">Confirm Delete</h3>
+    <div className="modal-box text-theme bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl">
+      <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Confirm Delete</h3>
       <p className="mb-4">Are you sure you want to delete dispute #{disputeId}? This action cannot be undone.</p>
       <div className="modal-action flex gap-4">
         <button className="btn btn-error" onClick={() => { onConfirm(disputeId); onClose(); }}>Yes, Delete</button>

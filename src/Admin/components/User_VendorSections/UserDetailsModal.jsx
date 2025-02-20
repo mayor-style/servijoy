@@ -18,9 +18,9 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
   const u = user || defaultUser;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition">
-      <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-2xl relative transition">
-        <h2 className="header text-gray-800 dark:text-white mb-4">User Details</h2>
+    <div className="fixed inset-0 px-3 bg-black bg-opacity-50 flex items-center justify-center z-50 transition">
+      <div className="bg-soft-white max-h-[95%] dark:bg-gray-800 p-6 rounded-lg scroll shadow-xl w-full max-w-2xl relative transition">
+        <h2 className="header text-gray-800 dark:text-white mb-4 border-b pb-2 dark:border-gray-600 border-gray-40">User Details</h2>
         <button
           className="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 text-2xl font-bold dark:hover:text-white transition"
           onClick={onClose}
@@ -28,7 +28,7 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
           <MdClose />
         </button>
 
-        <div className="mb-4 space-y-2">
+        <div className="mb-4 dark:text-gray-300 space-y-2">
           <p><strong>Name:</strong> {u.name}</p>
           <p><strong>Email:</strong> {u.email}</p>
           <p><strong>Role:</strong> {u.role}</p>

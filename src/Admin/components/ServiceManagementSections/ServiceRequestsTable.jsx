@@ -53,10 +53,10 @@ const ServiceRequestsTable = () => {
   const renderTable = () => {
     if (loading) {
       return Array.from({ length: itemsPerPage }).map((_, index) => (
-        <tr key={index}>
+        <tr key={index} className="">
           {Array.from({ length: 8 }).map((_, i) => (
             <td key={i} className="p-2">
-              <div className="bg-gray-300 dark:bg-gray-700 h-4 rounded animate-pulse"></div>
+              <div className="bg-gray-300  dark:bg-gray-700 h-4 rounded animate-pulse"></div>
             </td>
           ))}
         </tr>
@@ -93,7 +93,7 @@ const ServiceRequestsTable = () => {
         <td className="p-2">
           <input
             type="checkbox"
-            className="checkbox"
+            className="checkbox border dark:border-gray-500"
             checked={selectedRequests.includes(req.id)}
             onChange={() => toggleSelect(req.id)}
           />
@@ -139,11 +139,12 @@ const ServiceRequestsTable = () => {
   };
 
   return (
-    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white dark:bg-gray-800 rounded-lg shadow-md mt-4 transition">
-      <table className="table w-full min-w-[800px]">
+    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white p-4 dark:bg-gray-800 rounded-lg shadow-md mt-4 transition">
+      <h1 className="header pb-3 text-theme">Service Requests</h1>
+      <table className="table w-full text-theme min-w-[800px]">
         <thead>
           <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 dark:text-gray-200">
-            <th className="p-3">
+            <th className="p-3 ">
               <input
                 type="checkbox"
                 onChange={(e) =>

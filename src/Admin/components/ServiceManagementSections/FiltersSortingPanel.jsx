@@ -27,7 +27,7 @@ const FiltersSortingPanel = ({ onFilterChange }) => {
   const applyFilters = () => onFilterChange(filters);
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl mt-4 flex flex-wrap gap-4 items-center transition">
+    <div className="bg-soft-white text-theme dark:bg-gray-800 p-4 rounded-lg shadow-xl mt-4 flex flex-wrap gap-4 items-center transition">
       {/* Status Filter */}
       <select
         name="status"

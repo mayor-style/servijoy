@@ -66,7 +66,7 @@ const DisputesTable = ({ filters, selectedDisputes, setSelectedDisputes, onOpenM
   }
 
   return (
-    <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
+    <div className="overflow-x-auto p-2 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
       <table className="table w-full min-w-[800px]">
         <thead className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 dark:text-gray-200">
           <tr>

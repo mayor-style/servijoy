@@ -36,9 +36,9 @@ const ServiceModals = () => {
     <div>
       {/* Request Details Modal */}
       {showRequestModal && (
-        <dialog open className="modal transition">
+        <dialog open className="modal text-theme transition">
           <div className="modal-box bg-soft-white dark:bg-gray-800">
-            <h3 className="font-bold text-lg">Service Request Details</h3>
+            <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Service Request Details</h3>
             <p><strong>Requester:</strong> {requestDetails.requester}</p>
             <p><strong>Service:</strong> {requestDetails.service}</p>
             <p><strong>Category:</strong> {requestDetails.category}</p>
@@ -60,8 +60,8 @@ const ServiceModals = () => {
       {/* Category Details Modal */}
       {showCategoryModal && (
         <dialog open className="modal transition">
-          <div className="modal-box bg-soft-white dark:bg-gray-800">
-            <h3 className="font-bold text-lg">Service Category Details</h3>
+          <div className="modal-box text-theme bg-soft-white dark:bg-gray-800">
+            <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Service Category Details</h3>
             <p><strong>Category:</strong> {categoryDetails.name}</p>
             <p><strong>Total Services:</strong> {categoryDetails.totalServices}</p>
             <p><strong>Status:</strong> {categoryDetails.status}</p>
@@ -81,17 +81,17 @@ const ServiceModals = () => {
 
       {/* Edit Category Modal */}
       {showEditCategoryModal && (
-        <dialog open className="modal transition">
-          <div className="modal-box bg-soft-white dark:bg-gray-800">
-            <h3 className="font-bold text-lg">Edit Service Category</h3>
+        <dialog open className="modal transition ">
+          <div className="modal-box text-theme bg-soft-white dark:bg-gray-800">
+            <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Edit Service Category</h3>
             <form>
               <label className="form-control w-full mb-2">
-                <span className="label-text">Category Name</span>
-                <input type="text" className="input input-bordered w-full" defaultValue={categoryDetails.name} />
+                <span className="label-text text-theme">Category Name</span>
+                <input type="text" className="input dark:bg-gray-700 input-bordered w-full" defaultValue={categoryDetails.name} />
               </label>
               <label className="form-control w-full mb-2">
-                <span className="label-text">Status</span>
-                <select className="select select-bordered w-full">
+                <span className="label-text text-theme">Status</span>
+                <select className="select dark:bg-gray-700 select-bordered w-full">
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
@@ -108,8 +108,8 @@ const ServiceModals = () => {
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
         <dialog open className="modal transition">
-          <div className="modal-box bg-soft-white dark:bg-gray-800">
-            <h3 className="font-bold text-lg">Confirm Deletion</h3>
+          <div className="modal-box text-theme bg-soft-white dark:bg-gray-800">
+            <h3 className="font-bold font-header mb-3 pb-2 border-b dark:border-gray-700 border-gray-400 text-lg">Confirm Deletion</h3>
             <p>Are you sure you want to delete this item? This action cannot be undone.</p>
             <div className="modal-action">
               <button className="btn btn-error">Delete</button>
@@ -120,7 +120,7 @@ const ServiceModals = () => {
       )}
 
       {/* Buttons to trigger modals (for demonstration) */}
-      <div className="flex gap-2 mt-4">
+      <div className="flex flex-wrap gap-2 mt-4">
         <button className="btn" onClick={() => setShowRequestModal(true)}>Show Request Details</button>
         <button className="btn" onClick={() => setShowCategoryModal(true)}>Show Category Details</button>
         <button className="btn" onClick={() => setShowEditCategoryModal(true)}>Edit Category</button>

@@ -37,7 +37,7 @@ const UpcomingEvents = () => {
 
   if (loading) {
     return (
-      <div className="p-4 animate-pulse">
+      <div className="p-0 animate-pulse">
         <div className="h-24 bg-light-gray dark:bg-gray-700 rounded-md mb-4"></div>
         <div className="h-24 bg-light-gray dark:bg-gray-700 rounded-md mb-4"></div>
         <div className="h-24 bg-light-gray dark:bg-gray-700 rounded-md"></div>
@@ -46,7 +46,7 @@ const UpcomingEvents = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className="p-0">
       <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-lg transition">
         <h2 className="header text-gray-800 dark:text-gray-300 mb-4">
           Upcoming Events & Reminders

@@ -3,6 +3,7 @@ import EditUserVendorModal from "./EditUserVendorModal";
 import UserDetailsModal from "./UserDetailsModal";
 import VendorDetailsModal from "./VendorsDetailsModal";
 import BulkActionsPanel from "./BulkActionsPanel";
+import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 
 const UsersVendorsTable = () => {
   const [selectedUser, setSelectedUser] = useState(null);
@@ -132,14 +133,14 @@ const UsersVendorsTable = () => {
   return (
     <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl p-4 transition">
       {loading ? (
-        <div className="text-center py-10">
+        <div className="text-center dark:text-gray-300 py-10">
           <span className="loader">Loading Data...</span>
         </div>
       ) : (
         <>
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 text-sm dark:text-gray-200">
+              <tr className="bg-light-gray dark:bg-gray-700 text-left text-gray-800 text-xs xs:text-sm dark:text-gray-200">
                 <th className="p-3">
                   <input
                     type="checkbox"
@@ -150,19 +151,19 @@ const UsersVendorsTable = () => {
                     }
                   />
                 </th>
-                <th className="p-3">Profile</th>
+                <th className="p-3 max-md:hidden">Profile</th>
                 <th className="p-3">Name</th>
                 <th className="p-3">Email</th>
                 <th className="p-3">Role</th>
                 <th className="p-3">Status</th>
-                <th className="p-3">Registered</th>
-                <th className="p-3">Last Login</th>
+                <th className="p-3 max-sm:hidden">Registered</th>
+                <th className="p-3 max-md:hidden">Last Login</th>
                 <th className="p-3">Actions</th>
               </tr>
             </thead>
             <tbody>
               {paginatedData.map((user) => (
-                <tr key={user.id} className="border-b dark:border-gray-700">
+                <tr key={user.id} className="border-b dark:border-gray-700 text-sm max-xs:text-xs">
                   <td className="p-3">
                     <input
                       type="checkbox"
@@ -170,7 +171,7 @@ const UsersVendorsTable = () => {
                       onChange={() => toggleSelectItem(user.id)}
                     />
                   </td>
-                  <td className="p-3">
+                  <td className="max-md:hidden p-3">
                     <img
                       src={user.profilePic}
                       alt="Profile"
@@ -181,51 +182,51 @@ const UsersVendorsTable = () => {
                   <td className="p-3 text-gray-800 dark:text-gray-200">{user.email}</td>
                   <td className="p-3 text-gray-800 dark:text-gray-200">{user.role}</td>
                   <td className="p-3 text-gray-800 dark:text-gray-200">{user.status}</td>
-                  <td className="p-3 text-gray-800 dark:text-gray-200">{user.registrationDate}</td>
-                  <td className="p-3 text-gray-800 dark:text-gray-200">{user.lastLogin}</td>
+                  <td className="p-3 text-gray-800 dark:text-gray-200 max-sm:hidden">{user.registrationDate}</td>
+                  <td className="p-3 text-gray-800 dark:text-gray-200 max-md:hidden">{user.lastLogin}</td>
                   <td className="p-3 flex gap-2">
                     <button
                       onClick={() => openModal("details", user)}
-                      className="bg-blue-500 text-white px-3 py-1 rounded transition"
+                      className="bg-green/90 text-white p-2 rounded-md hover:bg-green transition-colors duration-200"
                     >
-                      View
+                       <FaEye size={16}/>
                     </button>
                     <button
                       onClick={() => openModal("edit", user)}
-                      className="btn-green px-3 py-1 transition"
+                      className="bg-blue-500 hover:bg-blue-700 transition-colors duration-200 p-2 "
                     >
-                      Edit
+                      <FaEdit size={16}/>
                     </button>
                     <button
                       onClick={() => handleBulkAction("delete", [user.id])}
-                      className="bg-red-600 text-white px-3 py-1 rounded transition"
+                      className="bg-red-500 p-2 hover:bg-red-700 transition-colors duration-200"
                     >
-                      Delete
+                     <FaTrash size={16} />
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <div className="flex justify-between items-center mt-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+          <div className="flex gap-4 flex-wrap justify-between items-center mt-4">
+            <p className="xs:text-sm text-xs text-gray-600 dark:text-gray-300">
               Showing {itemsPerPage} of {data.length} results
             </p>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 text-xs sm:text-sm items-center">
               <button
                 onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-light-gray dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
-              <span className="text-sm text-gray-600 dark:text-gray-300">
+              <span className="text-xs xs:text-sm text-gray-600 dark:text-gray-300">
                 Page {currentPage} of {totalPages}
               </span>
               <button
                 onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-light-gray dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-400 dark:bg-gray-700 text-gray-50 dark:text-gray-200 rounded transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Next
               </button>

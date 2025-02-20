@@ -12,6 +12,16 @@
         @apply font-body
     }
 
+    .scroll{
+      @apply overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300
+    }
+
+    .text-theme{
+      @apply dark:text-gray-300 text-gray-700
+    }
+
+    
+
     .auth-container {
         @apply flex items-center justify-center min-h-screen gradient;
       }

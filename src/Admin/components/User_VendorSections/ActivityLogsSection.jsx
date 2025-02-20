@@ -19,7 +19,7 @@ const ActivityLogsSection = () => {
   }, []);
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl mt-6 transition">
+    <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl mt-6 transition">
       <h2 className="header text-gray-800 dark:text-white mb-4">Activity Logs</h2>
       {loading ? (
         <div className="text-center dark:text-gray-300 py-10">
@@ -28,7 +28,7 @@ const ActivityLogsSection = () => {
       ) : (
         <div className="overflow-x-auto overflow-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
           <table className="min-w-full table-auto border border-light-gray dark:border-gray-700">
-            <thead className="bg-light-gray dark:bg-gray-700 text-sm">
+            <thead className="bg-light-gray dark:bg-gray-700 text-xs xs:text-sm">
               <tr>
                 <th className="px-4 py-2 text-gray-600 dark:text-gray-300">Action</th>
                 <th className="px-4 py-2 text-gray-600 dark:text-gray-300">Timestamp</th>
@@ -36,7 +36,7 @@ const ActivityLogsSection = () => {
             </thead>
             <tbody>
               {logs.map((log) => (
-                <tr key={log.id} className="hover:bg-light-gray dark:hover:bg-gray-600 transition">
+                <tr key={log.id} className="hover:bg-light-gray dark:hover:bg-gray-600 transition text-xs xs:text-sm">
                   <td className="px-4 py-2 text-gray-800 dark:text-gray-300">{log.action}</td>
                   <td className="px-4 py-2 text-gray-800 dark:text-gray-300">{log.timestamp}</td>
                 </tr>

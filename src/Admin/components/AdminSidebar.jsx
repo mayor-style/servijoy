@@ -16,12 +16,8 @@ const AdminSidebar = ({ isOpen, onClose, onLogout }) => {
   ];
 
   return (
-    <aside className={`bg-white dark:bg-gray-800 shadow-xl p-4 md:p-6 w-64 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 fixed md:relative z-50 flex flex-col h-screen`}>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Admin Panel</h1>
-       
-      </div>
-      <nav className="flex-grow space-y-4 overflow-y-auto">
+    <aside className={`bg-white top-20 left-0 bottom-0 z-40 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-700 dark:bg-gray-800 shadow-xl p-4 lg:p-6 w-64 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 fixed z-50 flex flex-col h-screen`}>
+      <nav className="flex-grow space-y-4  overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-700">
         {navItems.map((item, index) => (
           <NavLink
             key={index}
@@ -32,16 +28,11 @@ const AdminSidebar = ({ isOpen, onClose, onLogout }) => {
             onClick={() => { onClose && onClose(); }}
           >
             {item.icon}
-            <span className="text-base md:text-lg">{item.label}</span>
+            <span className="text-base lg:text-lg">{item.label}</span>
           </NavLink>
         ))}
       </nav>
-      <div className="mt-auto border-t dark:border-gray-700 pt-4">
-        <button onClick={onLogout} className="flex items-center p-3 text-red-600 dark:text-red-500 hover:bg-red-100 dark:hover:bg-red-700 rounded-lg transition w-full">
-          <FaSignOutAlt className="text-xl mr-3" />
-          Logout
-        </button>
-      </div>
+      
     </aside>
   );
 };

@@ -24,8 +24,8 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition">
-      <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-lg relative transition">
+    <div className="fixed inset-0  px-3 bg-black bg-opacity-50 flex items-center justify-center z-50 transition">
+      <div className="bg-soft-white scroll max-h-[95%] dark:bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-lg relative transition">
         <h2 className="header text-gray-800 dark:text-white mb-4">
           Edit {userVendor.role === "Vendor" ? "Vendor" : "User"}
         </h2>
@@ -43,7 +43,7 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 border dark:border-none rounded dark:bg-gray-700 dark:text-white transition"
             />
           </div>
           <div>
@@ -53,7 +53,7 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 border dark:border-none rounded dark:bg-gray-700 dark:text-white transition"
             />
           </div>
           <div>
@@ -62,7 +62,7 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 border dark:border-none rounded dark:bg-gray-700 dark:text-white transition"
             >
               <option value="User">User</option>
               <option value="Vendor">Vendor</option>
@@ -75,7 +75,7 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 border dark:border-none rounded dark:bg-gray-700 dark:text-white transition"
             >
               <option value="Active">Active</option>
               <option value="Inactive">Inactive</option>
@@ -90,7 +90,7 @@ const EditUserVendorModal = ({ isOpen, onClose, userVendor, onSave }) => {
               placeholder="Enter new password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded dark:bg-gray-700 dark:text-white transition"
+              className="w-full p-2 border dark:border-none rounded dark:bg-gray-700 dark:text-white transition"
             />
           </div>
           <div className="flex justify-end gap-2 mt-4">

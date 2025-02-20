@@ -32,10 +32,10 @@ const StatisticsSummaryCards = () => {
   ];
 
   return (
-    <div className="bg-soft-white dark:bg-gray-800 p-6 rounded-lg shadow-xl transition-colors mb-6">
+    <div className="bg-soft-white dark:bg-gray-800 p-4 rounded-lg shadow-xl transition-colors mb-6">
       <h2 className="header text-gray-800 dark:text-white mb-4">Statistics Summary</h2>
       {loading ? (
-        <div className="text-center py-10">
+        <div className="text-center dark:text-gray-300 py-10">
           <span className="loader">Loading Statistics...</span>
         </div>
       ) : (
@@ -43,14 +43,14 @@ const StatisticsSummaryCards = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="bg-light-gray dark:bg-gray-700 p-4 rounded-lg flex items-center gap-4 shadow hover:shadow-xl transition"
+              className="bg-light-gray  dark:bg-gray-700 p-4 rounded-lg flex items-center gap-4 shadow hover:shadow-xl transition"
             >
-              <div className={`p-4 rounded-full ${card.color} text-white`}>
-                <card.icon className="text-2xl" />
+              <div className={`p-3 sm:p-4 rounded-full ${card.color} text-white`}>
+                <card.icon className="text-lg sm:text-2xl" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{card.label}</h3>
-                <p className="text-xl font-bold text-gray-900 dark:text-gray-100">{card.value}</p>
+                <h3 className="sm:text-lg font-semibold text-gray-800 dark:text-white">{card.label}</h3>
+                <p className="sm:text-xl text-lg font-bold text-gray-900 dark:text-gray-100">{card.value}</p>
               </div>
             </div>
           ))}

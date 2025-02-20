@@ -9,7 +9,7 @@ import AlertsNotificationsPanel from "../components/User_VendorSections/AlertsNo
 
 const UserVendorWrapper = () => {
   return (
-    <div className="p-4 space-y-6 bg-light-gray dark:bg-gray-900 min-h-screen transition">
+    <div className="pt-24 space-y-6 bg-light-gray dark:bg-gray-900 min-h-screen transition">
       <UsersVendorsHeader />
       <FiltersSortingPanel />
       <UsersVendorsTable />

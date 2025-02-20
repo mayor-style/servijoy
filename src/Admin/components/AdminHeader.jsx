@@ -20,21 +20,21 @@ const AdminHeader = ({ toggleSidebar }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 px-4 md:px-8 py-4 flex justify-between items-center transition-colors duration-300 ">
-      <button onClick={toggleSidebar} className="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+    <header className="fixed right-0 left-0 top-0 z-50 bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700 px-4 lg:px-8 py-4 flex justify-between items-center transition-colors duration-300 ">
+      <button onClick={toggleSidebar} className="lg:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
         <MdMenu className="text-2xl text-gray-700 dark:text-white" />
       </button>
 
-      <h1 className="text-lg xs:text-xl md:text-3xl font-bold text-gray-800 dark:text-white">
-        Admin Dashboard
+      <h1 className="text-lg font-header xs:text-xl lg:text-3xl font-bold text-gray-800 dark:text-white">
+        Admin Panel
       </h1>
 
-      <div className="flex items-center gap-4 md:gap-6">
+      <div className="flex items-center gap-4 lg:gap-6">
         <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
           {theme === "dark" ? <MdLightMode className="text-2xl text-yellow-500" /> : <MdDarkMode className="text-2xl text-gray-700" />}
         </button>
 
-        <div className="hidden md:flex gap-4">
+        <div className="hidden lg:flex gap-4">
           <button className="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <MdNotifications className="text-2xl text-gray-700 dark:text-white" />
             <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs font-bold px-1 rounded-full">3</span>

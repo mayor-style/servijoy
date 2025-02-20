@@ -12,11 +12,11 @@ const AdminDashboardLayout = ({content}) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="flex flex-col  min-h-screen bg-gray-100 dark:bg-gray-900 overflow-hidden">
       <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex-1 flex flex-col">
         <AdminHeader  toggleSidebar={handleToggleSidebar} />
-        <main className="p-4 md:p-8 flex-1 overflow-y-auto">
+        <main className="py-5 ml-0 lg:ml-64 px-3 lg:px-4 flex-1 overflow-hidden">
          {content}
           {/* Future sections like recent activity, notifications, etc. can be added here */}
         </main>

@@ -18,7 +18,7 @@ const AccountSettings = () => {
   };
 
   return (
-    <div className="p-6 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
+    <div className="p-4 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
       <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
         Account Settings
       </h2>
@@ -75,7 +75,7 @@ const SecuritySettings = () => {
   };
 
   return (
-    <div className="p-6 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
+    <div className="p-4 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
       <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
         Security Settings
       </h2>
@@ -140,7 +140,7 @@ const NotificationSettings = () => {
   };
 
   return (
-    <div className="p-6 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
+    <div className="p-4 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
       <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
         Notification Preferences
       </h2>
@@ -201,7 +201,7 @@ const ThemeSettings = () => {
   };
 
   return (
-    <div className="p-6 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
+    <div className="p-4 bg-soft-white dark:bg-gray-800 rounded-lg shadow-xl transition">
       <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
         Theme Options
       </h2>
@@ -229,15 +229,15 @@ const ThemeSettings = () => {
 // PARENT SETTINGS PAGE COMPONENT
 const AdminSettingsPageWrapper = () => {
   return (
-    <div className="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
-      <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+    <div className="pt-24 pb-5 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
+      <h1 className="text-3xl font-bold text-gray-800 dark:text-white font-header mb-6">
         Admin Settings
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <AccountSettings />
         <SecuritySettings />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <NotificationSettings />
         <ThemeSettings />
       </div>

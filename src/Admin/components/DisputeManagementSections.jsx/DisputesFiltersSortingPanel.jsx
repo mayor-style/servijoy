@@ -25,7 +25,7 @@ const DisputesFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
 
   return (
     <div className="p-4 bg-base-200 dark:bg-gray-800 rounded-xl mb-4 transition">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid text-theme grid-cols-1 md:grid-cols-3 gap-4">
         <select
           className="select select-bordered w-full dark:bg-gray-700 transition"
           value={filters.status}
@@ -56,7 +56,7 @@ const DisputesFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
           <option value="communication">Communication Issue</option>
         </select>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex text-theme flex-col gap-2">
           <label className="text-sm text-gray-700 dark:text-white">Date Range</label>
           <div className="flex gap-2">
             <DatePicker
@@ -80,7 +80,7 @@ const DisputesFiltersSortingPanel = ({ onFilterChange, onSortChange }) => {
           </div>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 text-theme">
         <select
           className="select select-bordered w-full dark:bg-gray-700 transition"
           value={sortOption}

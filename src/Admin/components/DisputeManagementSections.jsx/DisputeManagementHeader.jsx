@@ -12,12 +12,12 @@ const DisputeManagementHeader=()=> {
       </div>
 
       {/* Page Title */}
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 md:mb-0">
+      <h1 className="text-2xl font-header font-bold text-gray-800 dark:text-gray-100 mb-4 md:mb-0">
         Dispute Management
       </h1>
 
       {/* Quick Actions Button */}
-      <button className="btn btn-primary flex items-center gap-2 py-2 px-4 rounded-lg transition">
+      <button className="btn btn-primary btn-green flex items-center gap-2 py-2 px-4 rounded-lg transition">
         <PlusIcon size={18} className="mr-2" /> Add New Dispute
       </button>
     </div>
