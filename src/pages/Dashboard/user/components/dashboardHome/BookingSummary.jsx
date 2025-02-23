@@ -54,7 +54,7 @@ const BookingSummary = () => {
           to="/dashboard/my-bookings"
           className="mt-6 inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline"
         >
-          View All Bookings →
+          View Details →
         </Link>
       </div>
 
@@ -91,7 +91,7 @@ const BookingSummary = () => {
           to="/dashboard/my-bookings"
           className="mt-6 inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline"
         >
-          View All Bookings →
+          View Details →
         </Link>
       </div>
     </div>

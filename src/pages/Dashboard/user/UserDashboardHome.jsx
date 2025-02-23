@@ -11,7 +11,7 @@ import QuickAccessServices from "./components/dashboardHome/QuickAccessServices"
 
 const UserDashboardHome = () => {
   return (
-    <div className="max-w-7xl mx-auto px-0 py-6 space-y-8">
+    <div className="max-w-7xl mx-auto px-0 py-6 pt-0 space-y-6">
       {/* Welcome Message */}
       <WelcomeSection />
 

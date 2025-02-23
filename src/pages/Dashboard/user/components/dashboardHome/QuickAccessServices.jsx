@@ -15,11 +15,11 @@ const QuickAccessServices = () => {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-          Quick Access to Services
+          Book a Service
         </h3>
         <button className="text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline">
           View All
@@ -31,9 +31,9 @@ const QuickAccessServices = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className={`flex flex-col items-center justify-center gap-2 p-5 rounded-lg text-white ${service.color} shadow-md cursor-pointer transition-transform hover:scale-110`}
+            className={`flex flex-col items-center justify-center gap-2 p-5  rounded-xl text-white ${service.color} shadow-md cursor-pointer transition-transform hover:scale-110`}
           >
-            <span className="text-3xl">{service.icon}</span>
+            <span className="text-2xl md:text-3xl">{service.icon}</span>
             <p className="text-sm font-medium text-center">{service.name}</p>
           </div>
         ))}
