@@ -9,7 +9,7 @@ import ServiceModals from "../components/ServiceManagementSections/ServiceModals
 
 const ServiceManagementWrapper = () => {
   return (
-    <div className="p-6 px-0 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
+    <div className="p-6 pt-10 px-0 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
       <ServicePageHeader />
       <ServiceRequestsOverview />
       <FiltersSortingPanel onFilterChange={(filters) => console.log("Filters applied:", filters)} />

@@ -1,8 +1,40 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FaCalendarAlt } from "react-icons/fa";
 import CalendarHeader from "./components/BookingCalendarSections/CalendarHeader";
 import CalendarGrid from "./components/BookingCalendarSections/CalendarGrid";
 import BookingDetailsModal from "./components/BookingCalendarSections/BookingDetailsModal";
 import NewScheduleModal from "./components/BookingCalendarSections/NewScheduleModal";
+import LoadingSpinner from "./components/BookingCalendarSections/LoadingSpinner";
+import EmptyState from "./components/BookingCalendarSections/EmptyState";
+
+// Sample dummy data for development testing
+const dummyEvents = [
+  {
+    id: 1,
+    title: "Home Cleaning - John",
+    service: "Premium House Cleaning",
+    client: "John Smith",
+    date: new Date(new Date().getFullYear(), new Date().getMonth(), 15, 10, 0).toISOString(),
+    details: "Complete house cleaning with special attention to kitchen and bathrooms."
+  },
+  {
+    id: 2,
+    title: "Office Cleaning - TechCorp",
+    service: "Office Cleaning Service",
+    client: "TechCorp Inc.",
+    date: new Date(new Date().getFullYear(), new Date().getMonth(), 17, 14, 30).toISOString(),
+    details: "Weekly office cleaning including waste disposal and surface sanitization."
+  },
+  {
+    id: 3,
+    title: "Window Cleaning - Sarah",
+    service: "Window Cleaning",
+    client: "Sarah Johnson",
+    date: new Date(new Date().getFullYear(), new Date().getMonth(), 10, 9, 0).toISOString(),
+    details: "Complete window cleaning for two-story home."
+  }
+];
 
 const generateCalendarDays = (year, month) => {
   const days = [];
@@ -36,11 +68,24 @@ const BookingCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  
+  // New state variables for enhanced UX
+  const [isLoading, setIsLoading] = useState(true);
+  const [viewMode, setViewMode] = useState("month"); // "month", "week", "day" options
 
   useEffect(() => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     setCalendarDays(generateCalendarDays(year, month));
+    
+    // Simulate loading data from API and load dummy events
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setEvents(dummyEvents);
+    }, 1000);
+    
+    return () => clearTimeout(timer);
   }, [currentDate]);
 
   const handlePrevMonth = () => {
@@ -66,25 +111,60 @@ const BookingCalendar = () => {
   };
 
   return (
-    <div className="min-h-screen  dark:bg-gray-900 px-0 py-4 sm:py-6 md:py-8 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        <CalendarHeader
-          currentDate={currentDate}
-          onPrev={handlePrevMonth}
-          onNext={handleNextMonth}
-        />
-        <button
-          onClick={() => setIsAddModalOpen(true)}
-          className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 btn-green hover:bg-green text-white rounded-md shadow-xl mb-6 transition-all"
-        >
-          Add New Schedule
-        </button>
-        <CalendarGrid
-          calendarDays={calendarDays}
-          events={events}
-          onSelectEvent={handleSelectEvent}
-        />
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 md:p-8 transition-colors duration-300"
+    >
+      <div className="max-w-7xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+        {/* Header Section with Logo and Title */}
+        <div className="flex items-center justify-between p-4 sm:p-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+          <div className="flex items-center gap-3">
+            <FaCalendarAlt size={24} className="text-white" />
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">Booking Calendar</h1>
+          </div>
+        </div>
+
+        {/* Calendar Controls */}
+        <div className="p-4 sm:p-6">
+          <CalendarHeader
+            currentDate={currentDate}
+            onPrev={handlePrevMonth}
+            onNext={handleNextMonth}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+          />
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <button
+              onClick={() => setIsAddModalOpen(true)}
+              className="px-4 py-3 bg-green/60 hover:bg-green/70 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2"
+            >
+              <span>Add New Schedule</span>
+            </button>
+          </div>
+
+          {/* Calendar Content */}
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : events.length === 0 ? (
+            <EmptyState onAddNew={() => setIsAddModalOpen(true)} />
+          ) : (
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-2 sm:p-4 md:p-6 mb-4">
+              <CalendarGrid
+                calendarDays={calendarDays}
+                events={events}
+                onSelectEvent={handleSelectEvent}
+                viewMode={viewMode}
+              />
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Modals */}
       <BookingDetailsModal
         event={selectedEvent}
         isOpen={isDetailsModalOpen}
@@ -95,7 +175,7 @@ const BookingCalendar = () => {
         onClose={() => setIsAddModalOpen(false)}
         onAddEvent={handleAddEvent}
       />
-    </div>
+    </motion.div>
   );
 };
 

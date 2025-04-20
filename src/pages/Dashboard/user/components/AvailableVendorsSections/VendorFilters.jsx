@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { Search } from "lucide-react";
 
 const VendorFilters = ({ onFilterChange, onSortChange }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,28 +18,35 @@ const VendorFilters = ({ onFilterChange, onSortChange }) => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-xl transition-all duration-300 mb-6">
-      {/* Search Input */}
-      <div className="flex items-center w-full sm:w-2/3 md:w-1/2 mb-4 sm:mb-0">
-        <FaSearch className="text-gray-500 dark:text-gray-300 mr-3" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchChange}
-          placeholder="Search vendors..."
-          className="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+      <div className="mb-4">
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-4 w-4 text-gray-400" />
+          </div>
+          <input
+            type="text"
+            placeholder="Search vendors..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="pl-10 w-full py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
       </div>
-      {/* Sort Dropdown */}
-      <div className="w-full sm:w-auto">
+
+      <div>
+        <label htmlFor="sort-select" className="block text-sm font-medium text-gray-700 mb-1">
+          Sort by
+        </label>
         <select
+          id="sort-select"
           value={sortBy}
           onChange={handleSortChange}
-          className="w-full sm:w-auto p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
-          <option value="rating">Sort by Rating</option>
-          <option value="price">Sort by Price</option>
-          <option value="experience">Sort by Experience</option>
+          <option value="rating">Rating (Highest First)</option>
+          <option value="price">Price (Lowest First)</option>
+          <option value="experience">Experience (Most First)</option>
         </select>
       </div>
     </div>

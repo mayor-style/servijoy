@@ -42,7 +42,7 @@ const DisputeManagementPageWrapper = () => {
   return (
     <div className="pt-24 pb-5 bg-gray-50 dark:bg-gray-900 min-h-screen space-y-6 transition">
       <DisputeManagementHeader />
-      <DisputeOverview />
+    
       <DisputesFiltersSortingPanel onFilterChange={handleFilterChange} onSortChange={handleSortChange} />
       <DisputesTable filters={filters} selectedDisputes={selectedDisputes} setSelectedDisputes={setSelectedDisputes} onOpenModal={handleOpenModal} />
       <DisputesBulkActions selectedDisputes={selectedDisputes} onBulkAction={handleBulkAction} />

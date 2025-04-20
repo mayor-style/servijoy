@@ -14,7 +14,7 @@ const AboutPage = () => {
     <AboutMission />
     <AboutStory />
     <OurValues />
-    <OurTeam /> {/* This could be optional but well it serve as a placeholder for now! */}
+    {/* <OurTeam />  This could be optional but well it serve as a placeholder for now! */}
     <AboutClosing />
     <ContactUs />
     </main>

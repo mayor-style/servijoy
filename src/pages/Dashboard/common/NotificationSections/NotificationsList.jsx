@@ -1,4 +1,3 @@
-// File: components/notifications/NotificationsList.jsx
 import React from "react";
 import NotificationCard from "./NotificationCard";
 

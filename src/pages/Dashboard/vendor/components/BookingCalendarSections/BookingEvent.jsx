@@ -1,15 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaUser, FaBriefcase, FaClock } from "react-icons/fa";
 
 const BookingEvent = ({ event, onSelect }) => {
+  const eventTime = new Date(event.date).toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      className="bg-blue-200 dark:bg-blue-600 text-xs sm:text-sm md:text-base p-2 sm:p-3 md:p-4 rounded-lg cursor-pointer hover:opacity-90 transition-colors duration-300 truncate"
-      title={event.title}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 text-white p-2 rounded-lg cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
       onClick={onSelect}
     >
-      {event.title}
+      <div className="font-semibold text-xs truncate">{event.title}</div>
+      <div className="flex items-center gap-1 text-xs text-blue-100">
+        <FaClock size={10} />
+        <span>{eventTime}</span>
+      </div>
     </motion.div>
   );
 };

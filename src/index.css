@@ -95,3 +95,15 @@
       }
 }
 
+@layer components {
+  .btn:disabled {
+    opacity: 1; /* Remove transparency for full visibility */
+    background-color: #E5E7EB; /* gray-200 for light mode */
+    color: #6B7280; /* gray-500 for readable text */
+    cursor: not-allowed; /* Keep the disabled cursor */
+  }
+  .dark .btn:disabled {
+    background-color: #4B5563; /* gray-600 for dark mode */
+    color: #D1D5DB; /* gray-300 for readable text */
+  }
+}

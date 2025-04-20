@@ -13,16 +13,16 @@ const VendorDashboardHome = () => {
       {/* Welcome Section */}
       <VendorWelcome />
 
+          <VendorBookingRequests />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column */}
         <div className="space-y-8">
-          <VendorBookingRequests />
           <VendorEarnings />
+          <VendorTrustScore />
         </div>
-
+      
         {/* Right Column */}
         <div className="space-y-8">
-          <VendorTrustScore />
           <VendorMessages />
         </div>
       </div>
